@@ -1,15 +1,6 @@
 #include<iostream>
 using namespace std;
-
-
 static int x = 123456000;
-
-
-
-
-
-
-
 class bankAccount
 {
     string name;
@@ -26,11 +17,6 @@ public:
     friend class bankManager;
 };
 
-
-
-
-
-
 class bankManager
 {
 public:
@@ -38,18 +24,6 @@ public:
     void deleteAccount(bankAccount &z);
     int ac_no(bankAccount z);
 };
-
-
-
-
-
-
-
-
-
-
-
-
 
 bankAccount::bankAccount()
 {
