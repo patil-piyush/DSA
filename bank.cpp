@@ -41,7 +41,7 @@ bank :: bank(){
     name= "NONE";
     balance = 0;
     acctype="null";
-    accno=p;
+    accno=0;
 }
 
 bank :: bank(string x, int y, string z){
@@ -54,15 +54,21 @@ bank :: bank(string x, int y, string z){
 
 //defining the member functions of class customer
 void customer :: getdata(){
-    cout<<"Your account details are: \n"<<"Name: "<<name<<"\nAccount number: "<<accno<<"\nBalance: Rs."<<balance<<"\nAccount Type: "<<acctype;
+    cout<<"Your account details are: \n"<<"\tName: "
+        <<name<<"\n\tAccount number: "
+        <<accno<<"\n\tBalance: Rs."
+        <<balance<<"\n\tAccount Type: "
+        <<acctype<<endl<<"---------------------------------------------------------------"<<endl;
 }
 
 void customer :: diposit(float n){
     balance = balance + n;
+    cout<<"Your total balance is "<<balance<<endl<<"---------------------------------------------------------------"<<endl;
 }
         
 void customer :: withdraw(float n){
     balance = balance - n;
+    cout<<"Your total balance is "<<balance<<endl<<"---------------------------------------------------------------"<<endl;
 }
 
 
@@ -70,7 +76,7 @@ void customer :: withdraw(float n){
 //defining the member functions of class customer
 void manager :: setdata(customer &a){
     a.accno = p;
-    p++;
+    p=p+1;
     cout<<"Enter the details:\n";
     cout<<"1. Name: ";
     cin>>a.name;
@@ -78,7 +84,7 @@ void manager :: setdata(customer &a){
     cin>>a.acctype;
     cout<<"3. Balance: ";
     cin>>a.balance;
-    cout<<"Your assigned account number is "<<accno;      
+    cout<<"Your assigned account number is  "<<a.accno<<endl<<"---------------------------------------------------------------"<<endl;      
 }
 
 void manager :: removedata(customer &a){
@@ -97,8 +103,8 @@ int main(){
     while(1){
         cout<<"Choose from below option:\n"
             <<"1. Sign in as customer\n"
-            <<"2.  Sign in as manager\n"
-            <<"3. Exit\n";
+            <<"2. Sign in as manager\n"
+            <<"3. Exit\n"<<"Your choice : ";
         int choice1;
         cin>>choice1;
         switch (choice1){
@@ -111,7 +117,7 @@ int main(){
                         <<"1. Show account information\n"
                         <<"2. Deposite money\n"
                         <<"3. Withdraw money\n"
-                        <<"4. Exit";
+                        <<"4. Exit\n"<<"Your choice : ";
                     int choice_customer;
                     cin>>choice_customer;
                     switch (choice_customer){
@@ -121,7 +127,7 @@ int main(){
                             int accno1, accno2;
                             cin>>accno1;
                             accno2 = accno1%1231231;
-                            if (accno2>0 && accno2<100){
+                            if (accno2>=0 && accno2<100){
                                 custom[accno2].getdata();
                             }
                             else{
@@ -135,7 +141,7 @@ int main(){
                             cin>>accno1;
                             float amt_deposit;
                             accno2 = accno1%1231231;
-                            if (accno2>0 && accno2<100){
+                            if (accno2>=0 && accno2<100){
                                 cout<<"Enter the amount to be deposit: ";
                                 cin>>amt_deposit;
                                 custom[accno2].diposit(amt_deposit);
@@ -150,18 +156,18 @@ int main(){
                             cin>>accno1;
                             accno2 = accno1%1231231;
                             float amt_withdraw;
-                            if (accno2>0 && accno2<100){
+                            if (accno2>=0 && accno2<100){
                                 cout<<"Enter the amount to be withdraw: ";
                                 cin>>amt_withdraw;
                                 custom[accno2].withdraw(amt_withdraw);
                             }
                             else{
-                                cout<<"Invalid Account Number."<<endl;
+                                cout<<"Invalid Account Number.\n"<<endl;
                             }
                             break;
                         case 4:
                             //signing out as customer
-                            cout<<"Signing out as CUSTOMER\n";
+                            cout<<"Signing out as CUSTOMER\n"<<"---------------------------------------------------------------"<<endl;
                             eloop=false;
                             break;
                         default:    
@@ -181,7 +187,7 @@ int main(){
                     cout<<"choose from below options:\n"
                         <<"1. Create a bank account\n"
                         <<"2. Delete a bank account\n"
-                        <<"3. Exit\n";
+                        <<"3. Exit\n"<<"Your choice : ";
                     int choice_manager;
                     cin>>choice_manager;
                     switch(choice_manager) {
@@ -196,16 +202,17 @@ int main(){
                             int accno4;
                             cin>>accno3;
                             accno4 = accno3%1231231;
-                            if (accno4>0 && accno4<100){
+                            if (accno4>=0 && accno4<100){
                                 man.removedata(custom[accno4]);
+                                cout<<"Your account is deleted"<<endl<<"---------------------------------------------------------------"<<endl;
                             }
                             else{
-                                cout<<"Invalid Account Number."<<endl;
+                                cout<<"Invalid Account Number.\n"<<endl;
                             }
                             break;
                         case 3:
                             //Signing out as manager 
-                            cout << "Signing Out As Manager\n";
+                            cout << "Signing Out As Manager\n"<<"---------------------------------------------------------------"<<endl;
                             eloop=false;
                             break;
                         default:
