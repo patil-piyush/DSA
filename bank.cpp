@@ -1,7 +1,10 @@
 #include<iostream>
+#include<string.h>
 using namespace std;
 
-static int p=123123100;
+static int p=123123100;//using static variable to assign account number 
+class customer; // Forward declaration
+
 //creating class bank as base class
 class bank{
     public:
@@ -75,7 +78,7 @@ void manager :: setdata(customer &a){
     cin>>a.acctype;
     cout<<"3. Balance: ";
     cin>>a.balance;
-    cout<<"Your account number is "<<accno;      
+    cout<<"Your assigned account number is "<<accno;      
 }
 
 void manager :: removedata(customer &a){
@@ -88,16 +91,14 @@ void manager :: removedata(customer &a){
 
 int main(){
     bool eloop;
-    // bank* banker[100];
     manager man;
     customer custom[100];
-    // for (int i = 0; i < 100; i++)
-    // {
-    //     banker[i] = &custom[100];
-    // }
     
     while(1){
-        cout<<"Choose from below option:\n"<<"1. Sign in as customer\n"<<"2.  Sign in as manager\n"<<"3. Exit\n";
+        cout<<"Choose from below option:\n"
+            <<"1. Sign in as customer\n"
+            <<"2.  Sign in as manager\n"
+            <<"3. Exit\n";
         int choice1;
         cin>>choice1;
         switch (choice1){
@@ -106,7 +107,11 @@ int main(){
                 // bool eloop;
                 eloop = true;
                 while (eloop){
-                    cout<<"choose from below options:\n"<<"1. Show account information\n"<<"2. Deposite money\n"<<"3. Withdraw money\n"<<"4. Exit";
+                    cout<<"choose from below options:\n"
+                        <<"1. Show account information\n"
+                        <<"2. Deposite money\n"
+                        <<"3. Withdraw money\n"
+                        <<"4. Exit";
                     int choice_customer;
                     cin>>choice_customer;
                     switch (choice_customer){
@@ -116,7 +121,7 @@ int main(){
                             int accno1, accno2;
                             cin>>accno1;
                             accno2 = accno1%1231231;
-                            if (accno2!=0 && accno2>0){
+                            if (accno2>0 && accno2<100){
                                 custom[accno2].getdata();
                             }
                             else{
@@ -128,12 +133,12 @@ int main(){
                             //Depositing money
                             cout<<"Enter the account no. : ";
                             cin>>accno1;
-                            float amt;
+                            float amt_deposit;
                             accno2 = accno1%1231231;
-                            if (accno2!=0 && accno2>0){
+                            if (accno2>0 && accno2<100){
                                 cout<<"Enter the amount to be deposit: ";
-                                cin>>amt;
-                                custom[accno2].diposit(amt);
+                                cin>>amt_deposit;
+                                custom[accno2].diposit(amt_deposit);
                             }
                             else{
                                 cout<<"Invalid Account Number."<<endl;
@@ -144,10 +149,11 @@ int main(){
                             cout<<"Enter the account no. : ";
                             cin>>accno1;
                             accno2 = accno1%1231231;
-                            if (accno2!=0 && accno2>0){
+                            float amt_withdraw;
+                            if (accno2>0 && accno2<100){
                                 cout<<"Enter the amount to be withdraw: ";
-                                cin>>amt;
-                                custom[accno2].withdraw(amt);
+                                cin>>amt_withdraw;
+                                custom[accno2].withdraw(amt_withdraw);
                             }
                             else{
                                 cout<<"Invalid Account Number."<<endl;
@@ -172,13 +178,16 @@ int main(){
                 //signing in as manager
                 eloop = true;
                 while (eloop){
-                    cout<<"choose from below options:\n"<<"1. Create a bank account\n"<<"2. Delete a bank account\n"<<"3. Exit\n";
+                    cout<<"choose from below options:\n"
+                        <<"1. Create a bank account\n"
+                        <<"2. Delete a bank account\n"
+                        <<"3. Exit\n";
                     int choice_manager;
                     cin>>choice_manager;
                     switch(choice_manager) {
                         case 1:
                             //Creating a bank account
-                            custom[p%1231231].setdata();
+                            man.setdata(custom[p % 1231231]);
                             break;
                         case 2:
                             //deleting a bank accounts
@@ -187,8 +196,8 @@ int main(){
                             int accno4;
                             cin>>accno3;
                             accno4 = accno3%1231231;
-                            if (accno4!=0 && accno4>0){
-                                removedata(custom[accno4]);
+                            if (accno4>0 && accno4<100){
+                                man.removedata(custom[accno4]);
                             }
                             else{
                                 cout<<"Invalid Account Number."<<endl;
