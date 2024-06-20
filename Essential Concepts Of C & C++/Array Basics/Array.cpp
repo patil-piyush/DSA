@@ -11,7 +11,7 @@ int main()
     A[2] = 13;
 
     // printing the size of the array
-    cout << sizeof(A)<<endl;
+    cout << sizeof(A) << endl;
 
     // printing elements
     cout << A[0] << endl;
@@ -19,28 +19,29 @@ int main()
     cout << A[2] << endl;
     cout << A[9] << endl;
 
-    //printing the size of an array without giving the size while declaration it will decided by the elements you will assign while declaration
-    int B[] = {1,2,3,4,5,6,7};
-    cout<<sizeof(B)<<endl;
+    // printing the size of an array without giving the size while declaration it will decided by the elements you will assign while declaration
+    int B[] = {1, 2, 3, 4, 5, 6, 7};
+    cout << sizeof(B) << endl;
 
-    //print all the elements
+    // print all the elements
     for (int i = 0; i < 10; i++)
     {
-        cout<<A[i]<<endl;
+        cout << A[i] << endl;
     }
 
-    //OR
+    // OR
 
-    for(int x:A){
-        cout<<x<<endl;
-    } 
+    for (int x : A)
+    {
+        cout << x << endl;
+    }
 
-    //take the size of array from user
+    // take the size of array from user
     int n;
-    cout<<"Enter the size of array";
-    cin>>n;
+    cout << "Enter the size of array";
+    cin >> n;
     int C[n];
 
-    //End of problems
+    // End of problems
     return 0;
 }

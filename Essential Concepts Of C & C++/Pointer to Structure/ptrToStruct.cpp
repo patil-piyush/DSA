@@ -1,22 +1,24 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
 
-struct Rectangle{
+struct Rectangle
+{
     int length;
     int breadth;
 };
 
-int main(){
-    struct Rectangle r = {10 , 5};
+int main()
+{
+    struct Rectangle r = {10, 5};
     struct Rectangle *p = &r; // pointer declaration + initialization
 
     // accessing data members by using '.' operator
-    cout<<r.length<<endl;
+    cout << r.length << endl;
     cout << r.breadth << endl;
 
     // accessing data members by using a pointer
-    cout<<p->length<<endl;
-    cout<<p->breadth<<endl;
+    cout << p->length << endl;
+    cout << p->breadth << endl;
 
     /*
     Allocating memory in Heap (Dynamic memory allocation)

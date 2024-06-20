@@ -1,7 +1,7 @@
-#include<iostream>
+#include <iostream>
 using namespace std;
 
-//defining a structure
+// defining a structure
 struct Rectangle
 {
     int length;
@@ -26,14 +26,15 @@ struct Rectangle
     };
 */
 
-int main(){
-    //Declaring and initialising a variable of the structure
-    struct Rectangle r1 = {10 , 5};
-    //calculating size of the struct variable
-    cout<<sizeof(r1)<<endl;
+int main()
+{
+    // Declaring and initialising a variable of the structure
+    struct Rectangle r1 = {10, 5};
+    // calculating size of the struct variable
+    cout << sizeof(r1) << endl;
 
-    //accessing the data members
-    cout<<r1.length<<endl;
-    cout<<r1.breadth<<endl;
+    // accessing the data members
+    cout << r1.length << endl;
+    cout << r1.breadth << endl;
     return 0;
 }
