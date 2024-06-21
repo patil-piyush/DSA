@@ -41,7 +41,7 @@ int main()
             int *p1;
             char *p2;
             float *p3;
-            double p4;
+            double *p4;
             struct rectangle *p5;
 
             cout << sizeof(p1) << endl;
