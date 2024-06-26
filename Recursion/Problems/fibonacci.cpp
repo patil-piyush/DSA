@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
-int F[100];
 
+// Iterative approach
 int Ifib(int n)
 {
     int t1 = 0, t2 = 1, t3;
@@ -14,6 +14,7 @@ int Ifib(int n)
     return t3;
 }
 
+// Recursive approach
 int fib(int n)
 {
 
@@ -26,6 +27,9 @@ int fib(int n)
         return fib(n - 2) + fib(n - 1);
     }
 }
+
+// memorizing approach
+int F[100];
 
 int Mfib(int n)
 {
