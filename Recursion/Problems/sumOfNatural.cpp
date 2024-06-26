@@ -22,7 +22,7 @@ by using loops
     }
 */
 
-//by using recursion
+// by using recursion
 int sum(int n)
 {
     if (n == 0)
