@@ -48,6 +48,7 @@ int Mfib(int n)
         {
             F[n - 1] = Mfib(n - 1);
         }
+        F[n] = F[n - 2] + F[n - 1];
         return F[n - 2] + F[n - 1];
     }
 }
