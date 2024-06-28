@@ -14,10 +14,11 @@ void display(struct Array a)
     {
         cout << a.A[i] << " ";
     }
-    cout<<endl;
+    cout << endl;
 }
 
-void append(struct Array *arr, int x){
+void append(struct Array *arr, int x)
+{
     if (arr->length < arr->size)
     {
         arr->A[arr->length] = x;
@@ -44,7 +45,7 @@ int main()
 
     display(arr);
 
-    append(&arr,10);
+    append(&arr, 10);
 
     display(arr);
 
