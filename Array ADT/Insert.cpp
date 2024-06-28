@@ -22,11 +22,10 @@ struct Array
     }
 };
 
-
-//Normal insert function
-void Insert(struct Array *arr,int index, int x)
+// Normal insert function
+void Insert(struct Array *arr, int index, int x)
 {
-    if (arr->length < arr->size  &&  index >= 0)
+    if (arr->length < arr->size && index >= 0)
     {
         for (int i = arr->length; i > index; i--)
         {
@@ -66,13 +65,13 @@ int main()
 
     display(arr);
 
-    //calling insert function as member function of structure array 
+    // calling insert function as member function of structure array
     arr.Insert(3, 10);
 
     display(arr);
 
-    //calling normal insert function
-    Insert(&arr,4, 10);
+    // calling normal insert function
+    Insert(&arr, 4, 10);
 
     display(arr);
 
