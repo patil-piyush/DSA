@@ -10,7 +10,7 @@ struct Array
     // Insert as member function of structure
     void Insert(int index, int x)
     {
-        if (length < size)
+        if (length < size && index >= 0)
         {
             for (int i = length; i > index; i--)
             {
@@ -21,6 +21,21 @@ struct Array
         }
     }
 };
+
+
+//Normal insert function
+void Insert(struct Array *arr,int index, int x)
+{
+    if (arr->length < arr->size  &&  index >= 0)
+    {
+        for (int i = arr->length; i > index; i--)
+        {
+            arr->A[i] = arr->A[i - 1];
+        }
+        arr->A[index] = x;
+        arr->length++;
+    }
+}
 
 void display(struct Array a)
 {
@@ -51,7 +66,13 @@ int main()
 
     display(arr);
 
+    //calling insert function as member function of structure array 
     arr.Insert(3, 10);
+
+    display(arr);
+
+    //calling normal insert function
+    Insert(&arr,4, 10);
 
     display(arr);
 
