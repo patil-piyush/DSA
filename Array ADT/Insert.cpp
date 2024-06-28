@@ -6,6 +6,20 @@ struct Array
     int *A;
     int size;
     int length;
+
+    // Insert as member function of structure
+    void Insert(int index, int x)
+    {
+        if (length < size)
+        {
+            for (int i = length; i > index; i--)
+            {
+                A[i] = A[i - 1];
+            }
+            A[index] = x;
+            length++;
+        }
+    }
 };
 
 void display(struct Array a)
@@ -14,8 +28,9 @@ void display(struct Array a)
     {
         cout << a.A[i] << " ";
     }
-    
+    cout << endl;
 }
+
 int main()
 {
     struct Array arr;
@@ -33,6 +48,10 @@ int main()
         cin >> arr.A[i];
     }
     arr.length = n;
+
+    display(arr);
+
+    arr.Insert(3, 10);
 
     display(arr);
 
