@@ -14,7 +14,7 @@ void display(struct Array a)
     {
         cout << a.A[i] << " ";
     }
-    
+    cout<<endl;
 }
 int main()
 {
