@@ -8,12 +8,15 @@ struct Array
     int length;
 };
 
-int Delete(struct Array *arr,int index){
+int Delete(struct Array *arr, int index)
+{
     int x = 0;
-    if(index>= 0 && index<= arr->length){
+    if (index >= 0 && index <= arr->length)
+    {
         x = arr->A[index];
-        for(int i = index; i<arr->length; i++){
-            arr->A[i] = arr->A[i+1];
+        for (int i = index; i < arr->length; i++)
+        {
+            arr->A[i] = arr->A[i + 1];
         }
         arr->length--;
         return x;
@@ -50,7 +53,7 @@ int main()
 
     display(arr);
 
-    Delete(&arr,3);
+    Delete(&arr, 3);
     display(arr);
 
     return 0;
