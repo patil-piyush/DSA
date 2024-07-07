@@ -8,7 +8,7 @@ struct Array
     int length;
 };
 
-// Left Rotation
+//Left Rotation
 void LeftRotation(struct Array *arr)
 {
     arr->A[arr->length] = arr->A[0];
@@ -18,7 +18,7 @@ void LeftRotation(struct Array *arr)
     }
 }
 
-// Right Rotation
+//Right Rotation
 void RightRotation(struct Array *arr)
 {
     for (int i = arr->length; i > 0; i--)
