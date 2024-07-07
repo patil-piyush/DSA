@@ -18,11 +18,13 @@ void display(struct Array a)
 }
 
 // max function
-int max(struct Array arr){
+int max(struct Array arr)
+{
     int max = arr.A[0];
     for (int i = 0; i < arr.length; i++)
     {
-        if(max<arr.A[i]){
+        if (max < arr.A[i])
+        {
             max = arr.A[i];
         }
     }
@@ -63,7 +65,7 @@ int main()
 
     display(arr);
 
-    cout<<max(arr)<<endl;
+    cout << max(arr) << endl;
     cout << min(arr) << endl;
     return 0;
 }
