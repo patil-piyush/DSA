@@ -9,9 +9,12 @@ struct Array
 };
 
 // function for checking if array is sorted or not
-bool CheckSort(struct Array arr){
-    for(int i = 0; i< arr.length; i++){
-        if(arr.A[i] > arr.A[i+1]){
+bool CheckSort(struct Array arr)
+{
+    for (int i = 0; i < arr.length; i++)
+    {
+        if (arr.A[i] > arr.A[i + 1])
+        {
             return false;
         }
     }
@@ -47,6 +50,6 @@ int main()
 
     display(arr);
 
-    cout<<CheckSort(arr)<<endl;
+    cout << CheckSort(arr) << endl;
     return 0;
 }
