@@ -33,7 +33,7 @@ void Diff(struct Array first, struct Array second, struct Array *third)
         }
         else if (first.A[i] < second.A[j])
         {
-            third->A[k++]=first.A[i++];
+            third->A[k++] = first.A[i++];
         }
         else
         {
