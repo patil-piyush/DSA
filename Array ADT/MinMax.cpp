@@ -17,23 +17,32 @@ void display(struct Array a)
     cout << endl;
 }
 
-// Get function
-int get(struct Array arr, int index)
-{
-    if (index >= 0 && index < arr.length)
+// max function
+int max(struct Array arr){
+    int max = arr.A[0];
+    for (int i = 0; i < arr.length; i++)
     {
-        return arr.A[index];
+        if(max<arr.A[i]){
+            max = arr.A[i];
+        }
     }
+    return max;
 }
 
-// set function
-void set(struct Array *arr, int index, int x)
+// min function
+int min(struct Array arr)
 {
-    if (index >= 0 && index < arr->length)
+    int min = arr.A[0];
+    for (int i = 0; i < arr.length; i++)
     {
-        arr->A[index] = x;
+        if (min > arr.A[i])
+        {
+            min = arr.A[i];
+        }
     }
+    return min;
 }
+
 int main()
 {
     struct Array arr;
@@ -54,9 +63,7 @@ int main()
 
     display(arr);
 
-    cout << get(arr, 4) << endl;
-
-    set(&arr, 4, 100);
-    cout << get(arr, 4) << endl;
+    cout<<max(arr)<<endl;
+    cout << min(arr) << endl;
     return 0;
 }
