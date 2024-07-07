@@ -20,10 +20,10 @@ void display(struct Array a)
 // reverse function by using saperate array
 void M1_reverse(struct Array *arr)
 {
-    int B[arr->length-1];
+    int B[arr->length - 1];
     for (int i = 0; i < arr->length; i++)
     {
-        B[i] = arr->A[arr->length-1-i];
+        B[i] = arr->A[arr->length - 1 - i];
     }
     for (int i = 0; i < arr->length; i++)
     {
@@ -35,7 +35,8 @@ void M1_reverse(struct Array *arr)
 void M2_reverse(struct Array *arr)
 {
     int temp;
-    for (int i = 0; i < arr->length/2; i++){
+    for (int i = 0; i < arr->length / 2; i++)
+    {
         temp = arr->A[i];
         arr->A[i] = arr->A[arr->length - 1 - i];
         arr->A[arr->length - 1 - i] = temp;
