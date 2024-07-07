@@ -17,20 +17,24 @@ void display(struct Array a)
     cout << endl;
 }
 
-//function for arranging Positive numbers on right and negative numbers on left
-void sortInt(struct Array *arr){
+// function for arranging Positive numbers on right and negative numbers on left
+void sortInt(struct Array *arr)
+{
     int i = 0;
-    int j = arr->length-1;
-    while(i<j){
-        while(arr->A[i]<0){
+    int j = arr->length - 1;
+    while (i < j)
+    {
+        while (arr->A[i] < 0)
+        {
             i++;
         }
         while (arr->A[j] > 0)
         {
             j--;
         }
-        if(i<j){
-            swap(arr->A[i],arr->A[j]);
+        if (i < j)
+        {
+            swap(arr->A[i], arr->A[j]);
         }
     }
 }
