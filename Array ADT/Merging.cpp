@@ -17,14 +17,17 @@ void display(struct Array a)
     cout << endl;
 }
 
-//function for merging
-void Merge(struct Array first, struct Array second, struct Array *third){
+// function for merging
+void Merge(struct Array first, struct Array second, struct Array *third)
+{
     third->size = first.size + second.size;
     third->length = 0;
-    int i,j,k;
-    i=j=k=0;
-    while(i<first.length && j<second.length){
-        if(first.A[i] > second.A[j]){
+    int i, j, k;
+    i = j = k = 0;
+    while (i < first.length && j < second.length)
+    {
+        if (first.A[i] > second.A[j])
+        {
             third->A[k++] = second.A[j++];
         }
         else if (first.A[i] < second.A[j])
@@ -37,15 +40,16 @@ void Merge(struct Array first, struct Array second, struct Array *third){
             i++;
         }
     }
-    
-    for(;i<first.length; i++){
-        third->A[k++] = first.A[i]; 
+
+    for (; i < first.length; i++)
+    {
+        third->A[k++] = first.A[i];
     }
     for (; j < second.length; j++)
     {
         third->A[k++] = second.A[j];
     }
-    third->length=k;
+    third->length = k;
 }
 
 int main()
@@ -67,7 +71,7 @@ int main()
     }
     first.length = n;
 
-    //taking input for second array
+    // taking input for second array
     struct Array second;
     cout << "Enter the size: ";
     cin >> second.size;
@@ -84,7 +88,7 @@ int main()
     second.length = n;
 
     struct Array third;
-    Merge( first, second, &third);
+    Merge(first, second, &third);
     display(third);
 
     return 0;
