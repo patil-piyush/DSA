@@ -18,19 +18,24 @@ void display(struct Array a)
 }
 
 // normal binary search
-int BinSearch(struct Array arr,int key){
-    int l=0;
+int BinSearch(struct Array arr, int key)
+{
+    int l = 0;
     int h = arr.length;
     int mid;
-    while(l<=h){
-        mid = (l+h)/2;
-        if(key == arr.A[mid]){
+    while (l <= h)
+    {
+        mid = (l + h) / 2;
+        if (key == arr.A[mid])
+        {
             return mid;
         }
-        else if(key<arr.A[mid]){
+        else if (key < arr.A[mid])
+        {
             h = mid - 1;
         }
-        else{
+        else
+        {
             l = mid + 1;
         }
     }
@@ -38,9 +43,10 @@ int BinSearch(struct Array arr,int key){
 }
 
 // recursive binary search
-int RBinSearch(struct Array arr, int l, int h, int key){
+int RBinSearch(struct Array arr, int l, int h, int key)
+{
 
-    if(l <= h)
+    if (l <= h)
     {
         int mid = (l + h) / 2;
         if (key == arr.A[mid])
@@ -49,11 +55,11 @@ int RBinSearch(struct Array arr, int l, int h, int key){
         }
         else if (key < arr.A[mid])
         {
-            return RBinSearch(arr,l, mid - 1, key);
+            return RBinSearch(arr, l, mid - 1, key);
         }
         else
         {
-            return RBinSearch(arr,mid+1,h, key);
+            return RBinSearch(arr, mid + 1, h, key);
         }
     }
     return -1;
@@ -81,11 +87,11 @@ int main()
     display(arr);
 
     int key;
-    cout<<"enter the number to search\n";
-    cin>>key;
+    cout << "enter the number to search\n";
+    cin >> key;
     // result of normal binary search
-    cout<<BinSearch(arr,key)<<endl;
+    cout << BinSearch(arr, key) << endl;
     // result of recursive binary search
-    cout << RBinSearch(arr,0,arr.length,key) << endl;
+    cout << RBinSearch(arr, 0, arr.length, key) << endl;
     return 0;
 }
