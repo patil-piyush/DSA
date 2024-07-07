@@ -54,10 +54,8 @@ int main()
 
     display(arr);
 
-    //calling get
     cout << get(arr, 4) << endl;
 
-    //calling set and displaying the changed value by get
     set(&arr, 4, 100);
     cout << get(arr, 4) << endl;
     return 0;
