@@ -17,8 +17,8 @@ void display(struct Array a)
     cout << endl;
 }
 
-// function for Union by using merging
-void Union(struct Array first, struct Array second, struct Array *third)
+// function for intersection by using merging
+void Intersection(struct Array first, struct Array second, struct Array *third)
 {
     third->size = first.size + second.size;
     third->length = 0;
@@ -75,7 +75,7 @@ int main()
     second.length = n;
 
     struct Array third;
-    Union(first, second, &third);
+    Intersection(first, second, &third);
     display(third);
 
     return 0;
