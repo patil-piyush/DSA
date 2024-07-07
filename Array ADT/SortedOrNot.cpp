@@ -8,18 +8,14 @@ struct Array
     int length;
 };
 
-// Normal insert function
-void Insert(struct Array *arr, int index, int x)
-{
-    if (arr->length < arr->size && index >= 0)
-    {
-        for (int i = arr->length; i > index; i--)
-        {
-            arr->A[i] = arr->A[i - 1];
+// function for checking if array is sorted or not
+bool CheckSort(struct Array arr){
+    for(int i = 0; i< arr.length; i++){
+        if(arr.A[i] > arr.A[i+1]){
+            return false;
         }
-        arr->A[index] = x;
-        arr->length++;
     }
+    return true;
 }
 
 void display(struct Array a)
@@ -51,6 +47,6 @@ int main()
 
     display(arr);
 
-
+    cout<<CheckSort(arr)<<endl;
     return 0;
 }
