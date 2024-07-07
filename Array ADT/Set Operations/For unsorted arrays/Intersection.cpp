@@ -23,15 +23,16 @@ void Union(struct Array first, struct Array second, struct Array *third)
     third->size = first.size + second.size;
     third->length = 0;
 
-    // it is done by using linear or binary search 
+    // it is done by using linear or binary search
     for (int i = 0; i < second.length; i++)
     {
         for (int j = 0; j < first.length; j++)
         {
             // check if element of second array is present or not in first array which you copied in third array
-            if (second.A[i] == first.A[j]){
-                // if yes then copy the element 
-                //if not then look for next element
+            if (second.A[i] == first.A[j])
+            {
+                // if yes then copy the element
+                // if not then look for next element
                 third->A[third->length++] = second.A[i];
             }
         }
