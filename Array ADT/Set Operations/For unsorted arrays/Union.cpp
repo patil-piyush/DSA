@@ -22,7 +22,7 @@ void Union(struct Array first, struct Array second, struct Array *third)
 {
     third->size = first.size + second.size;
     third->length = 0;
-    
+
     // step 1 -- copy first array in third array
     for (int i = 0; i < first.length; i++)
     {
@@ -30,19 +30,20 @@ void Union(struct Array first, struct Array second, struct Array *third)
     }
     third->length = first.length;
 
-    //step 2 -- copying second array in third array
+    // step 2 -- copying second array in third array
     for (int i = 0; i < second.length; i++)
     {
         for (int j = 0; j < first.length; j++)
         {
-            //check if element of second array is present or not in first array which you copied in third array
+            // check if element of second array is present or not in first array which you copied in third array
             if (second.A[i] == first.A[j])
             {
-                //if yes then leave the element and look for next because we are not copying same element twice
+                // if yes then leave the element and look for next because we are not copying same element twice
                 break;
             }
-            else{
-                //if no then copy the element in third array and increament length of third array
+            else
+            {
+                // if no then copy the element in third array and increament length of third array
                 third->A[third->length++] = second.A[i];
                 break;
             }
