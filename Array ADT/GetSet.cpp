@@ -17,8 +17,10 @@ void display(struct Array a)
     cout << endl;
 }
 
-int get(struct Array arr, int index){
-    if(index>=0 && index<arr.length){
+int get(struct Array arr, int index)
+{
+    if (index >= 0 && index < arr.length)
+    {
         return arr.A[index];
     }
 }
