@@ -11,13 +11,14 @@ struct Array
 // Normal insert function
 void Insert(struct Array *arr, int x)
 {
-        int i= arr->length-1;
-        while(arr->A[i]>x){
-            arr->A[i+1] = arr->A[i];
-            i--;
-        }
-        arr->A[i+1] = x;
-        arr->length++;
+    int i = arr->length - 1;
+    while (arr->A[i] > x)
+    {
+        arr->A[i + 1] = arr->A[i];
+        i--;
+    }
+    arr->A[i + 1] = x;
+    arr->length++;
 }
 
 void display(struct Array a)
