@@ -1,0 +1,2 @@
+RightRotation(&arr);
+    // display(arr);
