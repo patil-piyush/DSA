@@ -18,9 +18,11 @@ void display(struct Array a)
 }
 
 // normal sum function
-int sum(struct Array arr){
+int sum(struct Array arr)
+{
     int sum = 0;
-    for(int i = 0; i< arr.length; i++){
+    for (int i = 0; i < arr.length; i++)
+    {
         sum = sum + arr.A[i];
     }
     return sum;
@@ -29,11 +31,13 @@ int sum(struct Array arr){
 // recursive sum function
 int Rsum(struct Array arr, int index)
 {
-    if(index < 0){
+    if (index < 0)
+    {
         return 0;
     }
-    else{
-        return Rsum(arr, index-1)+arr.A[index];
+    else
+    {
+        return Rsum(arr, index - 1) + arr.A[index];
     }
 }
 
@@ -57,10 +61,10 @@ int main()
 
     display(arr);
 
-    //calling normal sum function
+    // calling normal sum function
     cout << sum(arr) << endl;
 
     // calling recursive sum function
-    cout << Rsum(arr,arr.length-1) << endl;
+    cout << Rsum(arr, arr.length - 1) << endl;
     return 0;
 }
