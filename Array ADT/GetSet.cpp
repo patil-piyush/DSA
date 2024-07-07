@@ -17,6 +17,7 @@ void display(struct Array a)
     cout << endl;
 }
 
+// Get function
 int get(struct Array arr, int index)
 {
     if (index >= 0 && index < arr.length)
@@ -25,6 +26,7 @@ int get(struct Array arr, int index)
     }
 }
 
+// set function
 void set(struct Array *arr, int index, int x)
 {
     if (index >= 0 && index < arr->length)
@@ -52,5 +54,9 @@ int main()
 
     display(arr);
 
+    cout << get(arr, 4) << endl;
+
+    set(&arr, 4, 100);
+    cout << get(arr, 4) << endl;
     return 0;
 }
