@@ -88,6 +88,8 @@ int main()
     second.length = n;
 
     struct Array third;
+
+    //merging array first and second into array third by calling merge function
     Merge(first, second, &third);
     display(third);
 
