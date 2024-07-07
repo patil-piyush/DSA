@@ -8,22 +8,21 @@ struct Array
     int length;
 };
 
-
-//Left shift
+// Left shift
 void LeftShift(struct Array *arr)
 {
-        for (int i = 0; i < arr->length; i++)
-        {
-            arr->A[i] = arr->A[i + 1];
-        }
-        arr->length--;    
+    for (int i = 0; i < arr->length; i++)
+    {
+        arr->A[i] = arr->A[i + 1];
+    }
+    arr->length--;
 }
 
 // Right shift
 void RightShift(struct Array *arr)
 {
     int i;
-    for (i = arr->length ; i > 0; i--)
+    for (i = arr->length; i > 0; i--)
     {
         arr->A[i] = arr->A[i - 1];
     }
@@ -64,7 +63,7 @@ int main()
     LeftShift(&arr);
     display(arr);
 
-    //calling Right shift
+    // calling Right shift
     RightShift(&arr);
     display(arr);
 
