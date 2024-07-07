@@ -8,17 +8,18 @@ struct Array
     int length;
 };
 
-// insert function for sorted array
-void Insert(struct Array *arr, int x)
+// Normal insert function
+void Insert(struct Array *arr, int index, int x)
 {
-    int i = arr->length - 1;
-    while (arr->A[i] > x)
+    if (arr->length < arr->size && index >= 0)
     {
-        arr->A[i + 1] = arr->A[i];
-        i--;
+        for (int i = arr->length; i > index; i--)
+        {
+            arr->A[i] = arr->A[i - 1];
+        }
+        arr->A[index] = x;
+        arr->length++;
     }
-    arr->A[i + 1] = x;
-    arr->length++;
 }
 
 void display(struct Array a)
@@ -50,10 +51,6 @@ int main()
 
     display(arr);
 
-    // calling insert function for sorted array
-    Insert(&arr, 10);
-
-    display(arr);
 
     return 0;
 }
