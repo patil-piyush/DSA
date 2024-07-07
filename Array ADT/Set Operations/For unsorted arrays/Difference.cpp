@@ -18,17 +18,22 @@ void display(struct Array a)
 }
 
 // function for Difference of two sets
-void Diff(struct Array first, struct Array second, struct Array *third){
+void Diff(struct Array first, struct Array second, struct Array *third)
+{
     third->length = 0;
-    for(int i = 0; i<first.length; i++){
-    int flag = 0;
-        for(int j=0; j<second.length; j++){
-            if(first.A[i] == second.A[j]){
+    for (int i = 0; i < first.length; i++)
+    {
+        int flag = 0;
+        for (int j = 0; j < second.length; j++)
+        {
+            if (first.A[i] == second.A[j])
+            {
                 flag = 1;
                 break;
             }
         }
-        if(flag == 0){
+        if (flag == 0)
+        {
             third->A[third->length++] = first.A[i];
         }
     }
