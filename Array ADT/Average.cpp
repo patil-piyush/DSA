@@ -25,9 +25,8 @@ int average(struct Array arr)
     {
         sum = sum + arr.A[i];
     }
-    return sum/arr.length;
+    return sum / arr.length;
 }
-
 
 int main()
 {
