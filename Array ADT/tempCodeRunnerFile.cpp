@@ -1,2 +1,0 @@
-RightRotation(&arr);
-    // display(arr);
