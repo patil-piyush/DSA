@@ -13,10 +13,10 @@ void display(struct Array a);
 void append(struct Array *arr, int x);
 int average(struct Array arr);
 int BinSearch(struct Array arr, int key);
-
-
-
-
+int Delete(struct Array *arr, int index);
+int get(struct Array arr, int index);
+void set(struct Array *arr, int index, int x);
+void Insert(struct Array *arr, int index, int x);
 
 
 
@@ -73,6 +73,51 @@ int BinSearch(struct Array arr, int key)
         }
     }
     return -1;
+}
+//5.Delete Function
+int Delete(struct Array *arr, int index)
+{
+    int x = 0;
+    if (index >= 0 && index <= arr->length)
+    {
+        x = arr->A[index];
+        for (int i = index; i < arr->length; i++)
+        {
+            arr->A[i] = arr->A[i + 1];
+        }
+        arr->length--;
+        return x;
+    }
+    return x;
+}
+//6.Get function
+int get(struct Array arr, int index)
+{
+    if (index >= 0 && index < arr.length)
+    {
+        return arr.A[index];
+    }
+}
+//7.set function
+void set(struct Array *arr, int index, int x)
+{
+    if (index >= 0 && index < arr->length)
+    {
+        arr->A[index] = x;
+    }
+}
+//8.insert function
+void Insert(struct Array *arr, int index, int x)
+{
+    if (arr->length < arr->size && index >= 0)
+    {
+        for (int i = arr->length; i > index; i--)
+        {
+            arr->A[i] = arr->A[i - 1];
+        }
+        arr->A[index] = x;
+        arr->length++;
+    }
 }
 
 int main()
