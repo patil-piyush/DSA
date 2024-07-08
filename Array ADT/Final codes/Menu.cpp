@@ -8,7 +8,7 @@ struct Array
     int length;
 };
 
-//Function prototypes
+// Function prototypes
 void display(struct Array a);
 void append(struct Array *arr, int x);
 int average(struct Array arr);
@@ -32,11 +32,9 @@ bool CheckSort(struct Array arr);
 int sum(struct Array arr);
 void swap(int *x, int *y);
 
-
-
 // function definations
 
-//1.Display Function
+// 1.Display Function
 void display(struct Array a)
 {
     for (int i = 0; i < a.length; i++)
@@ -45,7 +43,7 @@ void display(struct Array a)
     }
     cout << endl;
 }
-//2.Append Function
+// 2.Append Function
 void append(struct Array *arr, int x)
 {
     if (arr->length < arr->size)
@@ -54,7 +52,7 @@ void append(struct Array *arr, int x)
         arr->length++;
     }
 }
-//3.Average Function
+// 3.Average Function
 int average(struct Array arr)
 {
     int sum = 0;
@@ -64,7 +62,7 @@ int average(struct Array arr)
     }
     return sum / arr.length;
 }
-//4.Binary Search
+// 4.Binary Search
 int BinSearch(struct Array arr, int key)
 {
     int l = 0;
@@ -88,7 +86,7 @@ int BinSearch(struct Array arr, int key)
     }
     return -1;
 }
-//5.Delete Function
+// 5.Delete Function
 int Delete(struct Array *arr, int index)
 {
     int x = 0;
@@ -104,7 +102,7 @@ int Delete(struct Array *arr, int index)
     }
     return x;
 }
-//6.Get function
+// 6.Get function
 int get(struct Array arr, int index)
 {
     if (index >= 0 && index < arr.length)
@@ -112,7 +110,7 @@ int get(struct Array arr, int index)
         return arr.A[index];
     }
 }
-//7.set function
+// 7.set function
 void set(struct Array *arr, int index, int x)
 {
     if (index >= 0 && index < arr->length)
@@ -120,7 +118,7 @@ void set(struct Array *arr, int index, int x)
         arr->A[index] = x;
     }
 }
-//8.insert function
+// 8.insert function
 void Insert(struct Array *arr, int index, int x)
 {
     if (arr->length < arr->size && index >= 0)
@@ -133,7 +131,7 @@ void Insert(struct Array *arr, int index, int x)
         arr->length++;
     }
 }
-//9.insert function for sorted array
+// 9.insert function for sorted array
 void SortedInsert(struct Array *arr, int x)
 {
     int i = arr->length - 1;
@@ -145,7 +143,7 @@ void SortedInsert(struct Array *arr, int x)
     arr->A[i + 1] = x;
     arr->length++;
 }
-//10.linear search
+// 10.linear search
 int LinearSearch(struct Array arr, int key)
 {
     for (int i = 0; i < arr.length; i++)
@@ -157,7 +155,7 @@ int LinearSearch(struct Array arr, int key)
     }
     return -1;
 }
-//11.function for merging
+// 11.function for merging
 void Merge(struct Array first, struct Array second, struct Array *third)
 {
     third->size = first.size + second.size;
@@ -191,7 +189,7 @@ void Merge(struct Array first, struct Array second, struct Array *third)
     }
     third->length = k;
 }
-//12.max function
+// 12.max function
 int max(struct Array arr)
 {
     int max = arr.A[0];
@@ -204,7 +202,7 @@ int max(struct Array arr)
     }
     return max;
 }
-//13.min function
+// 13.min function
 int min(struct Array arr)
 {
     int min = arr.A[0];
@@ -217,7 +215,7 @@ int min(struct Array arr)
     }
     return min;
 }
-//14.function for arranging Positive numbers on right and negative numbers on left
+// 14.function for arranging Positive numbers on right and negative numbers on left
 void sortInt(struct Array *arr)
 {
     int i = 0;
@@ -238,7 +236,7 @@ void sortInt(struct Array *arr)
         }
     }
 }
-//15.Reverse Function
+// 15.Reverse Function
 void Reverse(struct Array *arr)
 {
     int temp;
@@ -249,7 +247,7 @@ void Reverse(struct Array *arr)
         arr->A[arr->length - 1 - i] = temp;
     }
 }
-//16.Left Rotation
+// 16.Left Rotation
 void LeftRotation(struct Array *arr)
 {
     arr->A[arr->length] = arr->A[0];
@@ -258,7 +256,7 @@ void LeftRotation(struct Array *arr)
         arr->A[i] = arr->A[i + 1];
     }
 }
-//17.Right Rotation
+// 17.Right Rotation
 void RightRotation(struct Array *arr)
 {
     for (int i = arr->length; i > 0; i--)
@@ -267,7 +265,7 @@ void RightRotation(struct Array *arr)
     }
     arr->A[0] = arr->A[arr->length];
 }
-//18.Left shift
+// 18.Left shift
 void LeftShift(struct Array *arr)
 {
     for (int i = 0; i < arr->length; i++)
@@ -277,7 +275,7 @@ void LeftShift(struct Array *arr)
     arr->length--;
 }
 
-//19.Right shift
+// 19.Right shift
 void RightShift(struct Array *arr)
 {
     int i;
@@ -288,7 +286,7 @@ void RightShift(struct Array *arr)
     arr->A[i] = 0;
     arr->length++;
 }
-//20.function for checking if array is sorted or not
+// 20.function for checking if array is sorted or not
 bool CheckSort(struct Array arr)
 {
     for (int i = 0; i < arr.length; i++)
@@ -300,7 +298,7 @@ bool CheckSort(struct Array arr)
     }
     return true;
 }
-//21.sum function
+// 21.sum function
 int sum(struct Array arr)
 {
     int sum = 0;
@@ -310,7 +308,7 @@ int sum(struct Array arr)
     }
     return sum;
 }
-//22.swap Function
+// 22.swap Function
 void swap(int *x, int *y)
 {
     int temp;
@@ -318,9 +316,221 @@ void swap(int *x, int *y)
     *x = *y;
     *y = temp;
 }
+// 23.Menu printer
+int Menu()
+{
+    int n;
+    cout << "Choose from the following options: " << endl
+         << "1. Input Array." << endl
+         << "2. Choose operation." << endl
+         << "3. Exit." << endl
+         << "--------------------------------------------------------" << endl;
+    cin >> n;
+    return n;
+}
+// 24.Printing Operations
+int Opr()
+{
+    cout << "Choose one operations from the following options: " << endl
+         << "1. Display." << endl
+         << "2. Append an element." << endl
+         << "3.Average." << endl
+         << "4.Searching." << endl
+         << "5.Delete an element." << endl
+         << "6.Display an element." << endl
+         << "7.Replace an element." << endl
+         << "8.Insert an element." << endl
+         << "9.Insert an element in sorted array." << endl
+         << "10.Merge." << endl
+         << "11.Find Minimum element." << endl
+         << "12.Find Maximum element." << endl
+         << "13.Arrange elements in order as positive negative." << endl
+         << "14.Reverse." << endl
+         << "15.Left Rotation." << endl
+         << "16.Right Rotation." << endl
+         << "17.Left Shift." << endl
+         << "18.Right Shift." << endl
+         << "19.Check If array is sorted or not." << endl
+         << "20.Sum of all elements." << endl
+         << "Back" << endl
+         << "Exit." << endl
+         << "--------------------------------------------------------" << endl;
+    int n;
+    cin >> n;
+    return n;
+}
 
 int main()
 {
-    
+    // declaration of 3 objects of struct Array to input the aarays and performing operations on them
+    struct Array first;
+    struct Array second;
+    struct Array third;
+    int ch1, ch2;
+    ch1 = ch2 = 0;
+    while (ch1 == 0)
+    {
+        // switch case for main menu
+        switch (Menu())
+        {
+        // storing array data from user
+        // Taking input from user
+        case 1:
+            cout << "Choose The array for storing data: " << endl
+                 << "1. Array 'A'" << endl
+                 << "2. Array 'B'" << endl
+                 << "3. Back." << endl
+                 << "--------------------------------------------------------" << endl;
+            int InputChoice;
+            cin >> InputChoice;
+            switch (InputChoice)
+            {
+            case 1:
+                // taking input for First array
+                cout << "Enter the size: ";
+                cin >> first.size;
+                first.A = new int[first.size];
+                first.length = 0;
+
+                int n;
+                cout << "enter the number of elements: ";
+                cin >> n;
+                cout << "enter the elements: ";
+                for (int i = 0; i < n; i++)
+                {
+                    cin >> first.A[i];
+                }
+                first.length = n;
+                break;
+
+            case 2:
+                // taking input for second array
+                cout << "Enter the size: ";
+                cin >> second.size;
+                second.A = new int[second.size];
+                second.length = 0;
+
+                cout << "enter the number of elements: ";
+                cin >> n;
+                cout << "enter the elements: ";
+                for (int i = 0; i < n; i++)
+                {
+                    cin >> second.A[i];
+                }
+                second.length = n;
+                break;
+            case 3:
+                break;
+            default:
+                cout << "Choice is Invalid !!...Try Again";
+                break;
+            }
+            break;
+        // End of Taking input from user
+
+        // Choosing operation to perform
+        case 2:
+            switch (Opr())
+            {
+            // Display function
+            case 1:
+                cout << "Choose The array to display: " << endl
+                     << "1. Array 'A'" << endl
+                     << "2. Array 'B'" << endl
+                     << "3. Back." << endl
+                     << "--------------------------------------------------------" << endl;
+                int DisplayChoice;
+                switch (DisplayChoice)
+                {
+                case 1:
+                    cout<<"Elements of Array A:"<<endl;
+                    display(first);
+                    break;
+                case 2:
+                    cout << "Elements of Array B:" << endl;
+                    display(second);
+                    break;
+                case 3:
+                    break;
+                default:
+                    cout << "Choice is Invalid !!...Try Again";
+                    break;
+                }
+                break;
+
+            // Append Function
+            case 2:
+                cout << "Choose The array to Append element: " << endl
+                     << "1. Array 'A'" << endl
+                     << "2. Array 'B'" << endl
+                     << "3. Back." << endl
+                     << "--------------------------------------------------------" << endl;
+                int AppendChoice;
+                cout << "Enter The element to append";
+                int AppendElement;
+                cin >> AppendElement;
+                switch (AppendChoice)
+                {
+                case 1:
+                    append(&first, AppendElement);
+                    break;
+                case 2:
+                    append(&second, AppendElement);
+                    break;
+                case 3:
+                    break;
+                default:
+                    cout << "Choice is Invalid !!...Try Again";
+                    break;
+                }
+                break;
+
+            // Average Function
+            case 3:
+                cout << "Choose The array to find average of the same: " << endl
+                     << "1. Array 'A'" << endl
+                     << "2. Array 'B'" << endl
+                     << "3. Back." << endl
+                     << "--------------------------------------------------------" << endl;
+                int AverageChoice;
+                cout << "Enter The element to append";
+                int AverageElement;
+                cin >> AverageElement;
+                switch (AverageChoice)
+                {
+                case 1:
+                    cout<<"Average of elements of A is: "<<average(first)<<endl;
+                    break;
+                case 2:
+                    cout << "Average of elements of A is: " << average(second) << endl;
+                    break;
+                case 3:
+                    break;
+                default:
+                    cout << "Choice is Invalid !!...Try Again";
+                    break;
+                }
+                break;
+
+            //searching operations
+
+
+            default:
+                cout << "Choice is Invalid !!...Try Again";
+                break;
+            }
+            break;
+        // End of Choosing operation to perform
+
+        // for Exiting the menu/program
+        case 3:
+            ch1 = 1;
+            exit(0);
+        default:
+            cout << "Choice is Invalid !!...Try Again";
+            break;
+        }
+        // End of switch case for main menu
+    }
     return 0;
 }
