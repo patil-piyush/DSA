@@ -25,6 +25,7 @@ void append(struct Array *arr, int x)
         arr->length++;
     }
 }
+
 int main()
 {
     struct Array arr;
