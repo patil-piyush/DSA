@@ -373,233 +373,237 @@ int main()
         // switch case for main menu
         switch (Menu())
         {
-        // storing array data from user
-        // Taking input from user
-        case 1:
-            cout << "Choose The array for storing data: " << endl
-                 << "1. Array 'A'" << endl
-                 << "2. Array 'B'" << endl
-                 << "3. Back." << endl
-                 << "--------------------------------------------------------" << endl;
-            int InputChoice;
-            cin >> InputChoice;
-            switch (InputChoice)
-            {
+            // storing array data from user
+            // Taking input from user
             case 1:
-                // taking input for First array
-                cout << "Enter the size: ";
-                cin >> first.size;
-                first.A = new int[first.size];
-                first.length = 0;
-
-                int n;
-                cout << "enter the number of elements: ";
-                cin >> n;
-                cout << "enter the elements: ";
-                for (int i = 0; i < n; i++)
+                cout << "Choose The array for storing data: " << endl
+                    << "1. Array 'A'" << endl
+                    << "2. Array 'B'" << endl
+                    << "3. Back." << endl
+                    << "--------------------------------------------------------" << endl;
+                int InputChoice;
+                cin >> InputChoice;
+                switch (InputChoice)
                 {
-                    cin >> first.A[i];
-                }
-                first.length = n;
-                break;
-
-            case 2:
-                // taking input for second array
-                cout << "Enter the size: ";
-                cin >> second.size;
-                second.A = new int[second.size];
-                second.length = 0;
-
-                cout << "enter the number of elements: ";
-                cin >> n;
-                cout << "enter the elements: ";
-                for (int i = 0; i < n; i++)
-                {
-                    cin >> second.A[i];
-                }
-                second.length = n;
-                break;
-            case 3:
-                break;
-            default:
-                cout << "Choice is Invalid !!...Try Again";
-                break;
-            }
-            break;
-        // End of Taking input from user
-
-        // Choosing operation to perform
-        case 2:
-            switch (Opr())
-            {
-            // Display function
-            case 1:
-                cout << "Choose The array to display: " << endl
-                     << "1. Array 'A'" << endl
-                     << "2. Array 'B'" << endl
-                     << "3. Back." << endl
-                     << "--------------------------------------------------------" << endl;
-                int DisplayChoice;
-                switch (DisplayChoice)
-                {
-                case 1:
-                    cout<<"Elements of Array A:"<<endl;
-                    display(first);
-                    break;
-                case 2:
-                    cout << "Elements of Array B:" << endl;
-                    display(second);
-                    break;
-                case 3:
-                    break;
-                default:
-                    cout << "Choice is Invalid !!...Try Again";
-                    break;
-                }
-                break;
-
-            // Append Function
-            case 2:
-                cout << "Choose The array to Append element: " << endl
-                     << "1. Array 'A'" << endl
-                     << "2. Array 'B'" << endl
-                     << "3. Back." << endl
-                     << "--------------------------------------------------------" << endl;
-                int AppendChoice;
-                cout << "Enter The element to append";
-                int AppendElement;
-                cin >> AppendElement;
-                switch (AppendChoice)
-                {
-                case 1:
-                    append(&first, AppendElement);
-                    break;
-                case 2:
-                    append(&second, AppendElement);
-                    break;
-                case 3:
-                    break;
-                default:
-                    cout << "Choice is Invalid !!...Try Again";
-                    break;
-                }
-                break;
-
-            // Average Function
-            case 3:
-                cout << "Choose The array to find average of the same: " << endl
-                     << "1. Array 'A'" << endl
-                     << "2. Array 'B'" << endl
-                     << "3. Back." << endl
-                     << "--------------------------------------------------------" << endl;
-                int AverageChoice;
-                cout << "Enter The element to append";
-                int AverageElement;
-                cin >> AverageElement;
-                switch (AverageChoice)
-                {
-                case 1:
-                    cout<<"Average of elements of A is: "<<average(first)<<endl;
-                    break;
-                case 2:
-                    cout << "Average of elements of A is: " << average(second) << endl;
-                    break;
-                case 3:
-                    break;
-                default:
-                    cout << "Choice is Invalid !!...Try Again";
-                    break;
-                }
-                break;
-
-            //searching operations
-            case 4:
-                cout << "Choose The array to find for searching operation: " << endl
-                     << "1. Array 'A'" << endl
-                     << "2. Array 'B'" << endl
-                     << "3. Back." << endl
-                     << "--------------------------------------------------------" << endl;
-                int SearchChoice;
-                switch (SearchChoice)
-                {
-                // searching for first array
-                case 1:
-                    cout << "Choose Type of searching operation: " << endl
-                         << "1. Linear Search" << endl
-                         << "2. Binary Search" << endl
-                         << "3. Back." << endl
-                         << "--------------------------------------------------------" << endl;
-                    int OprChoice;
-                    cin >> OprChoice;
-                    cout << "Enter The element to append";
-                    int SearchElement;
-                    cin >> SearchElement;
-                    switch (OprChoice)
-                    {
                     case 1:
-                        LinearSearch(first,SearchElement);
+                        // taking input for First array
+                        cout << "Enter the size: ";
+                        cin >> first.size;
+                        first.A = new int[first.size];
+                        first.length = 0;
+
+                        int n;
+                        cout << "enter the number of elements: ";
+                        cin >> n;
+                        cout << "enter the elements: ";
+                        for (int i = 0; i < n; i++)
+                        {
+                            cin >> first.A[i];
+                        }
+                        first.length = n;
                         break;
+
                     case 2:
-                        BinSearch(first, SearchElement);
+                        // taking input for second array
+                        cout << "Enter the size: ";
+                        cin >> second.size;
+                        second.A = new int[second.size];
+                        second.length = 0;
+
+                        cout << "enter the number of elements: ";
+                        cin >> n;
+                        cout << "enter the elements: ";
+                        for (int i = 0; i < n; i++)
+                        {
+                            cin >> second.A[i];
+                        }
+                        second.length = n;
+                        break;
+
+                    case 3:
+                        break;
+
+                    default:
+                        cout << "Choice is Invalid !!...Try Again";
+                        break;
+                }
+                break;
+            // End of Taking input from user
+
+            // Choosing operation to perform
+            case 2:
+                switch (Opr())
+                {
+                    // Display function
+                    case 1:
+                        cout << "Choose The array to display: " << endl
+                            << "1. Array 'A'" << endl
+                            << "2. Array 'B'" << endl
+                            << "3. Back." << endl
+                            << "--------------------------------------------------------" << endl;
+                        int DisplayChoice;
+                        switch (DisplayChoice)
+                        {
+                            case 1:
+                                cout<<"Elements of Array A:"<<endl;
+                                display(first);
+                                break;
+                            case 2:
+                                cout << "Elements of Array B:" << endl;
+                                display(second);
+                                break;
+                            case 3:
+                                break;
+                            default:
+                                cout << "Choice is Invalid !!...Try Again";
+                                break;
+                        }
+                        break;
+
+                    // Append Function
+                    case 2:
+                        cout << "Choose The array to Append element: " << endl
+                            << "1. Array 'A'" << endl
+                            << "2. Array 'B'" << endl
+                            << "3. Back." << endl
+                            << "--------------------------------------------------------" << endl;
+                        int AppendChoice;
+                        cout << "Enter The element to append";
+                        int AppendElement;
+                        cin >> AppendElement;
+                        switch (AppendChoice)
+                        {
+                            case 1:
+                                append(&first, AppendElement);
+                                break;
+                            case 2:
+                                append(&second, AppendElement);
+                                break;
+                            case 3:
+                                break;
+                            default:
+                                cout << "Choice is Invalid !!...Try Again";
+                                break;
+                        }
+                        break;
+
+                    // Average Function
+                    case 3:
+                        cout << "Choose The array to find average of the same: " << endl
+                            << "1. Array 'A'" << endl
+                            << "2. Array 'B'" << endl
+                            << "3. Back." << endl
+                            << "--------------------------------------------------------" << endl;
+                        int AverageChoice;
+                        cout << "Enter The element to append";
+                        int AverageElement;
+                        cin >> AverageElement;
+                        switch (AverageChoice)
+                        {
+                            case 1:
+                                cout<<"Average of elements of A is: "<<average(first)<<endl;
+                                break;
+                            case 2:
+                                cout << "Average of elements of A is: " << average(second) << endl;
+                                break;
+                            case 3:
+                                break;
+                            default:
+                                cout << "Choice is Invalid !!...Try Again";
+                                break;
+                        }
+                        break;
+
+                    //searching operations
+                    case 4:
+                        cout << "Choose The array to find for searching operation: " << endl
+                            << "1. Array 'A'" << endl
+                            << "2. Array 'B'" << endl
+                            << "3. Back." << endl
+                            << "--------------------------------------------------------" << endl;
+                        int SearchChoice;
+                        switch (SearchChoice)
+                        {
+                            // searching for first array
+                            case 1:
+                                cout << "Choose Type of searching operation: " << endl
+                                    << "1. Linear Search" << endl
+                                    << "2. Binary Search" << endl
+                                    << "3. Back." << endl
+                                    << "--------------------------------------------------------" << endl;
+                                int OprChoice;
+                                cin >> OprChoice;
+                                cout << "Enter The element to append";
+                                int SearchElement;
+                                cin >> SearchElement;
+                                switch (OprChoice)
+                                {
+                                    case 1:
+                                        LinearSearch(first,SearchElement);
+                                        break;
+                                    case 2:
+                                        BinSearch(first, SearchElement);
+                                        break;
+                                    default:
+                                        cout << "Choice is Invalid !!...Try Again";
+                                        break;
+                                }
+                                break;
+
+                            // searching for second array
+                            case 2:
+                                cout << "Choose Type of searching operation: " << endl
+                                    << "1. Linear Search" << endl
+                                    << "2. Binary Search" << endl
+                                    << "3. Back." << endl
+                                    << "--------------------------------------------------------" << endl;
+                                int OprChoice;
+                                cin >> OprChoice;
+                                cout << "Enter The element to append";
+                                int SearchElement;
+                                cin >> SearchElement;
+                                switch (OprChoice)
+                                {
+                                    case 1:
+                                        LinearSearch(second, SearchElement);
+                                        break;
+                                    case 2:
+                                        BinSearch(second, SearchElement);
+                                        break;
+                                    default:
+                                        cout << "Choice is Invalid !!...Try Again";
+                                        break;
+                                }
+                                break;
+
+                            case 3:
+                                break;
+                                
+                            default:
+                                cout << "Choice is Invalid !!...Try Again";
+                                break;
+                        }
+                        break;
+                        // end of searching operation
+
+                    //Delete Operation
+                    case 5:
+                        
                         break;
                     default:
                         cout << "Choice is Invalid !!...Try Again";
                         break;
-                    }
-                    break;
-
-                // searching for second array
-                case 2:
-                    cout << "Choose Type of searching operation: " << endl
-                         << "1. Linear Search" << endl
-                         << "2. Binary Search" << endl
-                         << "3. Back." << endl
-                         << "--------------------------------------------------------" << endl;
-                    int OprChoice;
-                    cin >> OprChoice;
-                    cout << "Enter The element to append";
-                    int SearchElement;
-                    cin >> SearchElement;
-                    switch (OprChoice)
-                    {
-                    case 1:
-                        LinearSearch(second, SearchElement);
-                        break;
-                    case 2:
-                        BinSearch(second, SearchElement);
-                        break;
-                    default:
-                        cout << "Choice is Invalid !!...Try Again";
-                        break;
-                    }
-                    break;
-                case 3:
-                    break;
-                default:
-                    cout << "Choice is Invalid !!...Try Again";
-                    break;
                 }
                 break;
-                // end of searching operation
+            // End of Choosing operation to perform
 
-            //Delete Operation
-            case 5:
-                
-                break;
+            // for Exiting the menu/program
+            case 3:
+                ch1 = 1;
+                exit(0);
             default:
                 cout << "Choice is Invalid !!...Try Again";
                 break;
-            }
-            break;
-        // End of Choosing operation to perform
-
-        // for Exiting the menu/program
-        case 3:
-            ch1 = 1;
-            exit(0);
-        default:
-            cout << "Choice is Invalid !!...Try Again";
-            break;
         }
         // End of switch case for main menu
     }
