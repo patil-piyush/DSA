@@ -513,8 +513,79 @@ int main()
                 break;
 
             //searching operations
+            case 4:
+                cout << "Choose The array to find for searching operation: " << endl
+                     << "1. Array 'A'" << endl
+                     << "2. Array 'B'" << endl
+                     << "3. Back." << endl
+                     << "--------------------------------------------------------" << endl;
+                int SearchChoice;
+                switch (SearchChoice)
+                {
+                // searching for first array
+                case 1:
+                    cout << "Choose Type of searching operation: " << endl
+                         << "1. Linear Search" << endl
+                         << "2. Binary Search" << endl
+                         << "3. Back." << endl
+                         << "--------------------------------------------------------" << endl;
+                    int OprChoice;
+                    cin >> OprChoice;
+                    cout << "Enter The element to append";
+                    int SearchElement;
+                    cin >> SearchElement;
+                    switch (OprChoice)
+                    {
+                    case 1:
+                        LinearSearch(first,SearchElement);
+                        break;
+                    case 2:
+                        BinSearch(first, SearchElement);
+                        break;
+                    default:
+                        cout << "Choice is Invalid !!...Try Again";
+                        break;
+                    }
+                    break;
 
+                // searching for second array
+                case 2:
+                    cout << "Choose Type of searching operation: " << endl
+                         << "1. Linear Search" << endl
+                         << "2. Binary Search" << endl
+                         << "3. Back." << endl
+                         << "--------------------------------------------------------" << endl;
+                    int OprChoice;
+                    cin >> OprChoice;
+                    cout << "Enter The element to append";
+                    int SearchElement;
+                    cin >> SearchElement;
+                    switch (OprChoice)
+                    {
+                    case 1:
+                        LinearSearch(second, SearchElement);
+                        break;
+                    case 2:
+                        BinSearch(second, SearchElement);
+                        break;
+                    default:
+                        cout << "Choice is Invalid !!...Try Again";
+                        break;
+                    }
+                    break;
+                case 3:
+                    break;
+                default:
+                    cout << "Choice is Invalid !!...Try Again";
+                    break;
+                }
+                break;
+                // end of searching operation
 
+            //Delete Operation
+            case 5:
+                
+                break;
             default:
                 cout << "Choice is Invalid !!...Try Again";
                 break;
