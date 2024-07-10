@@ -109,6 +109,7 @@ int get(struct Array arr, int index)
     {
         return arr.A[index];
     }
+    return -1;
 }
 // 7.set function
 void set(struct Array *arr, int index, int x)
@@ -442,15 +443,18 @@ int main()
                             << "3. Back." << endl
                             << "--------------------------------------------------------" << endl;
                         int DisplayChoice;
+                        cin>>DisplayChoice;
                         switch (DisplayChoice)
                         {
                             case 1:
                                 cout<<"Elements of Array A:"<<endl;
                                 display(first);
+                                cout << "--------------------------------------------------------" << endl;
                                 break;
                             case 2:
                                 cout << "Elements of Array B:" << endl;
                                 display(second);
+                                cout << "--------------------------------------------------------" << endl;
                                 break;
                             case 3:
                                 break;
@@ -468,6 +472,7 @@ int main()
                             << "3. Back." << endl
                             << "--------------------------------------------------------" << endl;
                         int AppendChoice;
+                        cin>>AppendChoice;
                         cout << "Enter The element to append";
                         int AppendElement;
                         cin >> AppendElement;
@@ -475,9 +480,13 @@ int main()
                         {
                             case 1:
                                 append(&first, AppendElement);
+                                cout << "Element is appended successfully in array A"<<endl
+                                     <<"--------------------------------------------------------" << endl;
                                 break;
                             case 2:
                                 append(&second, AppendElement);
+                                cout << "Element is appended successfully in array B" << endl
+                                     << "--------------------------------------------------------" << endl;
                                 break;
                             case 3:
                                 break;
@@ -495,16 +504,16 @@ int main()
                             << "3. Back." << endl
                             << "--------------------------------------------------------" << endl;
                         int AverageChoice;
-                        cout << "Enter The element to append";
-                        int AverageElement;
-                        cin >> AverageElement;
+                        cin >> AverageChoice;
                         switch (AverageChoice)
                         {
                             case 1:
-                                cout<<"Average of elements of A is: "<<average(first)<<endl;
+                                cout<<"Average of elements of A is: "<<average(first)<<endl
+                                    << "--------------------------------------------------------" << endl;
                                 break;
                             case 2:
-                                cout << "Average of elements of A is: " << average(second) << endl;
+                                cout << "Average of elements of A is: " << average(second) << endl
+                                     << "--------------------------------------------------------" << endl;
                                 break;
                             case 3:
                                 break;
@@ -533,16 +542,20 @@ int main()
                                     << "--------------------------------------------------------" << endl;
                                 int OprChoice;
                                 cin >> OprChoice;
-                                cout << "Enter The element to append";
+                                cout << "Enter The element to Search: ";
                                 int SearchElement;
                                 cin >> SearchElement;
                                 switch (OprChoice)
                                 {
                                     case 1:
+                                        cout << "Element is present at index: ";
                                         LinearSearch(first,SearchElement);
+                                        cout<<"Found by using linear search";
                                         break;
                                     case 2:
+                                        cout<<"Element is present at index: ";
                                         BinSearch(first, SearchElement);
+                                        cout << "Found by using Binary search";
                                         break;
                                     default:
                                         cout << "Choice is Invalid !!...Try Again";
@@ -557,10 +570,8 @@ int main()
                                     << "2. Binary Search" << endl
                                     << "3. Back." << endl
                                     << "--------------------------------------------------------" << endl;
-                                int OprChoice;
                                 cin >> OprChoice;
-                                cout << "Enter The element to append";
-                                int SearchElement;
+                                cout << "Enter The element to Search";
                                 cin >> SearchElement;
                                 switch (OprChoice)
                                 {
@@ -588,8 +599,125 @@ int main()
 
                     //Delete Operation
                     case 5:
-                        
+                        cout << "Choose The array to Delete element: " << endl
+                             << "1. Array 'A'" << endl
+                             << "2. Array 'B'" << endl
+                             << "3. Back." << endl
+                             << "--------------------------------------------------------" << endl;
+                        int DeleteChoice;
+                        cout << "Enter The index of the element to Delete";
+                        int DeleteIndex;
+                        cin >> DeleteIndex;
+                        switch (DeleteChoice)
+                        {
+                            case 1:
+                                Delete(&first, DeleteIndex);
+                                break;
+                            case 2:
+                                Delete(&second, DeleteIndex);
+                                break;
+                            case 3:
+                                break;
+                            default:
+                                cout << "Choice is Invalid !!...Try Again";
+                                break;
+                        }
                         break;
+                        //end of delete operation
+
+                    //Get operation
+                    case 6:
+                        cout << "Choose The array to get element from: " << endl
+                             << "1. Array 'A'" << endl
+                             << "2. Array 'B'" << endl
+                             << "3. Back." << endl
+                             << "--------------------------------------------------------" << endl;
+                        int GetChoice;
+                        cout << "Enter The index of the element to get";
+                        int GetIndex;
+                        cin >> GetIndex;
+                        switch (GetChoice)
+                        {
+                        case 1:
+                            get(first, GetIndex);
+                            break;
+                        case 2:
+                            get(second, GetIndex);
+                            break;
+                        case 3:
+                            break;
+                        default:
+                            cout << "Choice is Invalid !!...Try Again";
+                            break;
+                        }
+                        break;
+                        // end of get operation
+
+                    // Set operation
+                    case 7:
+                        cout << "Choose The array to set element : " << endl
+                             << "1. Array 'A'" << endl
+                             << "2. Array 'B'" << endl
+                             << "3. Back." << endl
+                             << "--------------------------------------------------------" << endl;
+                        int SetChoice;
+                        int SetIndex;
+                        int SetElement;
+                        cout << "Enter The element to set";
+                        cin>>SetElement;
+                        cout << "Enter The index of the element to set";
+                        cin >> SetIndex;
+                        switch (SetChoice)
+                        {
+                        case 1:
+                            set(&first, SetIndex, SetElement);
+                            break;
+                        case 2:
+                            set(&second, SetIndex, SetElement);
+                            break;
+                        case 3:
+                            break;
+                        default:
+                            cout << "Choice is Invalid !!...Try Again";
+                            break;
+                        }
+                        break;
+                        // end of set operation
+
+                    // Insert operation
+                    case 8:
+                        cout << "Choose The array to Insert element: " << endl
+                             << "1. Array 'A'" << endl
+                             << "2. Array 'B'" << endl
+                             << "3. Back." << endl
+                             << "--------------------------------------------------------" << endl;
+                        int InsertChoice;
+                        int InsertIndex;
+                        int InsertElement;
+                        cout << "Enter The element to Insert";
+                        cin >> InsertElement;
+                        cout << "Enter The index of the element to Insert";
+                        cin >> InsertIndex;
+                        switch (InsertChoice)
+                        {
+                        case 1:
+                            Insert(&first, InsertIndex, InsertElement);
+                            break;
+                        case 2:
+                            Insert(&second, InsertIndex, InsertElement);
+                            break;
+                        case 3:
+                            break;
+                        default:
+                            cout << "Choice is Invalid !!...Try Again";
+                            break;
+                        }
+                        break;
+                        // end of Insert operation
+
+
+
+
                     default:
                         cout << "Choice is Invalid !!...Try Again";
                         break;
