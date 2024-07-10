@@ -438,10 +438,11 @@ int main()
                     // Display function
                     case 1:
                         cout << "Choose The array to display: " << endl
-                            << "1. Array 'A'" << endl
-                            << "2. Array 'B'" << endl
-                            << "3. Back." << endl
-                            << "--------------------------------------------------------" << endl;
+                             << "1. Array 'A'" << endl
+                             << "2. Array 'B'" << endl
+                             << "3. Array 'C'" << endl
+                             << "4. Back." << endl
+                             << "--------------------------------------------------------" << endl;
                         int DisplayChoice;
                         cin>>DisplayChoice;
                         switch (DisplayChoice)
@@ -457,6 +458,11 @@ int main()
                                 cout << "--------------------------------------------------------" << endl;
                                 break;
                             case 3:
+                                cout << "Elements of Array C:" << endl;
+                                display(third);
+                                cout << "--------------------------------------------------------" << endl;
+                                break;
+                            case 4:
                                 break;
                             default:
                                 cout << "Choice is Invalid !!...Try Again";
@@ -731,25 +737,27 @@ int main()
                         switch (InsertChoice)
                         {
                         case 1:
-                            if(CheckSort(first)){
+                            //checking if array is sorted or not 
+                            if(CheckSort(first)){ //if yes then only insert the element
                                 cout << "Enter The element to Insert";
                                 cin >> InsertElement;
                                 SortedInsert(&first, InsertElement);
                             }
-                            else{
+                            else{ //otherwise give an error
                                 cout << "Array is not sorted!....use another insert operation"
                                      << "--------------------------------------------------------" << endl;
                             }
                             break;
                         case 2:
+                            // checking if array is sorted or not
                             if (CheckSort(second))
-                            {
+                            { // if yes then only insert the element
                                 cout << "Enter The element to Insert";
                                 cin >> InsertElement;
                                 SortedInsert(&second, InsertElement);
                             }
-                            else
-                            {
+
+                            { // otherwise give an error
                                 cout << "Array is not sorted!....use another insert operation"
                                      << "--------------------------------------------------------" << endl;
                             }
@@ -765,6 +773,9 @@ int main()
 
                     // Merging operation
                     case 10:
+
+                        break;
+                        // end of Merging operation
 
                     default:
                         cout << "Choice is Invalid !!...Try Again";
