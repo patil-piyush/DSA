@@ -810,6 +810,35 @@ int main()
                         break;
                         // end of min operation
 
+                    // max operation
+                    case 12:
+                        cout << "Choose The array to get max element from: " << endl
+                             << "1. Array 'A'" << endl
+                             << "2. Array 'B'" << endl
+                             << "3. Array 'C'" << endl
+                             << "4. Back." << endl
+                             << "--------------------------------------------------------" << endl;
+                        cin >> GetChoice;
+                        switch (GetChoice)
+                        {
+                        case 1:
+                            max(first);
+                            break;
+                        case 2:
+                            max(second);
+                            break;
+                        case 3:
+                            max(third);
+                            break;
+                        case 4:
+                            break;
+                        default:
+                            cout << "Choice is Invalid !!...Try Again";
+                            break;
+                        }
+                        break;
+                        // end of max operation
+
                     
 
                     default:
