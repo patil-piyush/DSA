@@ -868,6 +868,35 @@ int main()
                         break;
                         // end of positive-negative operation
 
+                    // Reverse operation
+                    case 14:
+                        cout << "Choose The array to Reverse elements: " << endl
+                             << "1. Array 'A'" << endl
+                             << "2. Array 'B'" << endl
+                             << "3. Array 'C'" << endl
+                             << "4. Back." << endl
+                             << "--------------------------------------------------------" << endl;
+                        cin >> GetChoice;
+                        switch (GetChoice)
+                        {
+                        case 1:
+                            Reverse(&first);
+                            break;
+                        case 2:
+                            Reverse(&second);
+                            break;
+                        case 3:
+                            Reverse(&third);
+                            break;
+                        case 4:
+                            break;
+                        default:
+                            cout << "Choice is Invalid !!...Try Again";
+                            break;
+                        }
+                        break;
+                        // end of Reverse operation
+
                     default:
                         cout << "Choice is Invalid !!...Try Again";
                         break;
