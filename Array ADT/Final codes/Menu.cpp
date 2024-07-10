@@ -773,9 +773,15 @@ int main()
 
                     // Merging operation
                     case 10:
-
+                        cout<<"You only have two arrays right now so we are merging them together."<<endl
+                        <<"Your merged array is as below: "<<endl;
+                        Merge(first,second,&third);
+                        display(third);
+                        cout << endl<<"--------------------------------------------------------" << endl;
                         break;
                         // end of Merging operation
+
+
 
                     default:
                         cout << "Choice is Invalid !!...Try Again";
