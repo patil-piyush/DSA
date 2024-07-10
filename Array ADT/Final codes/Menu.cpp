@@ -839,7 +839,34 @@ int main()
                         break;
                         // end of max operation
 
-                    
+                    // positive-negative operation
+                    case 13:
+                        cout << "Choose The array for arranging Positive numbers on right and negative numbers on left: " << endl
+                             << "1. Array 'A'" << endl
+                             << "2. Array 'B'" << endl
+                             << "3. Array 'C'" << endl
+                             << "4. Back." << endl
+                             << "--------------------------------------------------------" << endl;
+                        cin >> GetChoice;
+                        switch (GetChoice)
+                        {
+                        case 1:
+                            sortInt(&first);
+                            break;
+                        case 2:
+                            sortInt(&second);
+                            break;
+                        case 3:
+                            sortInt(&third);
+                            break;
+                        case 4:
+                            break;
+                        default:
+                            cout << "Choice is Invalid !!...Try Again";
+                            break;
+                        }
+                        break;
+                        // end of positive-negative operation
 
                     default:
                         cout << "Choice is Invalid !!...Try Again";
