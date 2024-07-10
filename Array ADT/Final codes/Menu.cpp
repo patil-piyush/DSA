@@ -715,8 +715,56 @@ int main()
                         break;
                         // end of Insert operation
 
+                    // Insert operation for sorted array
+                    case 9:
+                        cout << "Choose The array to Insert element: " << endl
+                             << "1. Array 'A'" << endl
+                             << "2. Array 'B'" << endl
+                             << "3. Back." << endl
+                             << "--------------------------------------------------------" << endl;
+                        int sortedInsertChoice;
+                        cin>>sortedInsertChoice;
+                        
+                        int InsertElement;
+                        
+                        
+                        switch (InsertChoice)
+                        {
+                        case 1:
+                            if(CheckSort(first)){
+                                cout << "Enter The element to Insert";
+                                cin >> InsertElement;
+                                SortedInsert(&first, InsertElement);
+                            }
+                            else{
+                                cout << "Array is not sorted!....use another insert operation"
+                                     << "--------------------------------------------------------" << endl;
+                            }
+                            break;
+                        case 2:
+                            if (CheckSort(second))
+                            {
+                                cout << "Enter The element to Insert";
+                                cin >> InsertElement;
+                                SortedInsert(&second, InsertElement);
+                            }
+                            else
+                            {
+                                cout << "Array is not sorted!....use another insert operation"
+                                     << "--------------------------------------------------------" << endl;
+                            }
+                            break;
+                        case 3:
+                            break;
+                        default:
+                            cout << "Choice is Invalid !!...Try Again";
+                            break;
+                        }
+                        break;
+                        // end of Insert operation for sorted array
 
-
+                    // Merging operation
+                    case 10:
 
                     default:
                         cout << "Choice is Invalid !!...Try Again";
