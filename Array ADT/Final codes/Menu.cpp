@@ -781,7 +781,36 @@ int main()
                         break;
                         // end of Merging operation
 
+                    // min operation
+                    case 11:
+                        cout << "Choose The array to get min element from: " << endl
+                             << "1. Array 'A'" << endl
+                             << "2. Array 'B'" << endl
+                             << "3. Array 'C'" << endl
+                             << "4. Back." << endl
+                             << "--------------------------------------------------------" << endl;
+                        cin >> GetChoice;
+                        switch (GetChoice)
+                        {
+                        case 1:
+                            min(first);
+                            break;
+                        case 2:
+                            min(second);
+                            break;
+                        case 3:
+                            min(third);
+                            break;
+                        case 4:
+                            break;
+                        default:
+                            cout << "Choice is Invalid !!...Try Again";
+                            break;
+                        }
+                        break;
+                        // end of min operation
 
+                    
 
                     default:
                         cout << "Choice is Invalid !!...Try Again";
