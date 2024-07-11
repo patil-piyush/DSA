@@ -474,7 +474,8 @@ int main()
                         cout << "Choose The array to Append element: " << endl
                              << "1. Array 'A'" << endl
                              << "2. Array 'B'" << endl
-                             << "3. Back." << endl
+                             << "3. Array 'C'" << endl
+                             << "4. Back." << endl
                              << "--------------------------------------------------------" << endl
                              << "Your choice : ";
                         cin >> Choice;
@@ -493,6 +494,11 @@ int main()
                                      << "--------------------------------------------------------" << endl;
                                 break;
                             case 3:
+                                append(&third, Element);
+                                cout << "Element is appended successfully in array C" << endl
+                                     << "--------------------------------------------------------" << endl;
+                                break;
+                            case 4:
                                 break;
                             default:
                                 cout << "Choice is Invalid !!...Try Again";
@@ -505,7 +511,8 @@ int main()
                         cout << "Choose The array to find average: " << endl
                              << "1. Array 'A'" << endl
                              << "2. Array 'B'" << endl
-                             << "3. Back." << endl
+                             << "3. Array 'C'" << endl
+                             << "4. Back." << endl
                              << "--------------------------------------------------------" << endl
                              << "Your choice : ";
                         cin >> Choice;
@@ -516,10 +523,14 @@ int main()
                                     << "--------------------------------------------------------" << endl;
                                 break;
                             case 2:
-                                cout << "Average of elements of A is: " << average(second) << endl
+                                cout << "Average of elements of B is: " << average(second) << endl
                                      << "--------------------------------------------------------" << endl;
                                 break;
                             case 3:
+                                cout << "Average of elements of C is: " << average(third) << endl
+                                     << "--------------------------------------------------------" << endl;
+                                break;
+                            case 4:
                                 break;
                             default:
                                 cout << "Choice is Invalid !!...Try Again";
@@ -529,10 +540,11 @@ int main()
 
                     //searching operations
                     case 4:
-                        cout << "Choose The array to find for searching operation: " << endl
+                        cout << "Choose The array for searching operation: " << endl
                              << "1. Array 'A'" << endl
                              << "2. Array 'B'" << endl
-                             << "3. Back." << endl
+                             << "3. Array 'C'" << endl
+                             << "4. Back." << endl
                              << "--------------------------------------------------------" << endl
                              << "Your choice : ";
                         cin>>Choice;
@@ -555,12 +567,13 @@ int main()
                                     case 1:
                                         cout << "Element is present at index: "
                                         <<LinearSearch(first, Element)
-                                        <<endl<<"Found by using linear search";
+                                        <<endl<<"Found by using linear search"<<endl;
                                         break;
                                     case 2:
-                                        cout<<"Element is present at index: "
-                                        <<BinSearch(first, Element)
-                                        <<endl<< "Found by using Binary search";
+                                        cout << "Element is present at index: "
+                                             << BinSearch(first, Element)
+                                             << endl
+                                             << "Found by using Binary search" << endl;
                                         break;
                                     default:
                                         cout << "Choice is Invalid !!...Try Again";
@@ -577,7 +590,7 @@ int main()
                                      << "--------------------------------------------------------" << endl
                                      << "Your choice : ";
                                 cin >> Choice;
-                                cout << "Enter The element to Search";
+                                cout << "Enter The element to Search: ";
                                 cin >> Element;
                                 switch (Choice)
                                 {
@@ -585,13 +598,43 @@ int main()
                                     cout << "Element is present at index: "
                                          << LinearSearch(second, Element)
                                          << endl
-                                         << "Found by using linear search";
+                                         << "Found by using linear search" << endl;
                                     break;
                                 case 2:
                                     cout << "Element is present at index: "
                                          << BinSearch(second, Element)
                                          << endl
-                                         << "Found by using Binary search";
+                                         << "Found by using Binary search" << endl;
+                                    break;
+                                default:
+                                    cout << "Choice is Invalid !!...Try Again";
+                                    break;
+                                }
+                                break;
+                            // searching for third array
+                            case 3:
+                                cout << "Choose Type of searching operation: " << endl
+                                     << "1. Linear Search" << endl
+                                     << "2. Binary Search" << endl
+                                     << "3. Back." << endl
+                                     << "--------------------------------------------------------" << endl
+                                     << "Your choice : ";
+                                cin >> Choice;
+                                cout << "Enter The element to Search: ";
+                                cin >> Element;
+                                switch (Choice)
+                                {
+                                case 1:
+                                    cout << "Element is present at index: "
+                                         << LinearSearch(third, Element)
+                                         << endl
+                                         << "Found by using linear search" << endl;
+                                    break;
+                                case 2:
+                                    cout << "Element is present at index: "
+                                         << BinSearch(third, Element)
+                                         << endl
+                                         << "Found by using Binary search" << endl;
                                     break;
                                 default:
                                     cout << "Choice is Invalid !!...Try Again";
@@ -599,7 +642,7 @@ int main()
                                 }
                                 break;
 
-                            case 3:
+                            case 4:
                                 break;
                                 
                             default:
@@ -619,20 +662,20 @@ int main()
                              << "--------------------------------------------------------" << endl
                              << "Your choice : ";
                         cin>>Choice;
-                        cout << "Enter The index of the element to Delete";
+                        cout << "Enter The index of the element to Delete: ";
                         cin >> Index;
                         switch (Choice)
                         {
                             case 1:
-                                cout << "Deleted Element is: " << (&first, Index) << endl
+                                cout << "Deleted Element is: " << Delete(&first, Index) << endl
                                      << "--------------------------------------------------------" << endl;
                                 break;
                             case 2:
-                                cout << "Deleted Element is: " << (&second, Index) << endl
+                                cout << "Deleted Element is: " << Delete(&second, Index) << endl
                                      << "--------------------------------------------------------" << endl;
                                 break;
                             case 3:
-                                cout << "Deleted Element is: " << (&first, Index) << endl
+                                cout << "Deleted Element is: " << Delete(&first, Index) << endl
                                      << "--------------------------------------------------------" << endl;
                                 break;
                             case 4:
