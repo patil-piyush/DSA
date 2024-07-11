@@ -926,6 +926,35 @@ int main()
                         break;
                         // end of Left Rotation operation
 
+                    // Right Rotation operation
+                    case 16:
+                        cout << "Choose The array to perform Right rotation: " << endl
+                             << "1. Array 'A'" << endl
+                             << "2. Array 'B'" << endl
+                             << "3. Array 'C'" << endl
+                             << "4. Back." << endl
+                             << "--------------------------------------------------------" << endl;
+                        cin >> GetChoice;
+                        switch (GetChoice)
+                        {
+                        case 1:
+                            RightRotation(&first);
+                            break;
+                        case 2:
+                            RightRotation(&second);
+                            break;
+                        case 3:
+                            RightRotation(&third);
+                            break;
+                        case 4:
+                            break;
+                        default:
+                            cout << "Choice is Invalid !!...Try Again";
+                            break;
+                        }
+                        break;
+                        // end of Right Rotation operation
+
                     default:
                         cout << "Choice is Invalid !!...Try Again";
                         break;
