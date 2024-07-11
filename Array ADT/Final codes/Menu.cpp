@@ -692,7 +692,8 @@ int main()
                         cout << "Choose The array to get element from: " << endl
                              << "1. Array 'A'" << endl
                              << "2. Array 'B'" << endl
-                             << "3. Back." << endl
+                             << "3. Array 'C'" << endl
+                             << "4. Back." << endl
                              << "--------------------------------------------------------" << endl
                              << "Your choice : ";
                         cin>>Choice;
@@ -709,6 +710,10 @@ int main()
                                  << "--------------------------------------------------------" << endl;
                             break;
                         case 3:
+                            cout << "The element you want is: " << get(third, Index) << endl
+                                 << "--------------------------------------------------------" << endl;
+                            break;
+                        case 4:
                             break;
                         default:
                             cout << "Choice is Invalid !!...Try Again";
@@ -722,7 +727,8 @@ int main()
                         cout << "Choose The array to set element : " << endl
                              << "1. Array 'A'" << endl
                              << "2. Array 'B'" << endl
-                             << "3. Back." << endl
+                             << "3. Array 'C'" << endl
+                             << "4. Back." << endl
                              << "--------------------------------------------------------" << endl
                              << "Your choice : ";
                         cin >> Choice;
@@ -743,6 +749,11 @@ int main()
                             set(&second, Index, Element);
                             break;
                         case 3:
+                            cout << "Element " << Element << " have been set at index " << Index << "." << endl
+                                 << "--------------------------------------------------------" << endl;
+                            set(&third, Index, Element);
+                            break;
+                        case 4:
                             break;
                         default:
                             cout << "Choice is Invalid !!...Try Again";
@@ -756,7 +767,8 @@ int main()
                         cout << "Choose The array to Insert element: " << endl
                              << "1. Array 'A'" << endl
                              << "2. Array 'B'" << endl
-                             << "3. Back." << endl
+                             << "3. Array 'C'" << endl
+                             << "4. Back." << endl
                              << "--------------------------------------------------------" << endl
                              << "Your choice : ";
                         cin >> Choice;
@@ -767,12 +779,20 @@ int main()
                         switch (Choice)
                         {
                         case 1:
+                            cout << "Element " << Element << " have been Inserted at index " << Index << "." << endl
+                                 << "--------------------------------------------------------" << endl;
                             Insert(&first, Index, Element);
                             break;
                         case 2:
+                            cout << "Element " << Element << " have been Inserted at index " << Index << "." << endl
+                                 << "--------------------------------------------------------" << endl;
                             Insert(&second, Index, Element);
                             break;
                         case 3:
+                            cout << "Element " << Element << " have been Inserted at index " << Index << "." << endl
+                                 << "--------------------------------------------------------" << endl;
+                            Insert(&third, Index, Element);
+                        case 4:
                             break;
                         default:
                             cout << "Choice is Invalid !!...Try Again";
@@ -786,7 +806,8 @@ int main()
                         cout << "Choose The array to Insert element: " << endl
                              << "1. Array 'A'" << endl
                              << "2. Array 'B'" << endl
-                             << "3. Back." << endl
+                             << "3. Array 'C'" << endl
+                             << "4. Back." << endl
                              << "--------------------------------------------------------" << endl
                              << "Your choice : ";
                         cin >> Choice;
@@ -795,9 +816,11 @@ int main()
                         case 1:
                             //checking if array is sorted or not 
                             if(CheckSort(first)){ //if yes then only insert the element
-                                cout << "Enter The element to Insert";
+                                cout << "Enter The element to Insert: ";
                                 cin >> Element;
                                 SortedInsert(&first, Element);
+                                cout << "Element " << Element << " have been Inserted. "<< endl
+                                     << "--------------------------------------------------------" << endl;
                             }
                             else{ //otherwise give an error
                                 cout << "Array is not sorted!....use another insert operation"
@@ -808,9 +831,11 @@ int main()
                             // checking if array is sorted or not
                             if (CheckSort(second))
                             { // if yes then only insert the element
-                                cout << "Enter The element to Insert";
+                                cout << "Enter The element to Insert: ";
                                 cin >> Element;
                                 SortedInsert(&second, Element);
+                                cout << "Element " << Element << " have been Inserted. " << endl
+                                     << "--------------------------------------------------------" << endl;
                             }
 
                             { // otherwise give an error
@@ -819,6 +844,22 @@ int main()
                             }
                             break;
                         case 3:
+                            // checking if array is sorted or not
+                            if (CheckSort(third))
+                            { // if yes then only insert the element
+                                cout << "Enter The element to Insert: ";
+                                cin >> Element;
+                                SortedInsert(&third, Element);
+                                cout << "Element " << Element << " have been Inserted. " << endl
+                                     << "--------------------------------------------------------" << endl;
+                            }
+
+                            { // otherwise give an error
+                                cout << "Array is not sorted!....use another insert operation"
+                                     << "--------------------------------------------------------" << endl;
+                            }
+                            break;
+                        case 4:
                             break;
                         default:
                             cout << "Choice is Invalid !!...Try Again";
@@ -850,13 +891,16 @@ int main()
                         switch (Choice)
                         {
                         case 1:
-                            min(first);
+                            cout << "Min element of array A is " << min(first) << endl
+                                 << "--------------------------------------------------------" << endl;
                             break;
                         case 2:
-                            min(second);
+                            cout << "Min element of array B is " << min(second) << endl
+                                 << "--------------------------------------------------------" << endl;
                             break;
                         case 3:
-                            min(third);
+                            cout << "Min element of array C is " << min(third) << endl
+                                 << "--------------------------------------------------------" << endl;
                             break;
                         case 4:
                             break;
@@ -880,13 +924,16 @@ int main()
                         switch (Choice)
                         {
                         case 1:
-                            max(first);
+                            cout << "Min element of array A is " << max(first) << endl
+                                 << "--------------------------------------------------------" << endl;
                             break;
                         case 2:
-                            max(second);
+                            cout << "Min element of array B is " << max(second) << endl
+                                 << "--------------------------------------------------------" << endl;
                             break;
                         case 3:
-                            max(third);
+                            cout << "Min element of array C is " << max(third) << endl
+                                 << "--------------------------------------------------------" << endl;
                             break;
                         case 4:
                             break;
@@ -910,12 +957,18 @@ int main()
                         switch (Choice)
                         {
                         case 1:
+                            cout << "array A is rearranged. " << endl
+                                 << "--------------------------------------------------------" << endl;
                             sortInt(&first);
                             break;
                         case 2:
+                            cout << "array B is rearranged. " << endl
+                                 << "--------------------------------------------------------" << endl;
                             sortInt(&second);
                             break;
                         case 3:
+                            cout << "array C is rearranged. " << endl
+                                 << "--------------------------------------------------------" << endl;
                             sortInt(&third);
                             break;
                         case 4:
@@ -940,12 +993,18 @@ int main()
                         switch (Choice)
                         {
                         case 1:
+                            cout << "array A is Reversed. " << endl
+                                 << "--------------------------------------------------------" << endl;
                             Reverse(&first);
                             break;
                         case 2:
+                            cout << "array B is Reversed. " << endl
+                                 << "--------------------------------------------------------" << endl;
                             Reverse(&second);
                             break;
                         case 3:
+                            cout << "array C is Reversed. " << endl
+                                 << "--------------------------------------------------------" << endl;
                             Reverse(&third);
                             break;
                         case 4:
@@ -970,12 +1029,18 @@ int main()
                         switch (Choice)
                         {
                         case 1:
+                            cout << "Left rotation of array A is done. " << endl
+                                 << "--------------------------------------------------------" << endl;
                             LeftRotation(&first);
                             break;
                         case 2:
+                            cout << "Left rotation of array B is done." << endl
+                                 << "--------------------------------------------------------" << endl;
                             LeftRotation(&second);
                             break;
                         case 3:
+                            cout << "Left rotation of array C is done. " << endl
+                                 << "--------------------------------------------------------" << endl;
                             LeftRotation(&third);
                             break;
                         case 4:
@@ -1000,12 +1065,18 @@ int main()
                         switch (Choice)
                         {
                         case 1:
+                            cout << "Right rotation of array A is done." << endl
+                                 << "--------------------------------------------------------" << endl;
                             RightRotation(&first);
                             break;
                         case 2:
+                            cout << "Right rotation of array B is done." << endl
+                                 << "--------------------------------------------------------" << endl;
                             RightRotation(&second);
                             break;
                         case 3:
+                            cout << "Right rotation of array C is done." << endl
+                                 << "--------------------------------------------------------" << endl;
                             RightRotation(&third);
                             break;
                         case 4:
@@ -1030,12 +1101,18 @@ int main()
                         switch (Choice)
                         {
                         case 1:
+                            cout << "Left Shift of array A is done. " << endl
+                                 << "--------------------------------------------------------" << endl;
                             LeftShift(&first);
                             break;
                         case 2:
+                            cout << "Left Shift of array B is done. " << endl
+                                 << "--------------------------------------------------------" << endl;
                             LeftShift(&second);
                             break;
                         case 3:
+                            cout << "Left Shift of array C is done. " << endl
+                                 << "--------------------------------------------------------" << endl;
                             LeftShift(&third);
                             break;
                         case 4:
@@ -1060,12 +1137,18 @@ int main()
                         switch (Choice)
                         {
                         case 1:
+                            cout << "Right Shift of array A is done. " << endl
+                                 << "--------------------------------------------------------" << endl;
                             RightShift(&first);
                             break;
                         case 2:
+                            cout << "Right Shift of array B is done. " << endl
+                                 << "--------------------------------------------------------" << endl;
                             RightShift(&second);
                             break;
                         case 3:
+                            cout << "Right Shift of array C is done. " << endl
+                                 << "--------------------------------------------------------" << endl;
                             RightShift(&third);
                             break;
                         case 4:
@@ -1089,19 +1172,19 @@ int main()
                         cin >> Choice;
                         cout<<endl
                             <<"Note:- If the answer is '1' that means array is sorted, otherwise array is not sorted."
-                            <<endl;
+                            <<endl<<"Ans: ";
                         switch (Choice)
                         {
                         case 1:
-                            cout << CheckSort(first) << endl
+                            cout << "Ans: " << CheckSort(first) << endl
                                  << "--------------------------------------------------------" << endl;
                             break;
                         case 2:
-                            cout << CheckSort(second) << endl
+                            cout << "Ans: " << CheckSort(second) << endl
                                  << "--------------------------------------------------------" << endl;
                             break;
                         case 3:
-                            cout << CheckSort(third) << endl
+                            cout << "Ans: " << CheckSort(third) << endl
                                  << "--------------------------------------------------------" << endl;
                             break;
                         case 4:
