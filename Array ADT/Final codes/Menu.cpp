@@ -659,14 +659,14 @@ int main()
                              << "2. Array 'B'" << endl
                              << "3. Back." << endl
                              << "--------------------------------------------------------" << endl;
-                        int SetChoice;
+                        cin >> Choice;
                         int SetIndex;
                         int SetElement;
                         cout << "Enter The element to set";
                         cin>>SetElement;
                         cout << "Enter The index of the element to set";
                         cin >> SetIndex;
-                        switch (SetChoice)
+                        switch (Choice)
                         {
                         case 1:
                             set(&first, SetIndex, SetElement);
@@ -690,14 +690,14 @@ int main()
                              << "2. Array 'B'" << endl
                              << "3. Back." << endl
                              << "--------------------------------------------------------" << endl;
-                        int InsertChoice;
+                        cin >> Choice;
                         int InsertIndex;
                         int InsertElement;
                         cout << "Enter The element to Insert";
                         cin >> InsertElement;
                         cout << "Enter The index of the element to Insert";
                         cin >> InsertIndex;
-                        switch (InsertChoice)
+                        switch (Choice)
                         {
                         case 1:
                             Insert(&first, InsertIndex, InsertElement);
@@ -720,14 +720,12 @@ int main()
                              << "1. Array 'A'" << endl
                              << "2. Array 'B'" << endl
                              << "3. Back." << endl
-                             << "--------------------------------------------------------" << endl;
-                        int sortedInsertChoice;
-                        cin>>sortedInsertChoice;
-                        
+                             << "--------------------------------------------------------" <<endl;
+                        cin >> Choice;
+
                         int InsertElement;
-                        
-                        
-                        switch (InsertChoice)
+
+                        switch (Choice)
                         {
                         case 1:
                             //checking if array is sorted or not 
@@ -782,8 +780,8 @@ int main()
                              << "3. Array 'C'" << endl
                              << "4. Back." << endl
                              << "--------------------------------------------------------" << endl;
-                        cin >> GetChoice;
-                        switch (GetChoice)
+                        cin >> Choice;
+                        switch (Choice)
                         {
                         case 1:
                             min(first);
@@ -811,8 +809,8 @@ int main()
                              << "3. Array 'C'" << endl
                              << "4. Back." << endl
                              << "--------------------------------------------------------" << endl;
-                        cin >> GetChoice;
-                        switch (GetChoice)
+                        cin >> Choice;
+                        switch (Choice)
                         {
                         case 1:
                             max(first);
@@ -840,8 +838,8 @@ int main()
                              << "3. Array 'C'" << endl
                              << "4. Back." << endl
                              << "--------------------------------------------------------" << endl;
-                        cin >> GetChoice;
-                        switch (GetChoice)
+                        cin >> Choice;
+                        switch (Choice)
                         {
                         case 1:
                             sortInt(&first);
@@ -869,8 +867,8 @@ int main()
                              << "3. Array 'C'" << endl
                              << "4. Back." << endl
                              << "--------------------------------------------------------" << endl;
-                        cin >> GetChoice;
-                        switch (GetChoice)
+                        cin >> Choice;
+                        switch (Choice)
                         {
                         case 1:
                             Reverse(&first);
@@ -898,8 +896,8 @@ int main()
                              << "3. Array 'C'" << endl
                              << "4. Back." << endl
                              << "--------------------------------------------------------" << endl;
-                        cin >> GetChoice;
-                        switch (GetChoice)
+                        cin >> Choice;
+                        switch (Choice)
                         {
                         case 1:
                             LeftRotation(&first);
@@ -927,8 +925,8 @@ int main()
                              << "3. Array 'C'" << endl
                              << "4. Back." << endl
                              << "--------------------------------------------------------" << endl;
-                        cin >> GetChoice;
-                        switch (GetChoice)
+                        cin >> Choice;
+                        switch (Choice)
                         {
                         case 1:
                             RightRotation(&first);
@@ -956,8 +954,8 @@ int main()
                              << "3. Array 'C'" << endl
                              << "4. Back." << endl
                              << "--------------------------------------------------------" << endl;
-                        cin >> GetChoice;
-                        switch (GetChoice)
+                        cin >> Choice;
+                        switch (Choice)
                         {
                         case 1:
                             LeftShift(&first);
@@ -985,8 +983,8 @@ int main()
                              << "3. Array 'C'" << endl
                              << "4. Back." << endl
                              << "--------------------------------------------------------" << endl;
-                        cin >> GetChoice;
-                        switch (GetChoice)
+                        cin >> Choice;
+                        switch (Choice)
                         {
                         case 1:
                             RightShift(&first);
@@ -1014,8 +1012,8 @@ int main()
                              << "3. Array 'C'" << endl
                              << "4. Back." << endl
                              << "--------------------------------------------------------" << endl;
-                        cin >> GetChoice;
-                        switch (GetChoice)
+                        cin >> Choice;
+                        switch (Choice)
                         {
                         case 1:
                             CheckSort(first);
@@ -1047,15 +1045,15 @@ int main()
                         switch (Choice)
                         {
                         case 1:
-                            cout<<"sum of all elements of array A is: "<<sum(first)
-                                << "--------------------------------------------------------" << endl;
+                            cout << "sum of all elements of array A is: " << sum(first) << endl
+                                 << "--------------------------------------------------------" << endl;
                             break;
                         case 2:
-                            cout << "sum of all elements of array B is: " << sum(second)
+                            cout << "sum of all elements of array B is: " << sum(second) << endl
                                  << "--------------------------------------------------------" << endl;
                             break;
                         case 3:
-                            cout << "sum of all elements of array C is: " << sum(third)
+                            cout << "sum of all elements of array C is: " << sum(third) << endl
                                  << "--------------------------------------------------------" << endl;
                             break;
                         case 4:
