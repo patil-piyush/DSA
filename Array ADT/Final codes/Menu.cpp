@@ -373,902 +373,907 @@ int main()
         // switch case for main menu
         switch (Menu())
         {
-            // storing array data from user
-            // Taking input from user
+        // storing array data from user
+        // Taking input from user
+        case 1:
+            cout << "Choose The array for storing data: " << endl
+                 << "1. Array 'A'" << endl
+                 << "2. Array 'B'" << endl
+                 << "3. Back." << endl
+                 << "--------------------------------------------------------" << endl
+                 << "Your choice : ";
+            cin >> Choice;
+            switch (Choice)
+            {
             case 1:
-                cout << "Choose The array for storing data: " << endl
+                // taking input for First array
+                cout << "Enter the size: ";
+                cin >> first.size;
+                first.A = new int[first.size];
+                first.length = 0;
+
+                int n;
+                cout << "enter the number of elements: ";
+                cin >> n;
+                cout << "enter the elements: ";
+                for (int i = 0; i < n; i++)
+                {
+                    cin >> first.A[i];
+                }
+                first.length = n;
+                break;
+
+            case 2:
+                // taking input for second array
+                cout << "Enter the size: ";
+                cin >> second.size;
+                second.A = new int[second.size];
+                second.length = 0;
+
+                cout << "enter the number of elements: ";
+                cin >> n;
+                cout << "enter the elements: ";
+                for (int i = 0; i < n; i++)
+                {
+                    cin >> second.A[i];
+                }
+                second.length = n;
+                break;
+
+            case 3:
+                break;
+
+            default:
+                cout << "Choice is Invalid !!...Try Again" << endl
+                     << "--------------------------------------------------------" << endl;
+                break;
+            }
+            break;
+        // End of Taking input from user
+
+        // Choosing operation to perform
+        case 2:
+            switch (Opr())
+            {
+            // Display function
+            case 1:
+                cout << "Choose The array to display: " << endl
                      << "1. Array 'A'" << endl
                      << "2. Array 'B'" << endl
-                     << "3. Back." << endl
+                     << "3. Array 'C'" << endl
+                     << "4. Back." << endl
                      << "--------------------------------------------------------" << endl
                      << "Your choice : ";
                 cin >> Choice;
                 switch (Choice)
                 {
+                case 1:
+                    cout << "Elements of Array A: " << endl;
+                    display(first);
+                    cout << "--------------------------------------------------------" << endl;
+                    break;
+                case 2:
+                    cout << "Elements of Array B: " << endl;
+                    display(second);
+                    cout << "--------------------------------------------------------" << endl;
+                    break;
+                case 3:
+                    cout << "Elements of Array C: " << endl;
+                    display(third);
+                    cout << "--------------------------------------------------------" << endl;
+                    break;
+                case 4:
+                    break;
+                default:
+                    cout << "Choice is Invalid !!...Try Again" << endl
+                         << "--------------------------------------------------------" << endl;
+                    break;
+                }
+                break;
+
+            // Append Function
+            case 2:
+                cout << "Choose The array to Append element: " << endl
+                     << "1. Array 'A'" << endl
+                     << "2. Array 'B'" << endl
+                     << "3. Array 'C'" << endl
+                     << "4. Back." << endl
+                     << "--------------------------------------------------------" << endl
+                     << "Your choice : ";
+                cin >> Choice;
+                cout << "Enter The element to append: ";
+                cin >> Element;
+                switch (Choice)
+                {
+                case 1:
+                    append(&first, Element);
+                    cout << "Element is appended successfully in array A." << endl
+                         << "--------------------------------------------------------" << endl;
+                    break;
+                case 2:
+                    append(&second, Element);
+                    cout << "Element is appended successfully in array B." << endl
+                         << "--------------------------------------------------------" << endl;
+                    break;
+                case 3:
+                    append(&third, Element);
+                    cout << "Element is appended successfully in array C." << endl
+                         << "--------------------------------------------------------" << endl;
+                    break;
+                case 4:
+                    break;
+                default:
+                    cout << "Choice is Invalid !!...Try Again" << endl
+                         << "--------------------------------------------------------" << endl;
+                    break;
+                }
+                break;
+
+            // Average Function
+            case 3:
+                cout << "Choose The array to find average: " << endl
+                     << "1. Array 'A'" << endl
+                     << "2. Array 'B'" << endl
+                     << "3. Array 'C'" << endl
+                     << "4. Back." << endl
+                     << "--------------------------------------------------------" << endl
+                     << "Your choice : ";
+                cin >> Choice;
+                switch (Choice)
+                {
+                case 1:
+                    cout << "Average of elements of A is: " << average(first) << endl
+                         << "--------------------------------------------------------" << endl;
+                    break;
+                case 2:
+                    cout << "Average of elements of B is: " << average(second) << endl
+                         << "--------------------------------------------------------" << endl;
+                    break;
+                case 3:
+                    cout << "Average of elements of C is: " << average(third) << endl
+                         << "--------------------------------------------------------" << endl;
+                    break;
+                case 4:
+                    break;
+                default:
+                    cout << "Choice is Invalid !!...Try Again" << endl
+                         << "--------------------------------------------------------" << endl;
+                    break;
+                }
+                break;
+
+            // searching operations
+            case 4:
+                cout << "Choose The array for searching operation: " << endl
+                     << "1. Array 'A'" << endl
+                     << "2. Array 'B'" << endl
+                     << "3. Array 'C'" << endl
+                     << "4. Back." << endl
+                     << "--------------------------------------------------------" << endl
+                     << "Your choice : ";
+                cin >> Choice;
+                switch (Choice)
+                {
+                // searching for first array
+                case 1:
+                    cout << "Choose Type of searching operation: " << endl
+                         << "1. Linear Search" << endl
+                         << "2. Binary Search" << endl
+                         << "3. Back." << endl
+                         << "--------------------------------------------------------" << endl
+                         << "Your choice : ";
+                    cin >> Choice;
+                    cout << "Enter The element to Search: ";
+                    int Element;
+                    cin >> Element;
+                    switch (Choice)
+                    {
                     case 1:
-                        // taking input for First array
-                        cout << "Enter the size: ";
-                        cin >> first.size;
-                        first.A = new int[first.size];
-                        first.length = 0;
-
-                        int n;
-                        cout << "enter the number of elements: ";
-                        cin >> n;
-                        cout << "enter the elements: ";
-                        for (int i = 0; i < n; i++)
-                        {
-                            cin >> first.A[i];
-                        }
-                        first.length = n;
+                        cout << "Element is present at index: "
+                             << LinearSearch(first, Element)
+                             << endl
+                             << "Found by using linear search" << endl;
                         break;
-
                     case 2:
-                        // taking input for second array
-                        cout << "Enter the size: ";
-                        cin >> second.size;
-                        second.A = new int[second.size];
-                        second.length = 0;
-
-                        cout << "enter the number of elements: ";
-                        cin >> n;
-                        cout << "enter the elements: ";
-                        for (int i = 0; i < n; i++)
-                        {
-                            cin >> second.A[i];
-                        }
-                        second.length = n;
+                        cout << "Element is present at index: "
+                             << BinSearch(first, Element)
+                             << endl
+                             << "Found by using Binary search" << endl;
                         break;
-
-                    case 3:
-                        break;
-
                     default:
                         cout << "Choice is Invalid !!...Try Again" << endl
                              << "--------------------------------------------------------" << endl;
                         break;
+                    }
+                    break;
+
+                // searching for second array
+                case 2:
+                    cout << "Choose Type of searching operation: " << endl
+                         << "1. Linear Search" << endl
+                         << "2. Binary Search" << endl
+                         << "3. Back." << endl
+                         << "--------------------------------------------------------" << endl
+                         << "Your choice : ";
+                    cin >> Choice;
+                    cout << "Enter The element to Search: ";
+                    cin >> Element;
+                    switch (Choice)
+                    {
+                    case 1:
+                        cout << "Element is present at index: "
+                             << LinearSearch(second, Element)
+                             << endl
+                             << "Found by using linear search" << endl;
+                        break;
+                    case 2:
+                        cout << "Element is present at index: "
+                             << BinSearch(second, Element)
+                             << endl
+                             << "Found by using Binary search" << endl;
+                        break;
+                    default:
+                        cout << "Choice is Invalid !!...Try Again" << endl
+                             << "--------------------------------------------------------" << endl;
+                        break;
+                    }
+                    break;
+                // searching for third array
+                case 3:
+                    cout << "Choose Type of searching operation: " << endl
+                         << "1. Linear Search" << endl
+                         << "2. Binary Search" << endl
+                         << "3. Back." << endl
+                         << "--------------------------------------------------------" << endl
+                         << "Your choice : ";
+                    cin >> Choice;
+                    cout << "Enter The element to Search: ";
+                    cin >> Element;
+                    switch (Choice)
+                    {
+                    case 1:
+                        cout << "Element is present at index: "
+                             << LinearSearch(third, Element)
+                             << endl
+                             << "Found by using linear search" << endl;
+                        break;
+                    case 2:
+                        cout << "Element is present at index: "
+                             << BinSearch(third, Element)
+                             << endl
+                             << "Found by using Binary search" << endl;
+                        break;
+                    default:
+                        cout << "Choice is Invalid !!...Try Again" << endl
+                             << "--------------------------------------------------------" << endl;
+                        break;
+                    }
+                    break;
+
+                case 4:
+                    break;
+
+                default:
+                    cout << "Choice is Invalid !!...Try Again" << endl
+                         << "--------------------------------------------------------" << endl;
+                    break;
                 }
                 break;
-            // End of Taking input from user
+                // end of searching operation
 
-            // Choosing operation to perform
-            case 2:
-                switch (Opr())
+            // Delete Operation
+            case 5:
+                cout << "Choose The array to Delete element: " << endl
+                     << "1. Array 'A'" << endl
+                     << "2. Array 'B'" << endl
+                     << "3. Array 'C'" << endl
+                     << "4. Back." << endl
+                     << "--------------------------------------------------------" << endl
+                     << "Your choice : ";
+                cin >> Choice;
+                cout << "Enter The index of the element to Delete: ";
+                cin >> Index;
+                switch (Choice)
                 {
-                    // Display function
-                    case 1:
-                        cout << "Choose The array to display: " << endl
-                             << "1. Array 'A'" << endl
-                             << "2. Array 'B'" << endl
-                             << "3. Array 'C'" << endl
-                             << "4. Back." << endl
-                             << "--------------------------------------------------------" << endl
-                             << "Your choice : ";
-                        cin >> Choice;
-                        switch (Choice)
-                        {
-                            case 1:
-                                cout<<"Elements of Array A: "<<endl;
-                                display(first);
-                                cout << "--------------------------------------------------------" << endl;
-                                break;
-                            case 2:
-                                cout << "Elements of Array B: " << endl;
-                                display(second);
-                                cout << "--------------------------------------------------------" << endl;
-                                break;
-                            case 3:
-                                cout << "Elements of Array C: " << endl;
-                                display(third);
-                                cout << "--------------------------------------------------------" << endl;
-                                break;
-                            case 4:
-                                break;
-                            default:
-                                cout << "Choice is Invalid !!...Try Again" << endl
-                                     << "--------------------------------------------------------" << endl;
-                                break;
-                        }
-                        break;
+                case 1:
+                    cout << "Deleted Element is: " << Delete(&first, Index) << endl
+                         << "--------------------------------------------------------" << endl;
+                    break;
+                case 2:
+                    cout << "Deleted Element is: " << Delete(&second, Index) << endl
+                         << "--------------------------------------------------------" << endl;
+                    break;
+                case 3:
+                    cout << "Deleted Element is: " << Delete(&first, Index) << endl
+                         << "--------------------------------------------------------" << endl;
+                    break;
+                case 4:
+                    break;
+                default:
+                    cout << "Choice is Invalid !!...Try Again" << endl
+                         << "--------------------------------------------------------" << endl;
+                    break;
+                }
+                break;
+                // end of delete operation
 
-                    // Append Function
-                    case 2:
-                        cout << "Choose The array to Append element: " << endl
-                             << "1. Array 'A'" << endl
-                             << "2. Array 'B'" << endl
-                             << "3. Array 'C'" << endl
-                             << "4. Back." << endl
-                             << "--------------------------------------------------------" << endl
-                             << "Your choice : ";
-                        cin >> Choice;
-                        cout << "Enter The element to append: ";
-                        cin >> Element;
-                        switch (Choice)
-                        {
-                            case 1:
-                                append(&first, Element);
-                                cout << "Element is appended successfully in array A."<<endl
-                                     <<"--------------------------------------------------------" << endl;
-                                break;
-                            case 2:
-                                append(&second, Element);
-                                cout << "Element is appended successfully in array B." << endl
-                                     << "--------------------------------------------------------" << endl;
-                                break;
-                            case 3:
-                                append(&third, Element);
-                                cout << "Element is appended successfully in array C." << endl
-                                     << "--------------------------------------------------------" << endl;
-                                break;
-                            case 4:
-                                break;
-                            default:
-                                cout << "Choice is Invalid !!...Try Again" << endl
-                                     << "--------------------------------------------------------" << endl;
-                                break;
-                        }
-                        break;
+            // Get operation
+            case 6:
+                cout << "Choose The array to get element from: " << endl
+                     << "1. Array 'A'" << endl
+                     << "2. Array 'B'" << endl
+                     << "3. Array 'C'" << endl
+                     << "4. Back." << endl
+                     << "--------------------------------------------------------" << endl
+                     << "Your choice : ";
+                cin >> Choice;
+                cout << "Enter The index of the element to get: ";
+                cin >> Index;
+                switch (Choice)
+                {
+                case 1:
+                    cout << "The element you want is: " << get(first, Index) << endl
+                         << "--------------------------------------------------------" << endl;
+                    break;
+                case 2:
+                    cout << "The element you want is: " << get(second, Index) << endl
+                         << "--------------------------------------------------------" << endl;
+                    break;
+                case 3:
+                    cout << "The element you want is: " << get(third, Index) << endl
+                         << "--------------------------------------------------------" << endl;
+                    break;
+                case 4:
+                    break;
+                default:
+                    cout << "Choice is Invalid !!...Try Again" << endl
+                         << "--------------------------------------------------------" << endl;
+                    break;
+                }
+                break;
+                // end of get operation
 
-                    // Average Function
-                    case 3:
-                        cout << "Choose The array to find average: " << endl
-                             << "1. Array 'A'" << endl
-                             << "2. Array 'B'" << endl
-                             << "3. Array 'C'" << endl
-                             << "4. Back." << endl
-                             << "--------------------------------------------------------" << endl
-                             << "Your choice : ";
-                        cin >> Choice;
-                        switch (Choice)
-                        {
-                            case 1:
-                                cout<<"Average of elements of A is: "<<average(first)<<endl
-                                    << "--------------------------------------------------------" << endl;
-                                break;
-                            case 2:
-                                cout << "Average of elements of B is: " << average(second) << endl
-                                     << "--------------------------------------------------------" << endl;
-                                break;
-                            case 3:
-                                cout << "Average of elements of C is: " << average(third) << endl
-                                     << "--------------------------------------------------------" << endl;
-                                break;
-                            case 4:
-                                break;
-                            default:
-                                cout << "Choice is Invalid !!...Try Again" << endl
-                                     << "--------------------------------------------------------" << endl;
-                                break;
-                        }
-                        break;
+            // Set operation
+            case 7:
+                cout << "Choose The array to set element : " << endl
+                     << "1. Array 'A'" << endl
+                     << "2. Array 'B'" << endl
+                     << "3. Array 'C'" << endl
+                     << "4. Back." << endl
+                     << "--------------------------------------------------------" << endl
+                     << "Your choice : ";
+                cin >> Choice;
+                cout << "Enter The element to set: ";
+                cin >> Element;
+                cout << "Enter The index of the element to set: ";
+                cin >> Index;
+                switch (Choice)
+                {
+                case 1:
+                    cout << "Element " << Element << " have been set at index " << Index << "." << endl
+                         << "--------------------------------------------------------" << endl;
+                    set(&first, Index, Element);
+                    break;
+                case 2:
+                    cout << "Element " << Element << " have been set at index " << Index << "." << endl
+                         << "--------------------------------------------------------" << endl;
+                    set(&second, Index, Element);
+                    break;
+                case 3:
+                    cout << "Element " << Element << " have been set at index " << Index << "." << endl
+                         << "--------------------------------------------------------" << endl;
+                    set(&third, Index, Element);
+                    break;
+                case 4:
+                    break;
+                default:
+                    cout << "Choice is Invalid !!...Try Again" << endl
+                         << "--------------------------------------------------------" << endl;
+                    break;
+                }
+                break;
+                // end of set operation
 
-                    //searching operations
-                    case 4:
-                        cout << "Choose The array for searching operation: " << endl
-                             << "1. Array 'A'" << endl
-                             << "2. Array 'B'" << endl
-                             << "3. Array 'C'" << endl
-                             << "4. Back." << endl
-                             << "--------------------------------------------------------" << endl
-                             << "Your choice : ";
-                        cin>>Choice;
-                        switch (Choice)
-                        {
-                            // searching for first array
-                            case 1:
-                                cout << "Choose Type of searching operation: " << endl
-                                     << "1. Linear Search" << endl
-                                     << "2. Binary Search" << endl
-                                     << "3. Back." << endl
-                                     << "--------------------------------------------------------" << endl
-                                     << "Your choice : ";
-                                cin >> Choice;
-                                cout << "Enter The element to Search: ";
-                                int Element;
-                                cin >> Element;
-                                switch (Choice)
-                                {
-                                    case 1:
-                                        cout << "Element is present at index: "
-                                        <<LinearSearch(first, Element)
-                                        <<endl<<"Found by using linear search"<<endl;
-                                        break;
-                                    case 2:
-                                        cout << "Element is present at index: "
-                                             << BinSearch(first, Element)
-                                             << endl
-                                             << "Found by using Binary search" << endl;
-                                        break;
-                                    default:
-                                        cout << "Choice is Invalid !!...Try Again" << endl
-                                             << "--------------------------------------------------------" << endl;
-                                        break;
-                                }
-                                break;
+            // Insert operation
+            case 8:
+                cout << "Choose The array to Insert element: " << endl
+                     << "1. Array 'A'" << endl
+                     << "2. Array 'B'" << endl
+                     << "3. Array 'C'" << endl
+                     << "4. Back." << endl
+                     << "--------------------------------------------------------" << endl
+                     << "Your choice : ";
+                cin >> Choice;
+                cout << "Enter The element to Insert: ";
+                cin >> Element;
+                cout << "Enter The index of the element to Insert: ";
+                cin >> Index;
+                switch (Choice)
+                {
+                case 1:
+                    cout << "Element " << Element << " have been Inserted at index " << Index << "." << endl
+                         << "--------------------------------------------------------" << endl;
+                    Insert(&first, Index, Element);
+                    break;
+                case 2:
+                    cout << "Element " << Element << " have been Inserted at index " << Index << "." << endl
+                         << "--------------------------------------------------------" << endl;
+                    Insert(&second, Index, Element);
+                    break;
+                case 3:
+                    cout << "Element " << Element << " have been Inserted at index " << Index << "." << endl
+                         << "--------------------------------------------------------" << endl;
+                    Insert(&third, Index, Element);
+                case 4:
+                    break;
+                default:
+                    cout << "Choice is Invalid !!...Try Again" << endl
+                         << "--------------------------------------------------------" << endl;
+                    break;
+                }
+                break;
+                // end of Insert operation
 
-                            // searching for second array
-                            case 2:
-                                cout << "Choose Type of searching operation: " << endl
-                                     << "1. Linear Search" << endl
-                                     << "2. Binary Search" << endl
-                                     << "3. Back." << endl
-                                     << "--------------------------------------------------------" << endl
-                                     << "Your choice : ";
-                                cin >> Choice;
-                                cout << "Enter The element to Search: ";
-                                cin >> Element;
-                                switch (Choice)
-                                {
-                                case 1:
-                                    cout << "Element is present at index: "
-                                         << LinearSearch(second, Element)
-                                         << endl
-                                         << "Found by using linear search" << endl;
-                                    break;
-                                case 2:
-                                    cout << "Element is present at index: "
-                                         << BinSearch(second, Element)
-                                         << endl
-                                         << "Found by using Binary search" << endl;
-                                    break;
-                                default:
-                                    cout << "Choice is Invalid !!...Try Again" << endl
-                                         << "--------------------------------------------------------" << endl;
-                                    break;
-                                }
-                                break;
-                            // searching for third array
-                            case 3:
-                                cout << "Choose Type of searching operation: " << endl
-                                     << "1. Linear Search" << endl
-                                     << "2. Binary Search" << endl
-                                     << "3. Back." << endl
-                                     << "--------------------------------------------------------" << endl
-                                     << "Your choice : ";
-                                cin >> Choice;
-                                cout << "Enter The element to Search: ";
-                                cin >> Element;
-                                switch (Choice)
-                                {
-                                case 1:
-                                    cout << "Element is present at index: "
-                                         << LinearSearch(third, Element)
-                                         << endl
-                                         << "Found by using linear search" << endl;
-                                    break;
-                                case 2:
-                                    cout << "Element is present at index: "
-                                         << BinSearch(third, Element)
-                                         << endl
-                                         << "Found by using Binary search" << endl;
-                                    break;
-                                default:
-                                    cout << "Choice is Invalid !!...Try Again" << endl
-                                         << "--------------------------------------------------------" << endl;
-                                    break;
-                                }
-                                break;
-
-                            case 4:
-                                break;
-                                
-                            default:
-                                cout << "Choice is Invalid !!...Try Again" << endl
-                                     << "--------------------------------------------------------" << endl;
-                                break;
-                        }
-                        break;
-                        // end of searching operation
-
-                    //Delete Operation
-                    case 5:
-                        cout << "Choose The array to Delete element: " << endl
-                             << "1. Array 'A'" << endl
-                             << "2. Array 'B'" << endl
-                             << "3. Array 'C'" << endl
-                             << "4. Back." << endl
-                             << "--------------------------------------------------------" << endl
-                             << "Your choice : ";
-                        cin>>Choice;
-                        cout << "Enter The index of the element to Delete: ";
-                        cin >> Index;
-                        switch (Choice)
-                        {
-                            case 1:
-                                cout << "Deleted Element is: " << Delete(&first, Index) << endl
-                                     << "--------------------------------------------------------" << endl;
-                                break;
-                            case 2:
-                                cout << "Deleted Element is: " << Delete(&second, Index) << endl
-                                     << "--------------------------------------------------------" << endl;
-                                break;
-                            case 3:
-                                cout << "Deleted Element is: " << Delete(&first, Index) << endl
-                                     << "--------------------------------------------------------" << endl;
-                                break;
-                            case 4:
-                                break;
-                            default:
-                                cout << "Choice is Invalid !!...Try Again" << endl
-                                     << "--------------------------------------------------------" << endl;
-                                break;
-                        }
-                        break;
-                        //end of delete operation
-
-                    //Get operation
-                    case 6:
-                        cout << "Choose The array to get element from: " << endl
-                             << "1. Array 'A'" << endl
-                             << "2. Array 'B'" << endl
-                             << "3. Array 'C'" << endl
-                             << "4. Back." << endl
-                             << "--------------------------------------------------------" << endl
-                             << "Your choice : ";
-                        cin>>Choice;
-                        cout << "Enter The index of the element to get: ";
-                        cin >> Index;
-                        switch (Choice)
-                        {
-                        case 1:
-                            cout << "The element you want is: " << get(first, Index) << endl
-                                 << "--------------------------------------------------------" << endl;
-                            break;
-                        case 2:
-                            cout << "The element you want is: " << get(second, Index) << endl
-                                 << "--------------------------------------------------------" << endl;
-                            break;
-                        case 3:
-                            cout << "The element you want is: " << get(third, Index) << endl
-                                 << "--------------------------------------------------------" << endl;
-                            break;
-                        case 4:
-                            break;
-                        default:
-                            cout << "Choice is Invalid !!...Try Again" << endl
-                                 << "--------------------------------------------------------" << endl;
-                            break;
-                        }
-                        break;
-                        // end of get operation
-
-                    // Set operation
-                    case 7:
-                        cout << "Choose The array to set element : " << endl
-                             << "1. Array 'A'" << endl
-                             << "2. Array 'B'" << endl
-                             << "3. Array 'C'" << endl
-                             << "4. Back." << endl
-                             << "--------------------------------------------------------" << endl
-                             << "Your choice : ";
-                        cin >> Choice;
-                        cout << "Enter The element to set: ";
-                        cin>>Element;
-                        cout << "Enter The index of the element to set: ";
-                        cin >> Index;
-                        switch (Choice)
-                        {
-                        case 1:
-                            cout << "Element " << Element << " have been set at index " << Index << "." << endl
-                                 << "--------------------------------------------------------" << endl;
-                            set(&first, Index, Element);
-                            break;
-                        case 2:
-                            cout << "Element " << Element << " have been set at index " << Index << "." << endl
-                                 << "--------------------------------------------------------" << endl;
-                            set(&second, Index, Element);
-                            break;
-                        case 3:
-                            cout << "Element " << Element << " have been set at index " << Index << "." << endl
-                                 << "--------------------------------------------------------" << endl;
-                            set(&third, Index, Element);
-                            break;
-                        case 4:
-                            break;
-                        default:
-                            cout << "Choice is Invalid !!...Try Again" << endl
-                                 << "--------------------------------------------------------" << endl;
-                            break;
-                        }
-                        break;
-                        // end of set operation
-
-                    // Insert operation
-                    case 8:
-                        cout << "Choose The array to Insert element: " << endl
-                             << "1. Array 'A'" << endl
-                             << "2. Array 'B'" << endl
-                             << "3. Array 'C'" << endl
-                             << "4. Back." << endl
-                             << "--------------------------------------------------------" << endl
-                             << "Your choice : ";
-                        cin >> Choice;
+            // Insert operation for sorted array
+            case 9:
+                cout << "Choose The array to Insert element: " << endl
+                     << "1. Array 'A'" << endl
+                     << "2. Array 'B'" << endl
+                     << "3. Array 'C'" << endl
+                     << "4. Back." << endl
+                     << "--------------------------------------------------------" << endl
+                     << "Your choice : ";
+                cin >> Choice;
+                switch (Choice)
+                {
+                case 1:
+                    // checking if array is sorted or not
+                    if (CheckSort(first))
+                    { // if yes then only insert the element
                         cout << "Enter The element to Insert: ";
                         cin >> Element;
-                        cout << "Enter The index of the element to Insert: ";
-                        cin >> Index;
-                        switch (Choice)
-                        {
-                        case 1:
-                            cout << "Element " << Element << " have been Inserted at index " << Index << "." << endl
-                                 << "--------------------------------------------------------" << endl;
-                            Insert(&first, Index, Element);
-                            break;
-                        case 2:
-                            cout << "Element " << Element << " have been Inserted at index " << Index << "." << endl
-                                 << "--------------------------------------------------------" << endl;
-                            Insert(&second, Index, Element);
-                            break;
-                        case 3:
-                            cout << "Element " << Element << " have been Inserted at index " << Index << "." << endl
-                                 << "--------------------------------------------------------" << endl;
-                            Insert(&third, Index, Element);
-                        case 4:
-                            break;
-                        default:
-                            cout << "Choice is Invalid !!...Try Again" << endl
-                                 << "--------------------------------------------------------" << endl;
-                            break;
-                        }
-                        break;
-                        // end of Insert operation
-
-                    // Insert operation for sorted array
-                    case 9:
-                        cout << "Choose The array to Insert element: " << endl
-                             << "1. Array 'A'" << endl
-                             << "2. Array 'B'" << endl
-                             << "3. Array 'C'" << endl
-                             << "4. Back." << endl
-                             << "--------------------------------------------------------" << endl
-                             << "Your choice : ";
-                        cin >> Choice;
-                        switch (Choice)
-                        {
-                        case 1:
-                            //checking if array is sorted or not 
-                            if(CheckSort(first)){ //if yes then only insert the element
-                                cout << "Enter The element to Insert: ";
-                                cin >> Element;
-                                SortedInsert(&first, Element);
-                                cout << "Element " << Element << " have been Inserted. "<< endl
-                                     << "--------------------------------------------------------" << endl;
-                            }
-                            else{ //otherwise give an error
-                                cout << "Array is not sorted!....use another insert operation"
-                                     << "--------------------------------------------------------" << endl;
-                            }
-                            break;
-                        case 2:
-                            // checking if array is sorted or not
-                            if (CheckSort(second))
-                            { // if yes then only insert the element
-                                cout << "Enter The element to Insert: ";
-                                cin >> Element;
-                                SortedInsert(&second, Element);
-                                cout << "Element " << Element << " have been Inserted. " << endl
-                                     << "--------------------------------------------------------" << endl;
-                            }
-
-                            { // otherwise give an error
-                                cout << "Array is not sorted!....use another insert operation"
-                                     << "--------------------------------------------------------" << endl;
-                            }
-                            break;
-                        case 3:
-                            // checking if array is sorted or not
-                            if (CheckSort(third))
-                            { // if yes then only insert the element
-                                cout << "Enter The element to Insert: ";
-                                cin >> Element;
-                                SortedInsert(&third, Element);
-                                cout << "Element " << Element << " have been Inserted. " << endl
-                                     << "--------------------------------------------------------" << endl;
-                            }
-
-                            { // otherwise give an error
-                                cout << "Array is not sorted!....use another insert operation"
-                                     << "--------------------------------------------------------" << endl;
-                            }
-                            break;
-                        case 4:
-                            break;
-                        default:
-                            cout << "Choice is Invalid !!...Try Again" << endl
-                                 << "--------------------------------------------------------" << endl;
-                            break;
-                        }
-                        break;
-                        // end of Insert operation for sorted array
-
-                    // Merging operation
-                    case 10:
-                        cout<<"You only have two arrays right now so we are merging them together."<<endl
-                        <<"Your merged array is as below: "<<endl;
-                        Merge(first,second,&third);
-                        display(third);
-                        cout << endl<<"--------------------------------------------------------" << endl;
-                        break;
-                        // end of Merging operation
-
-                    // min operation
-                    case 11:
-                        cout << "Choose The array to get min element from: " << endl
-                             << "1. Array 'A'" << endl
-                             << "2. Array 'B'" << endl
-                             << "3. Array 'C'" << endl
-                             << "4. Back." << endl
-                             << "--------------------------------------------------------" << endl
-                             << "Your choice : ";
-                        cin >> Choice;
-                        switch (Choice)
-                        {
-                        case 1:
-                            cout << "Min element of array A is " << min(first) << endl
-                                 << "--------------------------------------------------------" << endl;
-                            break;
-                        case 2:
-                            cout << "Min element of array B is " << min(second) << endl
-                                 << "--------------------------------------------------------" << endl;
-                            break;
-                        case 3:
-                            cout << "Min element of array C is " << min(third) << endl
-                                 << "--------------------------------------------------------" << endl;
-                            break;
-                        case 4:
-                            break;
-                        default:
-                            cout << "Choice is Invalid !!...Try Again" << endl
-                                 << "--------------------------------------------------------" << endl;
-                            break;
-                        }
-                        break;
-                        // end of min operation
-
-                    // max operation
-                    case 12:
-                        cout << "Choose The array to get max element from: " << endl
-                             << "1. Array 'A'" << endl
-                             << "2. Array 'B'" << endl
-                             << "3. Array 'C'" << endl
-                             << "4. Back." << endl
-                             << "--------------------------------------------------------" << endl
-                             << "Your choice : ";
-                        cin >> Choice;
-                        switch (Choice)
-                        {
-                        case 1:
-                            cout << "Min element of array A is " << max(first) << endl
-                                 << "--------------------------------------------------------" << endl;
-                            break;
-                        case 2:
-                            cout << "Min element of array B is " << max(second) << endl
-                                 << "--------------------------------------------------------" << endl;
-                            break;
-                        case 3:
-                            cout << "Min element of array C is " << max(third) << endl
-                                 << "--------------------------------------------------------" << endl;
-                            break;
-                        case 4:
-                            break;
-                        default:
-                            cout << "Choice is Invalid !!...Try Again" << endl
-                                 << "--------------------------------------------------------" << endl;
-                            break;
-                        }
-                        break;
-                        // end of max operation
-
-                    // positive-negative operation
-                    case 13:
-                        cout << "Choose The array for arranging Positive numbers on right and negative numbers on left: " << endl
-                             << "1. Array 'A'" << endl
-                             << "2. Array 'B'" << endl
-                             << "3. Array 'C'" << endl
-                             << "4. Back." << endl
-                             << "--------------------------------------------------------" << endl
-                             << "Your choice : ";
-                        cin >> Choice;
-                        switch (Choice)
-                        {
-                        case 1:
-                            cout << "array A is rearranged. " << endl
-                                 << "--------------------------------------------------------" << endl;
-                            sortInt(&first);
-                            break;
-                        case 2:
-                            cout << "array B is rearranged. " << endl
-                                 << "--------------------------------------------------------" << endl;
-                            sortInt(&second);
-                            break;
-                        case 3:
-                            cout << "array C is rearranged. " << endl
-                                 << "--------------------------------------------------------" << endl;
-                            sortInt(&third);
-                            break;
-                        case 4:
-                            break;
-                        default:
-                            cout << "Choice is Invalid !!...Try Again" << endl
-                                 << "--------------------------------------------------------" << endl;
-                            break;
-                        }
-                        break;
-                        // end of positive-negative operation
-
-                    // Reverse operation
-                    case 14:
-                        cout << "Choose The array to Reverse elements: " << endl
-                             << "1. Array 'A'" << endl
-                             << "2. Array 'B'" << endl
-                             << "3. Array 'C'" << endl
-                             << "4. Back." << endl
-                             << "--------------------------------------------------------" << endl
-                             << "Your choice : ";
-                        cin >> Choice;
-                        switch (Choice)
-                        {
-                        case 1:
-                            cout << "array A is Reversed. " << endl
-                                 << "--------------------------------------------------------" << endl;
-                            Reverse(&first);
-                            break;
-                        case 2:
-                            cout << "array B is Reversed. " << endl
-                                 << "--------------------------------------------------------" << endl;
-                            Reverse(&second);
-                            break;
-                        case 3:
-                            cout << "array C is Reversed. " << endl
-                                 << "--------------------------------------------------------" << endl;
-                            Reverse(&third);
-                            break;
-                        case 4:
-                            break;
-                        default:
-                            cout << "Choice is Invalid !!...Try Again" << endl
-                                 << "--------------------------------------------------------" << endl;
-                            break;
-                        }
-                        break;
-                        // end of Reverse operation
-
-                    // Left Rotation operation
-                    case 15:
-                        cout << "Choose The array to perform left rotation: " << endl
-                             << "1. Array 'A'" << endl
-                             << "2. Array 'B'" << endl
-                             << "3. Array 'C'" << endl
-                             << "4. Back." << endl
-                             << "--------------------------------------------------------" << endl
-                             << "Your choice : ";
-                        cin >> Choice;
-                        switch (Choice)
-                        {
-                        case 1:
-                            cout << "Left rotation of array A is done. " << endl
-                                 << "--------------------------------------------------------" << endl;
-                            LeftRotation(&first);
-                            break;
-                        case 2:
-                            cout << "Left rotation of array B is done." << endl
-                                 << "--------------------------------------------------------" << endl;
-                            LeftRotation(&second);
-                            break;
-                        case 3:
-                            cout << "Left rotation of array C is done. " << endl
-                                 << "--------------------------------------------------------" << endl;
-                            LeftRotation(&third);
-                            break;
-                        case 4:
-                            break;
-                        default:
-                            cout << "Choice is Invalid !!...Try Again" << endl
-                                 << "--------------------------------------------------------" << endl;
-                            break;
-                        }
-                        break;
-                        // end of Left Rotation operation
-
-                    // Right Rotation operation
-                    case 16:
-                        cout << "Choose The array to perform Right rotation: " << endl
-                             << "1. Array 'A'" << endl
-                             << "2. Array 'B'" << endl
-                             << "3. Array 'C'" << endl
-                             << "4. Back." << endl
-                             << "--------------------------------------------------------" << endl
-                             << "Your choice : ";
-                        cin >> Choice;
-                        switch (Choice)
-                        {
-                        case 1:
-                            cout << "Right rotation of array A is done." << endl
-                                 << "--------------------------------------------------------" << endl;
-                            RightRotation(&first);
-                            break;
-                        case 2:
-                            cout << "Right rotation of array B is done." << endl
-                                 << "--------------------------------------------------------" << endl;
-                            RightRotation(&second);
-                            break;
-                        case 3:
-                            cout << "Right rotation of array C is done." << endl
-                                 << "--------------------------------------------------------" << endl;
-                            RightRotation(&third);
-                            break;
-                        case 4:
-                            break;
-                        default:
-                            cout << "Choice is Invalid !!...Try Again" << endl
-                                 << "--------------------------------------------------------" << endl;
-                            break;
-                        }
-                        break;
-                        // end of Right Rotation operation
-
-                    // Left Shift operation
-                    case 17:
-                        cout << "Choose The array to perform left Shift: " << endl
-                             << "1. Array 'A'" << endl
-                             << "2. Array 'B'" << endl
-                             << "3. Array 'C'" << endl
-                             << "4. Back." << endl
-                             << "--------------------------------------------------------" << endl
-                             << "Your choice : ";
-                        cin >> Choice;
-                        switch (Choice)
-                        {
-                        case 1:
-                            cout << "Left Shift of array A is done. " << endl
-                                 << "--------------------------------------------------------" << endl;
-                            LeftShift(&first);
-                            break;
-                        case 2:
-                            cout << "Left Shift of array B is done. " << endl
-                                 << "--------------------------------------------------------" << endl;
-                            LeftShift(&second);
-                            break;
-                        case 3:
-                            cout << "Left Shift of array C is done. " << endl
-                                 << "--------------------------------------------------------" << endl;
-                            LeftShift(&third);
-                            break;
-                        case 4:
-                            break;
-                        default:
-                            cout << "Choice is Invalid !!...Try Again" << endl
-                                 << "--------------------------------------------------------" << endl;
-                            break;
-                        }
-                        break;
-                        // end of Left Shift operation
-
-                    // Right Shift operation
-                    case 18:
-                        cout << "Choose The array to perform Right Shift: " << endl
-                             << "1. Array 'A'" << endl
-                             << "2. Array 'B'" << endl
-                             << "3. Array 'C'" << endl
-                             << "4. Back." << endl
-                             << "--------------------------------------------------------" << endl
-                             << "Your choice : ";
-                        cin >> Choice;
-                        switch (Choice)
-                        {
-                        case 1:
-                            cout << "Right Shift of array A is done. " << endl
-                                 << "--------------------------------------------------------" << endl;
-                            RightShift(&first);
-                            break;
-                        case 2:
-                            cout << "Right Shift of array B is done. " << endl
-                                 << "--------------------------------------------------------" << endl;
-                            RightShift(&second);
-                            break;
-                        case 3:
-                            cout << "Right Shift of array C is done. " << endl
-                                 << "--------------------------------------------------------" << endl;
-                            RightShift(&third);
-                            break;
-                        case 4:
-                            break;
-                        default:
-                            cout << "Choice is Invalid !!...Try Again" << endl
-                                 << "--------------------------------------------------------" << endl;
-                            break;
-                        }
-                        break;
-                        // end of Right Shift operation
-
-                    // checking if array is sorted or not operation
-                    case 19:
-                        cout << "Choose The array to check if it is sorted or not: " << endl
-                             << "1. Array 'A'" << endl
-                             << "2. Array 'B'" << endl
-                             << "3. Array 'C'" << endl
-                             << "4. Back." << endl
-                             << "--------------------------------------------------------" << endl
-                             <<"Your choice : ";
-                        cin >> Choice;
-                        cout<<endl
-                            <<"Note:- If the answer is '1' that means array is sorted, otherwise array is not sorted."
-                            <<endl<<"Ans: ";
-                        switch (Choice)
-                        {
-                        case 1:
-                            cout << "Ans: " << CheckSort(first) << endl
-                                 << "--------------------------------------------------------" << endl;
-                            break;
-                        case 2:
-                            cout << "Ans: " << CheckSort(second) << endl
-                                 << "--------------------------------------------------------" << endl;
-                            break;
-                        case 3:
-                            cout << "Ans: " << CheckSort(third) << endl
-                                 << "--------------------------------------------------------" << endl;
-                            break;
-                        case 4:
-                            break;
-                        default:
-                            cout << "Choice is Invalid !!...Try Again" << endl
-                                 << "--------------------------------------------------------" << endl;
-                            break;
-                        }
-                        break;
-                        // end of checking if array is sorted or not operation
-
-                    // Sum operation
-                    case 20:
-                        cout << "Choose The array to calculate total Sum of all the elements: " << endl
-                             << "1. Array 'A'" << endl
-                             << "2. Array 'B'" << endl
-                             << "3. Array 'C'" << endl
-                             << "4. Back." << endl
-                             << "--------------------------------------------------------" << endl
-                             << "Your choice : ";
-                        cin >> Choice;
-                        switch (Choice)
-                        {
-                        case 1:
-                            cout << "sum of all elements of array A is: " << sum(first) << endl
-                                 << "--------------------------------------------------------" << endl;
-                            break;
-                        case 2:
-                            cout << "sum of all elements of array B is: " << sum(second) << endl
-                                 << "--------------------------------------------------------" << endl;
-                            break;
-                        case 3:
-                            cout << "sum of all elements of array C is: " << sum(third) << endl
-                                 << "--------------------------------------------------------" << endl;
-                            break;
-                        case 4:
-                            break;
-                        default:
-                            cout << "Choice is Invalid !!...Try Again" << endl
-                                 << "--------------------------------------------------------" << endl;
-                            break;
-                        }
-                        break;
-                        // end of Sum operation
-
-                    case 21:
-                        break;
-                    default:
-                        cout << "Choice is Invalid !!...Try Again" << endl
+                        SortedInsert(&first, Element);
+                        cout << "Element " << Element << " have been Inserted. " << endl
                              << "--------------------------------------------------------" << endl;
-                        break;
+                    }
+                    else
+                    { // otherwise give an error
+                        cout << "Array is not sorted!....use another insert operation"
+                             << "--------------------------------------------------------" << endl;
+                    }
+                    break;
+                case 2:
+                    // checking if array is sorted or not
+                    if (CheckSort(second))
+                    { // if yes then only insert the element
+                        cout << "Enter The element to Insert: ";
+                        cin >> Element;
+                        SortedInsert(&second, Element);
+                        cout << "Element " << Element << " have been Inserted. " << endl
+                             << "--------------------------------------------------------" << endl;
+                    }
+
+                    { // otherwise give an error
+                        cout << "Array is not sorted!....use another insert operation"
+                             << "--------------------------------------------------------" << endl;
+                    }
+                    break;
+                case 3:
+                    // checking if array is sorted or not
+                    if (CheckSort(third))
+                    { // if yes then only insert the element
+                        cout << "Enter The element to Insert: ";
+                        cin >> Element;
+                        SortedInsert(&third, Element);
+                        cout << "Element " << Element << " have been Inserted. " << endl
+                             << "--------------------------------------------------------" << endl;
+                    }
+
+                    { // otherwise give an error
+                        cout << "Array is not sorted!....use another insert operation"
+                             << "--------------------------------------------------------" << endl;
+                    }
+                    break;
+                case 4:
+                    break;
+                default:
+                    cout << "Choice is Invalid !!...Try Again" << endl
+                         << "--------------------------------------------------------" << endl;
+                    break;
                 }
                 break;
-            // End of Choosing operation to perform
+                // end of Insert operation for sorted array
 
-            // for Exiting the menu/program
-            case 3:
-                exit(0);
+            // Merging operation
+            case 10:
+                cout << "You only have two arrays right now so we are merging them together." << endl
+                     << "Your merged array is as below: " << endl;
+                Merge(first, second, &third);
+                display(third);
+                cout << endl
+                     << "--------------------------------------------------------" << endl;
+                break;
+                // end of Merging operation
+
+            // min operation
+            case 11:
+                cout << "Choose The array to get min element from: " << endl
+                     << "1. Array 'A'" << endl
+                     << "2. Array 'B'" << endl
+                     << "3. Array 'C'" << endl
+                     << "4. Back." << endl
+                     << "--------------------------------------------------------" << endl
+                     << "Your choice : ";
+                cin >> Choice;
+                switch (Choice)
+                {
+                case 1:
+                    cout << "Min element of array A is " << min(first) << endl
+                         << "--------------------------------------------------------" << endl;
+                    break;
+                case 2:
+                    cout << "Min element of array B is " << min(second) << endl
+                         << "--------------------------------------------------------" << endl;
+                    break;
+                case 3:
+                    cout << "Min element of array C is " << min(third) << endl
+                         << "--------------------------------------------------------" << endl;
+                    break;
+                case 4:
+                    break;
+                default:
+                    cout << "Choice is Invalid !!...Try Again" << endl
+                         << "--------------------------------------------------------" << endl;
+                    break;
+                }
+                break;
+                // end of min operation
+
+            // max operation
+            case 12:
+                cout << "Choose The array to get max element from: " << endl
+                     << "1. Array 'A'" << endl
+                     << "2. Array 'B'" << endl
+                     << "3. Array 'C'" << endl
+                     << "4. Back." << endl
+                     << "--------------------------------------------------------" << endl
+                     << "Your choice : ";
+                cin >> Choice;
+                switch (Choice)
+                {
+                case 1:
+                    cout << "Min element of array A is " << max(first) << endl
+                         << "--------------------------------------------------------" << endl;
+                    break;
+                case 2:
+                    cout << "Min element of array B is " << max(second) << endl
+                         << "--------------------------------------------------------" << endl;
+                    break;
+                case 3:
+                    cout << "Min element of array C is " << max(third) << endl
+                         << "--------------------------------------------------------" << endl;
+                    break;
+                case 4:
+                    break;
+                default:
+                    cout << "Choice is Invalid !!...Try Again" << endl
+                         << "--------------------------------------------------------" << endl;
+                    break;
+                }
+                break;
+                // end of max operation
+
+            // positive-negative operation
+            case 13:
+                cout << "Choose The array for arranging Positive numbers on right and negative numbers on left: " << endl
+                     << "1. Array 'A'" << endl
+                     << "2. Array 'B'" << endl
+                     << "3. Array 'C'" << endl
+                     << "4. Back." << endl
+                     << "--------------------------------------------------------" << endl
+                     << "Your choice : ";
+                cin >> Choice;
+                switch (Choice)
+                {
+                case 1:
+                    cout << "array A is rearranged. " << endl
+                         << "--------------------------------------------------------" << endl;
+                    sortInt(&first);
+                    break;
+                case 2:
+                    cout << "array B is rearranged. " << endl
+                         << "--------------------------------------------------------" << endl;
+                    sortInt(&second);
+                    break;
+                case 3:
+                    cout << "array C is rearranged. " << endl
+                         << "--------------------------------------------------------" << endl;
+                    sortInt(&third);
+                    break;
+                case 4:
+                    break;
+                default:
+                    cout << "Choice is Invalid !!...Try Again" << endl
+                         << "--------------------------------------------------------" << endl;
+                    break;
+                }
+                break;
+                // end of positive-negative operation
+
+            // Reverse operation
+            case 14:
+                cout << "Choose The array to Reverse elements: " << endl
+                     << "1. Array 'A'" << endl
+                     << "2. Array 'B'" << endl
+                     << "3. Array 'C'" << endl
+                     << "4. Back." << endl
+                     << "--------------------------------------------------------" << endl
+                     << "Your choice : ";
+                cin >> Choice;
+                switch (Choice)
+                {
+                case 1:
+                    cout << "array A is Reversed. " << endl
+                         << "--------------------------------------------------------" << endl;
+                    Reverse(&first);
+                    break;
+                case 2:
+                    cout << "array B is Reversed. " << endl
+                         << "--------------------------------------------------------" << endl;
+                    Reverse(&second);
+                    break;
+                case 3:
+                    cout << "array C is Reversed. " << endl
+                         << "--------------------------------------------------------" << endl;
+                    Reverse(&third);
+                    break;
+                case 4:
+                    break;
+                default:
+                    cout << "Choice is Invalid !!...Try Again" << endl
+                         << "--------------------------------------------------------" << endl;
+                    break;
+                }
+                break;
+                // end of Reverse operation
+
+            // Left Rotation operation
+            case 15:
+                cout << "Choose The array to perform left rotation: " << endl
+                     << "1. Array 'A'" << endl
+                     << "2. Array 'B'" << endl
+                     << "3. Array 'C'" << endl
+                     << "4. Back." << endl
+                     << "--------------------------------------------------------" << endl
+                     << "Your choice : ";
+                cin >> Choice;
+                switch (Choice)
+                {
+                case 1:
+                    cout << "Left rotation of array A is done. " << endl
+                         << "--------------------------------------------------------" << endl;
+                    LeftRotation(&first);
+                    break;
+                case 2:
+                    cout << "Left rotation of array B is done." << endl
+                         << "--------------------------------------------------------" << endl;
+                    LeftRotation(&second);
+                    break;
+                case 3:
+                    cout << "Left rotation of array C is done. " << endl
+                         << "--------------------------------------------------------" << endl;
+                    LeftRotation(&third);
+                    break;
+                case 4:
+                    break;
+                default:
+                    cout << "Choice is Invalid !!...Try Again" << endl
+                         << "--------------------------------------------------------" << endl;
+                    break;
+                }
+                break;
+                // end of Left Rotation operation
+
+            // Right Rotation operation
+            case 16:
+                cout << "Choose The array to perform Right rotation: " << endl
+                     << "1. Array 'A'" << endl
+                     << "2. Array 'B'" << endl
+                     << "3. Array 'C'" << endl
+                     << "4. Back." << endl
+                     << "--------------------------------------------------------" << endl
+                     << "Your choice : ";
+                cin >> Choice;
+                switch (Choice)
+                {
+                case 1:
+                    cout << "Right rotation of array A is done." << endl
+                         << "--------------------------------------------------------" << endl;
+                    RightRotation(&first);
+                    break;
+                case 2:
+                    cout << "Right rotation of array B is done." << endl
+                         << "--------------------------------------------------------" << endl;
+                    RightRotation(&second);
+                    break;
+                case 3:
+                    cout << "Right rotation of array C is done." << endl
+                         << "--------------------------------------------------------" << endl;
+                    RightRotation(&third);
+                    break;
+                case 4:
+                    break;
+                default:
+                    cout << "Choice is Invalid !!...Try Again" << endl
+                         << "--------------------------------------------------------" << endl;
+                    break;
+                }
+                break;
+                // end of Right Rotation operation
+
+            // Left Shift operation
+            case 17:
+                cout << "Choose The array to perform left Shift: " << endl
+                     << "1. Array 'A'" << endl
+                     << "2. Array 'B'" << endl
+                     << "3. Array 'C'" << endl
+                     << "4. Back." << endl
+                     << "--------------------------------------------------------" << endl
+                     << "Your choice : ";
+                cin >> Choice;
+                switch (Choice)
+                {
+                case 1:
+                    cout << "Left Shift of array A is done. " << endl
+                         << "--------------------------------------------------------" << endl;
+                    LeftShift(&first);
+                    break;
+                case 2:
+                    cout << "Left Shift of array B is done. " << endl
+                         << "--------------------------------------------------------" << endl;
+                    LeftShift(&second);
+                    break;
+                case 3:
+                    cout << "Left Shift of array C is done. " << endl
+                         << "--------------------------------------------------------" << endl;
+                    LeftShift(&third);
+                    break;
+                case 4:
+                    break;
+                default:
+                    cout << "Choice is Invalid !!...Try Again" << endl
+                         << "--------------------------------------------------------" << endl;
+                    break;
+                }
+                break;
+                // end of Left Shift operation
+
+            // Right Shift operation
+            case 18:
+                cout << "Choose The array to perform Right Shift: " << endl
+                     << "1. Array 'A'" << endl
+                     << "2. Array 'B'" << endl
+                     << "3. Array 'C'" << endl
+                     << "4. Back." << endl
+                     << "--------------------------------------------------------" << endl
+                     << "Your choice : ";
+                cin >> Choice;
+                switch (Choice)
+                {
+                case 1:
+                    cout << "Right Shift of array A is done. " << endl
+                         << "--------------------------------------------------------" << endl;
+                    RightShift(&first);
+                    break;
+                case 2:
+                    cout << "Right Shift of array B is done. " << endl
+                         << "--------------------------------------------------------" << endl;
+                    RightShift(&second);
+                    break;
+                case 3:
+                    cout << "Right Shift of array C is done. " << endl
+                         << "--------------------------------------------------------" << endl;
+                    RightShift(&third);
+                    break;
+                case 4:
+                    break;
+                default:
+                    cout << "Choice is Invalid !!...Try Again" << endl
+                         << "--------------------------------------------------------" << endl;
+                    break;
+                }
+                break;
+                // end of Right Shift operation
+
+            // checking if array is sorted or not operation
+            case 19:
+                cout << "Choose The array to check if it is sorted or not: " << endl
+                     << "1. Array 'A'" << endl
+                     << "2. Array 'B'" << endl
+                     << "3. Array 'C'" << endl
+                     << "4. Back." << endl
+                     << "--------------------------------------------------------" << endl
+                     << "Your choice : ";
+                cin >> Choice;
+                cout << endl
+                     << "Note:- If the answer is '1' that means array is sorted, otherwise array is not sorted."
+                     << endl
+                     << "Ans: ";
+                switch (Choice)
+                {
+                case 1:
+                    cout << "Ans: " << CheckSort(first) << endl
+                         << "--------------------------------------------------------" << endl;
+                    break;
+                case 2:
+                    cout << "Ans: " << CheckSort(second) << endl
+                         << "--------------------------------------------------------" << endl;
+                    break;
+                case 3:
+                    cout << "Ans: " << CheckSort(third) << endl
+                         << "--------------------------------------------------------" << endl;
+                    break;
+                case 4:
+                    break;
+                default:
+                    cout << "Choice is Invalid !!...Try Again" << endl
+                         << "--------------------------------------------------------" << endl;
+                    break;
+                }
+                break;
+                // end of checking if array is sorted or not operation
+
+            // Sum operation
+            case 20:
+                cout << "Choose The array to calculate total Sum of all the elements: " << endl
+                     << "1. Array 'A'" << endl
+                     << "2. Array 'B'" << endl
+                     << "3. Array 'C'" << endl
+                     << "4. Back." << endl
+                     << "--------------------------------------------------------" << endl
+                     << "Your choice : ";
+                cin >> Choice;
+                switch (Choice)
+                {
+                case 1:
+                    cout << "sum of all elements of array A is: " << sum(first) << endl
+                         << "--------------------------------------------------------" << endl;
+                    break;
+                case 2:
+                    cout << "sum of all elements of array B is: " << sum(second) << endl
+                         << "--------------------------------------------------------" << endl;
+                    break;
+                case 3:
+                    cout << "sum of all elements of array C is: " << sum(third) << endl
+                         << "--------------------------------------------------------" << endl;
+                    break;
+                case 4:
+                    break;
+                default:
+                    cout << "Choice is Invalid !!...Try Again" << endl
+                         << "--------------------------------------------------------" << endl;
+                    break;
+                }
+                break;
+                // end of Sum operation
+
+            case 21:
+                break;
             default:
                 cout << "Choice is Invalid !!...Try Again" << endl
                      << "--------------------------------------------------------" << endl;
                 break;
+            }
+            break;
+        // End of Choosing operation to perform
+
+        // for Exiting the menu/program
+        case 3:
+            exit(0);
+        default:
+            cout << "Choice is Invalid !!...Try Again" << endl
+                 << "--------------------------------------------------------" << endl;
+            break;
         }
         // End of switch case for main menu
     }
