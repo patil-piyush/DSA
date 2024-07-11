@@ -955,6 +955,37 @@ int main()
                         break;
                         // end of Right Rotation operation
 
+                    // Left Shift operation
+                    case 17:
+                        cout << "Choose The array to perform left Shift: " << endl
+                             << "1. Array 'A'" << endl
+                             << "2. Array 'B'" << endl
+                             << "3. Array 'C'" << endl
+                             << "4. Back." << endl
+                             << "--------------------------------------------------------" << endl;
+                        cin >> GetChoice;
+                        switch (GetChoice)
+                        {
+                        case 1:
+                            LeftShift(&first);
+                            break;
+                        case 2:
+                            LeftShift(&second);
+                            break;
+                        case 3:
+                            LeftShift(&third);
+                            break;
+                        case 4:
+                            break;
+                        default:
+                            cout << "Choice is Invalid !!...Try Again";
+                            break;
+                        }
+                        break;
+                        // end of Left Shift operation
+
+                    
+
                     default:
                         cout << "Choice is Invalid !!...Try Again";
                         break;
