@@ -607,22 +607,28 @@ int main()
                         cout << "Choose The array to Delete element: " << endl
                              << "1. Array 'A'" << endl
                              << "2. Array 'B'" << endl
-                             << "3. Back." << endl
+                             << "3. Array 'C'" << endl
+                             << "4. Back." << endl
                              << "--------------------------------------------------------" << endl
                              << "Your choice : ";
                         cin>>Choice;
                         cout << "Enter The index of the element to Delete";
-                        int DeleteIndex;
-                        cin >> DeleteIndex;
+                        cin >> Index;
                         switch (Choice)
                         {
                             case 1:
-                                Delete(&first, DeleteIndex);
+                                cout << "Deleted Element is: " << (&first, Index) << endl
+                                     << "--------------------------------------------------------" << endl;
                                 break;
                             case 2:
-                                Delete(&second, DeleteIndex);
+                                cout << "Deleted Element is: " << (&second, Index) << endl
+                                     << "--------------------------------------------------------" << endl;
                                 break;
                             case 3:
+                                cout << "Deleted Element is: " << (&first, Index) << endl
+                                     << "--------------------------------------------------------" << endl;
+                                break;
+                            case 4:
                                 break;
                             default:
                                 cout << "Choice is Invalid !!...Try Again";
@@ -640,15 +646,14 @@ int main()
                              << "--------------------------------------------------------" << endl
                              << "Your choice : ";
                         cout << "Enter The index of the element to get";
-                        int GetIndex;
-                        cin >> GetIndex;
+                        cin >> Index;
                         switch (Choice)
                         {
                         case 1:
-                            get(first, GetIndex);
+                            get(first, Index);
                             break;
                         case 2:
-                            get(second, GetIndex);
+                            get(second, Index);
                             break;
                         case 3:
                             break;
@@ -668,19 +673,17 @@ int main()
                              << "--------------------------------------------------------" << endl
                              << "Your choice : ";
                         cin >> Choice;
-                        int SetIndex;
-                        int SetElement;
                         cout << "Enter The element to set";
-                        cin>>SetElement;
+                        cin>>Element;
                         cout << "Enter The index of the element to set";
-                        cin >> SetIndex;
+                        cin >> Index;
                         switch (Choice)
                         {
                         case 1:
-                            set(&first, SetIndex, SetElement);
+                            set(&first, Index, Element);
                             break;
                         case 2:
-                            set(&second, SetIndex, SetElement);
+                            set(&second, Index, Element);
                             break;
                         case 3:
                             break;
@@ -700,19 +703,17 @@ int main()
                              << "--------------------------------------------------------" << endl
                              << "Your choice : ";
                         cin >> Choice;
-                        int InsertIndex;
-                        int InsertElement;
                         cout << "Enter The element to Insert";
-                        cin >> InsertElement;
+                        cin >> Element;
                         cout << "Enter The index of the element to Insert";
-                        cin >> InsertIndex;
+                        cin >> Index;
                         switch (Choice)
                         {
                         case 1:
-                            Insert(&first, InsertIndex, InsertElement);
+                            Insert(&first, Index, Element);
                             break;
                         case 2:
-                            Insert(&second, InsertIndex, InsertElement);
+                            Insert(&second, Index, Element);
                             break;
                         case 3:
                             break;
@@ -732,17 +733,14 @@ int main()
                              << "--------------------------------------------------------" << endl
                              << "Your choice : ";
                         cin >> Choice;
-
-                        int InsertElement;
-
                         switch (Choice)
                         {
                         case 1:
                             //checking if array is sorted or not 
                             if(CheckSort(first)){ //if yes then only insert the element
                                 cout << "Enter The element to Insert";
-                                cin >> InsertElement;
-                                SortedInsert(&first, InsertElement);
+                                cin >> Element;
+                                SortedInsert(&first, Element);
                             }
                             else{ //otherwise give an error
                                 cout << "Array is not sorted!....use another insert operation"
@@ -754,8 +752,8 @@ int main()
                             if (CheckSort(second))
                             { // if yes then only insert the element
                                 cout << "Enter The element to Insert";
-                                cin >> InsertElement;
-                                SortedInsert(&second, InsertElement);
+                                cin >> Element;
+                                SortedInsert(&second, Element);
                             }
 
                             { // otherwise give an error
