@@ -353,9 +353,9 @@ int Opr()
          << "18.Right Shift." << endl
          << "19.Check If array is sorted or not." << endl
          << "20.Sum of all elements." << endl
-         << "Back" << endl
-         << "Exit." << endl
-         << "--------------------------------------------------------" << endl;
+         << "21.Back" << endl
+         << "--------------------------------------------------------" << endl
+         << "Your choice : ";
     int n;
     cin >> n;
     return n;
@@ -367,10 +367,8 @@ int main()
     struct Array first;
     struct Array second;
     struct Array third;
-    int Choice;
-    int ch1, ch2;
-    ch1 = ch2 = 0;
-    while (ch1 == 0)
+    int Choice, Element, Index;
+    while (1)
     {
         // switch case for main menu
         switch (Menu())
@@ -379,10 +377,11 @@ int main()
             // Taking input from user
             case 1:
                 cout << "Choose The array for storing data: " << endl
-                    << "1. Array 'A'" << endl
-                    << "2. Array 'B'" << endl
-                    << "3. Back." << endl
-                    << "--------------------------------------------------------" << endl;
+                     << "1. Array 'A'" << endl
+                     << "2. Array 'B'" << endl
+                     << "3. Back." << endl
+                     << "--------------------------------------------------------" << endl
+                     << "Your choice : ";
                 cin >> Choice;
                 switch (Choice)
                 {
@@ -442,7 +441,8 @@ int main()
                              << "2. Array 'B'" << endl
                              << "3. Array 'C'" << endl
                              << "4. Back." << endl
-                             << "--------------------------------------------------------" << endl;
+                             << "--------------------------------------------------------" << endl
+                             << "Your choice : ";
                         cin >> Choice;
                         switch (Choice)
                         {
@@ -472,23 +472,23 @@ int main()
                     // Append Function
                     case 2:
                         cout << "Choose The array to Append element: " << endl
-                            << "1. Array 'A'" << endl
-                            << "2. Array 'B'" << endl
-                            << "3. Back." << endl
-                            << "--------------------------------------------------------" << endl;
+                             << "1. Array 'A'" << endl
+                             << "2. Array 'B'" << endl
+                             << "3. Back." << endl
+                             << "--------------------------------------------------------" << endl
+                             << "Your choice : ";
                         cin >> Choice;
                         cout << "Enter The element to append";
-                        int AppendElement;
-                        cin >> AppendElement;
+                        cin >> Element;
                         switch (Choice)
                         {
                             case 1:
-                                append(&first, AppendElement);
+                                append(&first, Element);
                                 cout << "Element is appended successfully in array A"<<endl
                                      <<"--------------------------------------------------------" << endl;
                                 break;
                             case 2:
-                                append(&second, AppendElement);
+                                append(&second, Element);
                                 cout << "Element is appended successfully in array B" << endl
                                      << "--------------------------------------------------------" << endl;
                                 break;
@@ -503,10 +503,11 @@ int main()
                     // Average Function
                     case 3:
                         cout << "Choose The array to find average of the same: " << endl
-                            << "1. Array 'A'" << endl
-                            << "2. Array 'B'" << endl
-                            << "3. Back." << endl
-                            << "--------------------------------------------------------" << endl;
+                             << "1. Array 'A'" << endl
+                             << "2. Array 'B'" << endl
+                             << "3. Back." << endl
+                             << "--------------------------------------------------------" << endl
+                             << "Your choice : ";
                         cin >> Choice;
                         switch (Choice)
                         {
@@ -529,33 +530,35 @@ int main()
                     //searching operations
                     case 4:
                         cout << "Choose The array to find for searching operation: " << endl
-                            << "1. Array 'A'" << endl
-                            << "2. Array 'B'" << endl
-                            << "3. Back." << endl
-                            << "--------------------------------------------------------" << endl;
+                             << "1. Array 'A'" << endl
+                             << "2. Array 'B'" << endl
+                             << "3. Back." << endl
+                             << "--------------------------------------------------------" << endl
+                             << "Your choice : ";
                         switch (Choice)
                         {
                             // searching for first array
                             case 1:
                                 cout << "Choose Type of searching operation: " << endl
-                                    << "1. Linear Search" << endl
-                                    << "2. Binary Search" << endl
-                                    << "3. Back." << endl
-                                    << "--------------------------------------------------------" << endl;
+                                     << "1. Linear Search" << endl
+                                     << "2. Binary Search" << endl
+                                     << "3. Back." << endl
+                                     << "--------------------------------------------------------" << endl
+                                     << "Your choice : ";
                                 cin >> Choice;
                                 cout << "Enter The element to Search: ";
-                                int SearchElement;
-                                cin >> SearchElement;
+                                int Element;
+                                cin >> Element;
                                 switch (Choice)
                                 {
                                     case 1:
                                         cout << "Element is present at index: ";
-                                        LinearSearch(first,SearchElement);
+                                        LinearSearch(first, Element);
                                         cout<<"Found by using linear search";
                                         break;
                                     case 2:
                                         cout<<"Element is present at index: ";
-                                        BinSearch(first, SearchElement);
+                                        BinSearch(first, Element);
                                         cout << "Found by using Binary search";
                                         break;
                                     default:
@@ -567,20 +570,21 @@ int main()
                             // searching for second array
                             case 2:
                                 cout << "Choose Type of searching operation: " << endl
-                                    << "1. Linear Search" << endl
-                                    << "2. Binary Search" << endl
-                                    << "3. Back." << endl
-                                    << "--------------------------------------------------------" << endl;
+                                     << "1. Linear Search" << endl
+                                     << "2. Binary Search" << endl
+                                     << "3. Back." << endl
+                                     << "--------------------------------------------------------" << endl
+                                     << "Your choice : ";
                                 cin >> Choice;
                                 cout << "Enter The element to Search";
-                                cin >> SearchElement;
+                                cin >> Element;
                                 switch (Choice)
                                 {
                                     case 1:
-                                        LinearSearch(second, SearchElement);
+                                        LinearSearch(second, Element);
                                         break;
                                     case 2:
-                                        BinSearch(second, SearchElement);
+                                        BinSearch(second, Element);
                                         break;
                                     default:
                                         cout << "Choice is Invalid !!...Try Again";
@@ -604,7 +608,9 @@ int main()
                              << "1. Array 'A'" << endl
                              << "2. Array 'B'" << endl
                              << "3. Back." << endl
-                             << "--------------------------------------------------------" << endl;
+                             << "--------------------------------------------------------" << endl
+                             << "Your choice : ";
+                        cin>>Choice;
                         cout << "Enter The index of the element to Delete";
                         int DeleteIndex;
                         cin >> DeleteIndex;
@@ -631,7 +637,8 @@ int main()
                              << "1. Array 'A'" << endl
                              << "2. Array 'B'" << endl
                              << "3. Back." << endl
-                             << "--------------------------------------------------------" << endl;
+                             << "--------------------------------------------------------" << endl
+                             << "Your choice : ";
                         cout << "Enter The index of the element to get";
                         int GetIndex;
                         cin >> GetIndex;
@@ -658,7 +665,8 @@ int main()
                              << "1. Array 'A'" << endl
                              << "2. Array 'B'" << endl
                              << "3. Back." << endl
-                             << "--------------------------------------------------------" << endl;
+                             << "--------------------------------------------------------" << endl
+                             << "Your choice : ";
                         cin >> Choice;
                         int SetIndex;
                         int SetElement;
@@ -689,7 +697,8 @@ int main()
                              << "1. Array 'A'" << endl
                              << "2. Array 'B'" << endl
                              << "3. Back." << endl
-                             << "--------------------------------------------------------" << endl;
+                             << "--------------------------------------------------------" << endl
+                             << "Your choice : ";
                         cin >> Choice;
                         int InsertIndex;
                         int InsertElement;
@@ -720,7 +729,8 @@ int main()
                              << "1. Array 'A'" << endl
                              << "2. Array 'B'" << endl
                              << "3. Back." << endl
-                             << "--------------------------------------------------------" <<endl;
+                             << "--------------------------------------------------------" << endl
+                             << "Your choice : ";
                         cin >> Choice;
 
                         int InsertElement;
@@ -779,7 +789,8 @@ int main()
                              << "2. Array 'B'" << endl
                              << "3. Array 'C'" << endl
                              << "4. Back." << endl
-                             << "--------------------------------------------------------" << endl;
+                             << "--------------------------------------------------------" << endl
+                             << "Your choice : ";
                         cin >> Choice;
                         switch (Choice)
                         {
@@ -808,7 +819,8 @@ int main()
                              << "2. Array 'B'" << endl
                              << "3. Array 'C'" << endl
                              << "4. Back." << endl
-                             << "--------------------------------------------------------" << endl;
+                             << "--------------------------------------------------------" << endl
+                             << "Your choice : ";
                         cin >> Choice;
                         switch (Choice)
                         {
@@ -837,7 +849,8 @@ int main()
                              << "2. Array 'B'" << endl
                              << "3. Array 'C'" << endl
                              << "4. Back." << endl
-                             << "--------------------------------------------------------" << endl;
+                             << "--------------------------------------------------------" << endl
+                             << "Your choice : ";
                         cin >> Choice;
                         switch (Choice)
                         {
@@ -866,7 +879,8 @@ int main()
                              << "2. Array 'B'" << endl
                              << "3. Array 'C'" << endl
                              << "4. Back." << endl
-                             << "--------------------------------------------------------" << endl;
+                             << "--------------------------------------------------------" << endl
+                             << "Your choice : ";
                         cin >> Choice;
                         switch (Choice)
                         {
@@ -895,7 +909,8 @@ int main()
                              << "2. Array 'B'" << endl
                              << "3. Array 'C'" << endl
                              << "4. Back." << endl
-                             << "--------------------------------------------------------" << endl;
+                             << "--------------------------------------------------------" << endl
+                             << "Your choice : ";
                         cin >> Choice;
                         switch (Choice)
                         {
@@ -924,7 +939,8 @@ int main()
                              << "2. Array 'B'" << endl
                              << "3. Array 'C'" << endl
                              << "4. Back." << endl
-                             << "--------------------------------------------------------" << endl;
+                             << "--------------------------------------------------------" << endl
+                             << "Your choice : ";
                         cin >> Choice;
                         switch (Choice)
                         {
@@ -953,7 +969,8 @@ int main()
                              << "2. Array 'B'" << endl
                              << "3. Array 'C'" << endl
                              << "4. Back." << endl
-                             << "--------------------------------------------------------" << endl;
+                             << "--------------------------------------------------------" << endl
+                             << "Your choice : ";
                         cin >> Choice;
                         switch (Choice)
                         {
@@ -982,7 +999,8 @@ int main()
                              << "2. Array 'B'" << endl
                              << "3. Array 'C'" << endl
                              << "4. Back." << endl
-                             << "--------------------------------------------------------" << endl;
+                             << "--------------------------------------------------------" << endl
+                             << "Your choice : ";
                         cin >> Choice;
                         switch (Choice)
                         {
@@ -1011,18 +1029,25 @@ int main()
                              << "2. Array 'B'" << endl
                              << "3. Array 'C'" << endl
                              << "4. Back." << endl
-                             << "--------------------------------------------------------" << endl;
+                             << "--------------------------------------------------------" << endl
+                             <<"Your choice : ";
                         cin >> Choice;
+                        cout<<endl
+                            <<"Note:- If the answer is '1' that means array is sorted, otherwise array is not sorted."
+                            <<endl;
                         switch (Choice)
                         {
                         case 1:
-                            CheckSort(first);
+                            cout << CheckSort(first) << endl
+                                 << "--------------------------------------------------------" << endl;
                             break;
                         case 2:
-                            CheckSort(second);
+                            cout << CheckSort(second) << endl
+                                 << "--------------------------------------------------------" << endl;
                             break;
                         case 3:
-                            CheckSort(third);
+                            cout << CheckSort(third) << endl
+                                 << "--------------------------------------------------------" << endl;
                             break;
                         case 4:
                             break;
@@ -1040,7 +1065,8 @@ int main()
                              << "2. Array 'B'" << endl
                              << "3. Array 'C'" << endl
                              << "4. Back." << endl
-                             << "--------------------------------------------------------" << endl;
+                             << "--------------------------------------------------------" << endl
+                             << "Your choice : ";
                         cin >> Choice;
                         switch (Choice)
                         {
@@ -1065,6 +1091,8 @@ int main()
                         break;
                         // end of Sum operation
 
+                    case 21:
+                        break;
                     default:
                         cout << "Choice is Invalid !!...Try Again";
                         break;
@@ -1074,7 +1102,6 @@ int main()
 
             // for Exiting the menu/program
             case 3:
-                ch1 = 1;
                 exit(0);
             default:
                 cout << "Choice is Invalid !!...Try Again";
