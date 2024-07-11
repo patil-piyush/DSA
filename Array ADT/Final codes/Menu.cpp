@@ -424,7 +424,8 @@ int main()
                         break;
 
                     default:
-                        cout << "Choice is Invalid !!...Try Again";
+                        cout << "Choice is Invalid !!...Try Again" << endl
+                             << "--------------------------------------------------------" << endl;
                         break;
                 }
                 break;
@@ -464,7 +465,8 @@ int main()
                             case 4:
                                 break;
                             default:
-                                cout << "Choice is Invalid !!...Try Again";
+                                cout << "Choice is Invalid !!...Try Again" << endl
+                                     << "--------------------------------------------------------" << endl;
                                 break;
                         }
                         break;
@@ -501,7 +503,8 @@ int main()
                             case 4:
                                 break;
                             default:
-                                cout << "Choice is Invalid !!...Try Again";
+                                cout << "Choice is Invalid !!...Try Again" << endl
+                                     << "--------------------------------------------------------" << endl;
                                 break;
                         }
                         break;
@@ -533,7 +536,8 @@ int main()
                             case 4:
                                 break;
                             default:
-                                cout << "Choice is Invalid !!...Try Again";
+                                cout << "Choice is Invalid !!...Try Again" << endl
+                                     << "--------------------------------------------------------" << endl;
                                 break;
                         }
                         break;
@@ -576,7 +580,8 @@ int main()
                                              << "Found by using Binary search" << endl;
                                         break;
                                     default:
-                                        cout << "Choice is Invalid !!...Try Again";
+                                        cout << "Choice is Invalid !!...Try Again" << endl
+                                             << "--------------------------------------------------------" << endl;
                                         break;
                                 }
                                 break;
@@ -607,7 +612,8 @@ int main()
                                          << "Found by using Binary search" << endl;
                                     break;
                                 default:
-                                    cout << "Choice is Invalid !!...Try Again";
+                                    cout << "Choice is Invalid !!...Try Again" << endl
+                                         << "--------------------------------------------------------" << endl;
                                     break;
                                 }
                                 break;
@@ -637,7 +643,8 @@ int main()
                                          << "Found by using Binary search" << endl;
                                     break;
                                 default:
-                                    cout << "Choice is Invalid !!...Try Again";
+                                    cout << "Choice is Invalid !!...Try Again" << endl
+                                         << "--------------------------------------------------------" << endl;
                                     break;
                                 }
                                 break;
@@ -646,7 +653,8 @@ int main()
                                 break;
                                 
                             default:
-                                cout << "Choice is Invalid !!...Try Again";
+                                cout << "Choice is Invalid !!...Try Again" << endl
+                                     << "--------------------------------------------------------" << endl;
                                 break;
                         }
                         break;
@@ -681,7 +689,8 @@ int main()
                             case 4:
                                 break;
                             default:
-                                cout << "Choice is Invalid !!...Try Again";
+                                cout << "Choice is Invalid !!...Try Again" << endl
+                                     << "--------------------------------------------------------" << endl;
                                 break;
                         }
                         break;
@@ -716,7 +725,8 @@ int main()
                         case 4:
                             break;
                         default:
-                            cout << "Choice is Invalid !!...Try Again";
+                            cout << "Choice is Invalid !!...Try Again" << endl
+                                 << "--------------------------------------------------------" << endl;
                             break;
                         }
                         break;
@@ -756,7 +766,8 @@ int main()
                         case 4:
                             break;
                         default:
-                            cout << "Choice is Invalid !!...Try Again";
+                            cout << "Choice is Invalid !!...Try Again" << endl
+                                 << "--------------------------------------------------------" << endl;
                             break;
                         }
                         break;
@@ -795,7 +806,8 @@ int main()
                         case 4:
                             break;
                         default:
-                            cout << "Choice is Invalid !!...Try Again";
+                            cout << "Choice is Invalid !!...Try Again" << endl
+                                 << "--------------------------------------------------------" << endl;
                             break;
                         }
                         break;
@@ -862,7 +874,8 @@ int main()
                         case 4:
                             break;
                         default:
-                            cout << "Choice is Invalid !!...Try Again";
+                            cout << "Choice is Invalid !!...Try Again" << endl
+                                 << "--------------------------------------------------------" << endl;
                             break;
                         }
                         break;
@@ -905,7 +918,8 @@ int main()
                         case 4:
                             break;
                         default:
-                            cout << "Choice is Invalid !!...Try Again";
+                            cout << "Choice is Invalid !!...Try Again" << endl
+                                 << "--------------------------------------------------------" << endl;
                             break;
                         }
                         break;
@@ -938,7 +952,8 @@ int main()
                         case 4:
                             break;
                         default:
-                            cout << "Choice is Invalid !!...Try Again";
+                            cout << "Choice is Invalid !!...Try Again" << endl
+                                 << "--------------------------------------------------------" << endl;
                             break;
                         }
                         break;
@@ -974,7 +989,8 @@ int main()
                         case 4:
                             break;
                         default:
-                            cout << "Choice is Invalid !!...Try Again";
+                            cout << "Choice is Invalid !!...Try Again" << endl
+                                 << "--------------------------------------------------------" << endl;
                             break;
                         }
                         break;
@@ -1010,7 +1026,8 @@ int main()
                         case 4:
                             break;
                         default:
-                            cout << "Choice is Invalid !!...Try Again";
+                            cout << "Choice is Invalid !!...Try Again" << endl
+                                 << "--------------------------------------------------------" << endl;
                             break;
                         }
                         break;
@@ -1046,7 +1063,8 @@ int main()
                         case 4:
                             break;
                         default:
-                            cout << "Choice is Invalid !!...Try Again";
+                            cout << "Choice is Invalid !!...Try Again" << endl
+                                 << "--------------------------------------------------------" << endl;
                             break;
                         }
                         break;
@@ -1082,7 +1100,8 @@ int main()
                         case 4:
                             break;
                         default:
-                            cout << "Choice is Invalid !!...Try Again";
+                            cout << "Choice is Invalid !!...Try Again" << endl
+                                 << "--------------------------------------------------------" << endl;
                             break;
                         }
                         break;
@@ -1118,7 +1137,8 @@ int main()
                         case 4:
                             break;
                         default:
-                            cout << "Choice is Invalid !!...Try Again";
+                            cout << "Choice is Invalid !!...Try Again" << endl
+                                 << "--------------------------------------------------------" << endl;
                             break;
                         }
                         break;
@@ -1154,7 +1174,8 @@ int main()
                         case 4:
                             break;
                         default:
-                            cout << "Choice is Invalid !!...Try Again";
+                            cout << "Choice is Invalid !!...Try Again" << endl
+                                 << "--------------------------------------------------------" << endl;
                             break;
                         }
                         break;
@@ -1190,7 +1211,8 @@ int main()
                         case 4:
                             break;
                         default:
-                            cout << "Choice is Invalid !!...Try Again";
+                            cout << "Choice is Invalid !!...Try Again" << endl
+                                 << "--------------------------------------------------------" << endl;
                             break;
                         }
                         break;
@@ -1223,7 +1245,8 @@ int main()
                         case 4:
                             break;
                         default:
-                            cout << "Choice is Invalid !!...Try Again";
+                            cout << "Choice is Invalid !!...Try Again" << endl
+                                 << "--------------------------------------------------------" << endl;
                             break;
                         }
                         break;
@@ -1232,7 +1255,8 @@ int main()
                     case 21:
                         break;
                     default:
-                        cout << "Choice is Invalid !!...Try Again";
+                        cout << "Choice is Invalid !!...Try Again" << endl
+                             << "--------------------------------------------------------" << endl;
                         break;
                 }
                 break;
@@ -1242,7 +1266,8 @@ int main()
             case 3:
                 exit(0);
             default:
-                cout << "Choice is Invalid !!...Try Again";
+                cout << "Choice is Invalid !!...Try Again" << endl
+                     << "--------------------------------------------------------" << endl;
                 break;
         }
         // End of switch case for main menu
