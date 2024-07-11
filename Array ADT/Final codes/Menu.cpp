@@ -695,15 +695,18 @@ int main()
                              << "3. Back." << endl
                              << "--------------------------------------------------------" << endl
                              << "Your choice : ";
-                        cout << "Enter The index of the element to get";
+                        cin>>Choice;
+                        cout << "Enter The index of the element to get: ";
                         cin >> Index;
                         switch (Choice)
                         {
                         case 1:
-                            get(first, Index);
+                            cout << "The element you want is: " << get(first, Index) << endl
+                                 << "--------------------------------------------------------" << endl;
                             break;
                         case 2:
-                            get(second, Index);
+                            cout << "The element you want is: " << get(second, Index) << endl
+                                 << "--------------------------------------------------------" << endl;
                             break;
                         case 3:
                             break;
@@ -723,16 +726,20 @@ int main()
                              << "--------------------------------------------------------" << endl
                              << "Your choice : ";
                         cin >> Choice;
-                        cout << "Enter The element to set";
+                        cout << "Enter The element to set: ";
                         cin>>Element;
-                        cout << "Enter The index of the element to set";
+                        cout << "Enter The index of the element to set: ";
                         cin >> Index;
                         switch (Choice)
                         {
                         case 1:
+                            cout << "Element " << Element << " have been set at index " << Index << "." << endl
+                                 << "--------------------------------------------------------" << endl;
                             set(&first, Index, Element);
                             break;
                         case 2:
+                            cout << "Element " << Element << " have been set at index " << Index << "." << endl
+                                 << "--------------------------------------------------------" << endl;
                             set(&second, Index, Element);
                             break;
                         case 3:
