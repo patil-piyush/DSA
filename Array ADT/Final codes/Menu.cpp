@@ -335,25 +335,25 @@ int Opr()
     cout << "Choose one operations from the following options: " << endl
          << "1. Display." << endl
          << "2. Append an element." << endl
-         << "3.Average." << endl
-         << "4.Searching." << endl
-         << "5.Delete an element." << endl
-         << "6.Display an element." << endl
-         << "7.Replace an element." << endl
-         << "8.Insert an element." << endl
-         << "9.Insert an element in sorted array." << endl
-         << "10.Merge." << endl
-         << "11.Find Minimum element." << endl
-         << "12.Find Maximum element." << endl
-         << "13.Arrange elements in order as positive negative." << endl
-         << "14.Reverse." << endl
-         << "15.Left Rotation." << endl
-         << "16.Right Rotation." << endl
-         << "17.Left Shift." << endl
-         << "18.Right Shift." << endl
-         << "19.Check If array is sorted or not." << endl
-         << "20.Sum of all elements." << endl
-         << "21.Back" << endl
+         << "3. Average." << endl
+         << "4. Searching." << endl
+         << "5. Delete an element." << endl
+         << "6. Display an element." << endl
+         << "7. Replace an element." << endl
+         << "8. Insert an element." << endl
+         << "9. Insert an element in sorted array." << endl
+         << "10. Merge." << endl
+         << "11. Find Minimum element." << endl
+         << "12. Find Maximum element." << endl
+         << "13. Arrange elements in order as positive negative." << endl
+         << "14. Reverse." << endl
+         << "15. Left Rotation." << endl
+         << "16. Right Rotation." << endl
+         << "17. Left Shift." << endl
+         << "18. Right Shift." << endl
+         << "19. Check If array is sorted or not." << endl
+         << "20. Sum of all elements." << endl
+         << "21. Back." << endl
          << "--------------------------------------------------------" << endl
          << "Your choice : ";
     int n;
