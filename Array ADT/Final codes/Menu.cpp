@@ -448,17 +448,17 @@ int main()
                         switch (Choice)
                         {
                             case 1:
-                                cout<<"Elements of Array A:"<<endl;
+                                cout<<"Elements of Array A: "<<endl;
                                 display(first);
                                 cout << "--------------------------------------------------------" << endl;
                                 break;
                             case 2:
-                                cout << "Elements of Array B:" << endl;
+                                cout << "Elements of Array B: " << endl;
                                 display(second);
                                 cout << "--------------------------------------------------------" << endl;
                                 break;
                             case 3:
-                                cout << "Elements of Array C:" << endl;
+                                cout << "Elements of Array C: " << endl;
                                 display(third);
                                 cout << "--------------------------------------------------------" << endl;
                                 break;
@@ -487,17 +487,17 @@ int main()
                         {
                             case 1:
                                 append(&first, Element);
-                                cout << "Element is appended successfully in array A"<<endl
+                                cout << "Element is appended successfully in array A."<<endl
                                      <<"--------------------------------------------------------" << endl;
                                 break;
                             case 2:
                                 append(&second, Element);
-                                cout << "Element is appended successfully in array B" << endl
+                                cout << "Element is appended successfully in array B." << endl
                                      << "--------------------------------------------------------" << endl;
                                 break;
                             case 3:
                                 append(&third, Element);
-                                cout << "Element is appended successfully in array C" << endl
+                                cout << "Element is appended successfully in array C." << endl
                                      << "--------------------------------------------------------" << endl;
                                 break;
                             case 4:
@@ -783,9 +783,9 @@ int main()
                              << "--------------------------------------------------------" << endl
                              << "Your choice : ";
                         cin >> Choice;
-                        cout << "Enter The element to Insert";
+                        cout << "Enter The element to Insert: ";
                         cin >> Element;
-                        cout << "Enter The index of the element to Insert";
+                        cout << "Enter The index of the element to Insert: ";
                         cin >> Index;
                         switch (Choice)
                         {
