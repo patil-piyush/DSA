@@ -1013,6 +1013,35 @@ int main()
                         break;
                         // end of Right Shift operation
 
+                    // checking if array is sorted or not operation
+                    case 19:
+                        cout << "Choose The array to check if it is sorted or not: " << endl
+                             << "1. Array 'A'" << endl
+                             << "2. Array 'B'" << endl
+                             << "3. Array 'C'" << endl
+                             << "4. Back." << endl
+                             << "--------------------------------------------------------" << endl;
+                        cin >> GetChoice;
+                        switch (GetChoice)
+                        {
+                        case 1:
+                            CheckSort(first);
+                            break;
+                        case 2:
+                            CheckSort(second);
+                            break;
+                        case 3:
+                            CheckSort(third);
+                            break;
+                        case 4:
+                            break;
+                        default:
+                            cout << "Choice is Invalid !!...Try Again";
+                            break;
+                        }
+                        break;
+                        // end of checking if array is sorted or not operation
+
                     default:
                         cout << "Choice is Invalid !!...Try Again";
                         break;
