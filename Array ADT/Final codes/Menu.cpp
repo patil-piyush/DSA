@@ -367,6 +367,7 @@ int main()
     struct Array first;
     struct Array second;
     struct Array third;
+    int Choice;
     int ch1, ch2;
     ch1 = ch2 = 0;
     while (ch1 == 0)
@@ -382,9 +383,8 @@ int main()
                     << "2. Array 'B'" << endl
                     << "3. Back." << endl
                     << "--------------------------------------------------------" << endl;
-                int InputChoice;
-                cin >> InputChoice;
-                switch (InputChoice)
+                cin >> Choice;
+                switch (Choice)
                 {
                     case 1:
                         // taking input for First array
@@ -443,9 +443,8 @@ int main()
                              << "3. Array 'C'" << endl
                              << "4. Back." << endl
                              << "--------------------------------------------------------" << endl;
-                        int DisplayChoice;
-                        cin>>DisplayChoice;
-                        switch (DisplayChoice)
+                        cin >> Choice;
+                        switch (Choice)
                         {
                             case 1:
                                 cout<<"Elements of Array A:"<<endl;
@@ -477,12 +476,11 @@ int main()
                             << "2. Array 'B'" << endl
                             << "3. Back." << endl
                             << "--------------------------------------------------------" << endl;
-                        int AppendChoice;
-                        cin>>AppendChoice;
+                        cin >> Choice;
                         cout << "Enter The element to append";
                         int AppendElement;
                         cin >> AppendElement;
-                        switch (AppendChoice)
+                        switch (Choice)
                         {
                             case 1:
                                 append(&first, AppendElement);
@@ -509,9 +507,8 @@ int main()
                             << "2. Array 'B'" << endl
                             << "3. Back." << endl
                             << "--------------------------------------------------------" << endl;
-                        int AverageChoice;
-                        cin >> AverageChoice;
-                        switch (AverageChoice)
+                        cin >> Choice;
+                        switch (Choice)
                         {
                             case 1:
                                 cout<<"Average of elements of A is: "<<average(first)<<endl
@@ -536,8 +533,7 @@ int main()
                             << "2. Array 'B'" << endl
                             << "3. Back." << endl
                             << "--------------------------------------------------------" << endl;
-                        int SearchChoice;
-                        switch (SearchChoice)
+                        switch (Choice)
                         {
                             // searching for first array
                             case 1:
@@ -546,12 +542,11 @@ int main()
                                     << "2. Binary Search" << endl
                                     << "3. Back." << endl
                                     << "--------------------------------------------------------" << endl;
-                                int OprChoice;
-                                cin >> OprChoice;
+                                cin >> Choice;
                                 cout << "Enter The element to Search: ";
                                 int SearchElement;
                                 cin >> SearchElement;
-                                switch (OprChoice)
+                                switch (Choice)
                                 {
                                     case 1:
                                         cout << "Element is present at index: ";
@@ -576,10 +571,10 @@ int main()
                                     << "2. Binary Search" << endl
                                     << "3. Back." << endl
                                     << "--------------------------------------------------------" << endl;
-                                cin >> OprChoice;
+                                cin >> Choice;
                                 cout << "Enter The element to Search";
                                 cin >> SearchElement;
-                                switch (OprChoice)
+                                switch (Choice)
                                 {
                                     case 1:
                                         LinearSearch(second, SearchElement);
@@ -610,11 +605,10 @@ int main()
                              << "2. Array 'B'" << endl
                              << "3. Back." << endl
                              << "--------------------------------------------------------" << endl;
-                        int DeleteChoice;
                         cout << "Enter The index of the element to Delete";
                         int DeleteIndex;
                         cin >> DeleteIndex;
-                        switch (DeleteChoice)
+                        switch (Choice)
                         {
                             case 1:
                                 Delete(&first, DeleteIndex);
@@ -638,11 +632,10 @@ int main()
                              << "2. Array 'B'" << endl
                              << "3. Back." << endl
                              << "--------------------------------------------------------" << endl;
-                        int GetChoice;
                         cout << "Enter The index of the element to get";
                         int GetIndex;
                         cin >> GetIndex;
-                        switch (GetChoice)
+                        switch (Choice)
                         {
                         case 1:
                             get(first, GetIndex);
@@ -1041,6 +1034,38 @@ int main()
                         }
                         break;
                         // end of checking if array is sorted or not operation
+
+                    // Sum operation
+                    case 20:
+                        cout << "Choose The array to calculate total Sum of all the elements: " << endl
+                             << "1. Array 'A'" << endl
+                             << "2. Array 'B'" << endl
+                             << "3. Array 'C'" << endl
+                             << "4. Back." << endl
+                             << "--------------------------------------------------------" << endl;
+                        cin >> Choice;
+                        switch (Choice)
+                        {
+                        case 1:
+                            cout<<"sum of all elements of array A is: "<<sum(first)
+                                << "--------------------------------------------------------" << endl;
+                            break;
+                        case 2:
+                            cout << "sum of all elements of array B is: " << sum(second)
+                                 << "--------------------------------------------------------" << endl;
+                            break;
+                        case 3:
+                            cout << "sum of all elements of array C is: " << sum(third)
+                                 << "--------------------------------------------------------" << endl;
+                            break;
+                        case 4:
+                            break;
+                        default:
+                            cout << "Choice is Invalid !!...Try Again";
+                            break;
+                        }
+                        break;
+                        // end of Sum operation
 
                     default:
                         cout << "Choice is Invalid !!...Try Again";
