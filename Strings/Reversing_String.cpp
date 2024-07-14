@@ -23,7 +23,7 @@ int main()
     // method 2 - without using extra array
     i = j = 0;
     char c[10] = "python";
-    for (i = 0; a[i] != '\0'; i++)
+    for (i = 0; c[i] != '\0'; i++)
     {
     }
     i = i - 1;
