@@ -21,7 +21,8 @@ int main()
 
     for (i = 0; a[i] != '\0'; i++)
     {
-        if(a[i]!=b[i]){
+        if (a[i] != b[i])
+        {
             cout << "not a palindrom" << endl;
             exit(0);
         }
@@ -30,14 +31,17 @@ int main()
 
     // method 2 - compare the same array from starting and ending
     char c[10] = "madamm";
-    for (i = 0; c[i] != '\0'; i++){}
+    for (i = 0; c[i] != '\0'; i++)
+    {
+    }
     i = i - 1;
     for (j = 0; j < i; j++, i--)
     {
-        if(c[i]!=c[j]){
+        if (c[i] != c[j])
+        {
             cout << "not a palindrom" << endl;
             exit(0);
-        } 
+        }
     }
     cout << "palindrom" << endl;
 
