@@ -16,6 +16,7 @@ int main()
     }
     cout << s;
 
+
     // for lowercase to uppercase
     for (int i = 0; s[i] != '\0'; i++)
     {
