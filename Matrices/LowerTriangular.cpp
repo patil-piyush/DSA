@@ -36,7 +36,7 @@ int get(struct matrix m, int i, int j){
 get function for column major
     int get(struct matrix m, int i, int j){
         if(i>=j){
-            return m.a[m->n*(j-1)-(j-2)(j-1)/2+i-j];
+            return m.a[m.n*(j-1)-(j-2)(j-1)/2+i-j];
         }
         else{
             return 0;
@@ -66,7 +66,7 @@ display function for column major
         for(int i=1; i<=m.n; i++){
             for(int j=1; j<=m.n; j++){
                 if(i>=j){
-                    cout<<m.a[m->n*(j-1)-(j-2)(j-1)/2+i-j]<<" ";
+                    cout<<m.a[m.n*(j-1)-(j-2)(j-1)/2+i-j]<<" ";
                 }
                 else{
                     cout<<"0 ";

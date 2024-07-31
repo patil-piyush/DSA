@@ -59,6 +59,14 @@
   "files.associations": {
     "ostream": "cpp",
     "iostream": "cpp",
-    "string_view": "cpp"
+    "string_view": "cpp",
+    "array": "cpp",
+    "*.tcc": "cpp",
+    "memory": "cpp",
+    "functional": "cpp",
+    "istream": "cpp",
+    "tuple": "cpp",
+    "utility": "cpp",
+    "new": "cpp"
   }
 }
