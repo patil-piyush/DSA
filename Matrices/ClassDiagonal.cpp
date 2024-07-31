@@ -17,7 +17,7 @@ class diagonal{
 
 diagonal::diagonal(){
     n = 2;
-    a = new int[n];
+    a = new int[2];
 }
 
 diagonal::diagonal(int n){
