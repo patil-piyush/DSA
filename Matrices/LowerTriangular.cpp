@@ -44,6 +44,7 @@ get function for column major
     }
 */
 
+//display function for row major
 void display(struct matrix m){
     for(int i=1; i<=m.n; i++){
         for(int j=1; j<=m.n; j++){
@@ -58,6 +59,24 @@ void display(struct matrix m){
     }
     cout<<endl;
 }
+
+/*
+display function for column major
+    void display(struct matrix m){
+        for(int i=1; i<=m.n; i++){
+            for(int j=1; j<=m.n; j++){
+                if(i>=j){
+                    cout<<m.a[m->n*(j-1)-(j-2)(j-1)/2+i-j]<<" ";
+                }
+                else{
+                    cout<<"0 ";
+                }
+            }
+            cout<<endl;
+        }
+        cout<<endl;
+    }
+*/
 
 int main(){
     struct matrix m;
