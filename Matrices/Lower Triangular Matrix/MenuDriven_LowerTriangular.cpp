@@ -10,7 +10,8 @@ int Menu()
          << "2. Set Element." << endl
          << "3. Get Element." << endl
          << "4. Display Array." << endl
-         << "5. Exit." << endl
+         << "5. Back." << endl
+         << "6. Exit." << endl
          << "--------------------------------------------------------" << endl;
     cin >> n;
     return n;
@@ -158,14 +159,14 @@ int main()
 {
     struct matrix d;
     int i, j, Element, sideMenu;
-    cout << "Choose from the following options: " << endl
-         << "1. Row Major Representation." << endl
-         << "2. Column Major Representation." << endl
-         << "3. Exit." << endl
-         << "--------------------------------------------------------" << endl;
     cin >> sideMenu;
     while (1)
     {
+        cout << "Choose from the following options: " << endl
+             << "1. Row Major Representation." << endl
+             << "2. Column Major Representation." << endl
+             << "3. Exit." << endl
+             << "--------------------------------------------------------" << endl;
         switch (sideMenu)
         {
         case 1:
@@ -194,6 +195,8 @@ int main()
                 Rowdisplay(d);
                 break;
             case 5:
+                break;
+            case 6:
                 exit(0);
             default:
                 cout << "Incorrect choice ....... choose again!!" << endl;
@@ -227,6 +230,8 @@ int main()
                 Coldisplay(d);
                 break;
             case 5:
+                break;
+            case 6:
                 exit(0);
             default:
                 cout << "Incorrect choice ....... choose again!!" << endl;
