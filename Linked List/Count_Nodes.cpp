@@ -26,23 +26,36 @@ void create(int a[], int n)
     }
 }
 
-// simple display function for displaying linked list
-int count(struct Node *p){
-    int l=0;
-    while(p){
+// simple display function for counting nodes of a linked list
+int count(struct Node *p)
+{
+    int l = 0;
+    while (p)
+    {
         l++;
-        p=p->next;
+        p = p->next;
     }
     return l;
 }
 
-// recursive display function for displaying linked list
-
+// recursive display function for counting nodes of a linked list
+int Rcount(struct Node *p)
+{
+    if (p != 0)
+    {
+        return Rcount(p->next) + 1;
+    }
+    else
+    {
+        return 0;
+    }
+}
 
 int main()
 {
-    int a[] = {10, 20, 30, 40, 50, 60 ,70};
+    int a[] = {10, 20, 30, 40, 50, 60, 70};
     create(a, 7);
-    cout<<"Length is "<<count(first)<<endl;
+    cout << "Length is " << count(first) << endl;
+    cout << "Length is " << Rcount(first) << endl;
     return 0;
 }
