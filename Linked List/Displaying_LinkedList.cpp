@@ -24,15 +24,26 @@ void create(int a[], int n){
     }
 }
 
+//simple display function for displaying linked list
 void DisplayLL(struct Node *p){
     while(p!=0){
         cout<<p->data<<endl;
         p=p->next;
     }
 }
+
+//recursive display function for displaying linked list
+void RDisplayLL(struct Node *p){
+    if(p!=0){
+        cout<<p->data<<endl;
+        RDisplayLL(p->next);
+    }
+}
+
+
 int main(){
     int a[]= {10,20,30,40,50};
     create(a,5);
-    DisplayLL(first);
+    RDisplayLL(first);
     return 0;
 }
