@@ -58,5 +58,4 @@ int main()
     cout << "sum is " << sum(first) << endl;
     cout << "sum is " << Rsum(first) << endl;
     return 0;
-    
 }
