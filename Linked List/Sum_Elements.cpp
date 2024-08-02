@@ -26,7 +26,7 @@ void create(int a[], int n)
     }
 }
 
-// simple display function for counting sum of elements of a linked list
+// simple function for counting sum of elements of a linked list
 int sum(struct Node *p)
 {
     int s = 0;
@@ -38,7 +38,7 @@ int sum(struct Node *p)
     return s;
 }
 
-// recursive display function for counting sum of elements of a linked list
+// recursive function for counting sum of elements of a linked list
 int Rsum(struct Node *p)
 {
     if (p != 0)
