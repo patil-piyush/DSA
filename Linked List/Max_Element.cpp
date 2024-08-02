@@ -41,6 +41,7 @@ int max(struct Node *p)
     return m;
 }
 
+
 // recursive function for finding max element of a linked list
 int Rmax(struct Node *p)
 {
