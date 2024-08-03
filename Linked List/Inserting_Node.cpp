@@ -38,16 +38,40 @@ int count(struct Node *p)
     return l;
 }
 
-// recursive count function for counting nodes of a linked list
-int Rcount(struct Node *p)
+// simple display function for displaying linked list
+void DisplayLL(struct Node *p)
 {
-    if (p != 0)
+    while (p != 0)
     {
-        return Rcount(p->next) + 1;
+        cout << p->data << endl;
+        p = p->next;
+    }
+}
+
+// Insert function for inserting a node in a linked list
+int Insert(struct Node *p, int index, int x)
+{
+    struct Node *t;
+
+    if (index < 0 || index > count(p))
+        return 0;
+    t = new Node;
+    t->data = x;
+
+    if (index == 0)
+    {
+        t->next = first;
+        first = t;
     }
     else
     {
-        return 0;
+        p = first;
+        for (int i = 0; i < index - 1 && p; i++)
+        {
+            p = p->next;
+        }
+        t->next = p->next;
+        p->next = t;
     }
 }
 
@@ -55,7 +79,8 @@ int main()
 {
     int a[] = {10, 20, 30, 40, 50, 60, 70};
     create(a, 7);
-    cout << "Length is " << count(first) << endl;
-    cout << "Length is " << Rcount(first) << endl;
+
+    Insert(first, 0, 33);
+    DisplayLL(first);
     return 0;
 }
