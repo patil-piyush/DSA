@@ -27,38 +27,84 @@ void create(int a[], int n)
 }
 
 // simple function for linear search in a linked list
-Node* search(struct Node *p,int key){
-    while(p!=NULL){
-        if(key==p->data){
+Node *search(struct Node *p, int key)
+{
+    while (p != NULL)
+    {
+        if (key == p->data)
+        {
             return p;
         }
-        else{
-            p=p->next;
+        else
+        {
+            p = p->next;
         }
     }
     return NULL;
 }
 
 // recursive function for linear search in a linked list
-Node * Rsearch(struct Node *p, int key){
-    if(p==0){
+Node *Rsearch(struct Node *p, int key)
+{
+    if (p == 0)
+    {
         return NULL;
     }
-    else if(key==p->data){
+    else if (key == p->data)
+    {
         return p;
     }
-    else{
-        return Rsearch(p->next,key);
+    else
+    {
+        return Rsearch(p->next, key);
     }
 }
 
-//improved linear search by using move to head method
+// improved linear search by using move to head method
+Node *ImpSearch(Node *p, int key)
+{
+    Node *q = NULL;
+    while (p != 0)
+    {
+        if (key == p->data)
+        {
+            q->next = p->next;
+            p->next = first;
+            first = p;
+            return p;
+        }
+        else
+        {
+            q = p;
+            p = p->next;
+        }
+    }
+}
+
+// simple display function for displaying linked list
+void DisplayLL(struct Node *p)
+{
+    while (p != 0)
+    {
+        cout << p->data << endl;
+        p = p->next;
+    }
+}
 
 int main()
 {
     int a[] = {10, 20, 30, 90, 50};
     create(a, 5);
-    cout << "Element is at " << search(first,40) << endl;
-    cout << "Element is at " << Rsearch(first,40) << endl;
+    Node *Temp;
+    Temp = ImpSearch(first, 50);
+    if (Temp)
+    {
+        cout << "Element is present " << endl;
+    }
+    else
+    {
+        cout << "Element is not present " << endl;
+    }
+    DisplayLL(first);
     return 0;
 }
