@@ -39,13 +39,26 @@ Node* search(struct Node *p,int key){
     return NULL;
 }
 
+// recursive function for linear search in a linked list
+Node * Rsearch(struct Node *p, int key){
+    if(p==0){
+        return NULL;
+    }
+    else if(key==p->data){
+        return p;
+    }
+    else{
+        return Rsearch(p->next,key);
+    }
+}
 
+//improved linear search by using move to head method
 
 int main()
 {
     int a[] = {10, 20, 30, 90, 50};
     create(a, 5);
     cout << "Element is at " << search(first,40) << endl;
-    // cout << "Element is at " << Rsearch(first,40) << endl;
+    cout << "Element is at " << Rsearch(first,40) << endl;
     return 0;
 }
