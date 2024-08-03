@@ -41,7 +41,6 @@ int min(struct Node *p)
     return m;
 }
 
-
 // recursive function for finding min element of a linked list
 int Rmin(struct Node *p)
 {
