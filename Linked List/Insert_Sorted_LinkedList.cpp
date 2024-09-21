@@ -46,8 +46,12 @@ void SortedInsert(struct Node *p, int x){
     t->next=NULL;
 
     while(p && p->data<x){
-
+        q = p;
+        p = p->next;
     }
+    t->next = q->next;
+    q->next = t;
+
 }
 
 int main()
@@ -55,7 +59,7 @@ int main()
     int a[] = {10, 20, 30, 40, 50, 60, 70};
     create(a, 7);
 
-    SortedInsert(first, 0);
+    SortedInsert(first, 42);
     DisplayLL(first);
     return 0;
 }
