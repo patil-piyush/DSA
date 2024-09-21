@@ -26,7 +26,6 @@ void create(int a[], int n)
     }
 }
 
-
 // simple display function for displaying linked list
 void DisplayLL(struct Node *p)
 {
@@ -37,21 +36,36 @@ void DisplayLL(struct Node *p)
     }
 }
 
-void SortedInsert(struct Node *p, int x){
-    struct Node *t,*q;
-    q=NULL;
+void SortedInsert(struct Node *p, int x)
+{
+    struct Node *t, *q;
+    q = NULL;
 
     t = new Node;
-    t->data=x;
-    t->next=NULL;
-
-    while(p && p->data<x){
-        q = p;
-        p = p->next;
+    t->data = x;
+    t->next = NULL;
+    if (first == NULL)
+    {
+        first = t;
     }
-    t->next = q->next;
-    q->next = t;
-
+    else
+    {
+        while (p && p->data < x)
+        {
+            q = p;
+            p = p->next;
+        }
+        if (p == first)
+        {
+            t->next = first;
+            first = t;
+        }
+        else
+        {
+            t->next = q->next;
+            q->next = t;
+        }
+    }
 }
 
 int main()
@@ -59,7 +73,7 @@ int main()
     int a[] = {10, 20, 30, 40, 50, 60, 70};
     create(a, 7);
 
-    SortedInsert(first, 42);
+    SortedInsert(first, 2);
     DisplayLL(first);
     return 0;
 }
