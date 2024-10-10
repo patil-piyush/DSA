@@ -36,6 +36,7 @@ void DisplayLL(struct Node *p)
     }
 }
 
+//Function for inserting a node in a sorted linked list
 void SortedInsert(struct Node *p, int x)
 {
     struct Node *t, *q;
