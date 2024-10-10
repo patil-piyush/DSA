@@ -88,10 +88,6 @@ int DeleteNode(struct Node *p,int pos){
     }
 }
 
-//reversing the linked list Method 1
-//it uses a array of size equal to the size of linked list
-//firstly traverse the LL and copy the elements from LL to the array 
-//while traversing second time copy the elements from array to LL in reverse order
 void ReverseElements(struct Node *p){
     
     int* arr = new int[sizeof(int)*count(p)];
