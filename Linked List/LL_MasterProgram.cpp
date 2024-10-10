@@ -289,12 +289,64 @@ int Rsum(struct Node *p)
     }
 }
 
+//reversing the linked list Method 1
+//it uses a array of size equal to the size of linked list
+//firstly traverse the LL and copy the elements from LL to the array 
+//while traversing second time copy the elements from array to LL in reverse order
+void ReverseElements1(struct Node *p){
+    
+    int* arr = new int[sizeof(int)*count(p)];
+    Node *q=p,*temp;
+    int i=0;
+    while(q){
+        arr[i] = q->data;
+        q=q->next;
+        i++;
+    }
+    q=p;
+    i--;
+    while(q){
+        q->data=arr[i];
+        q=q->next;
+        i--;
+    }
+    
+}
+
+//Reversing the LL method 2 - 
+//Reversing it by using 3 sliding pointers
+void ReverseElements2(struct Node *p)
+{
+    Node *current = nullptr;
+    Node *prev = nullptr;
+
+    while (p)
+    {
+        prev = current;
+        current = p;
+        p = p->next;
+        current->next = prev;
+    }
+    first = current;
+}
+
+//Reversing the LL method 3 - 
+//Reversing it by using Recursion
+void ReverseElements3(struct Node *q,struct Node *p)
+{
+    if(p){
+        ReverseElements3(p,p->next);
+        p->next=q;
+    }
+    else{
+        first=q;
+    }
+}
 
 int main()
 {
     int a[] = {10, 20, 30, 40, 50, 60, 70};
     create(a, 7);
-    cout << "Length is " << count(first) << endl;
-    cout << "Length is " << Rcount(first) << endl;
+    
     return 0;
 }
