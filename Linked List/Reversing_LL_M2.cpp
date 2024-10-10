@@ -59,27 +59,32 @@ void RDisplayLL(struct Node *p)
     }
 }
 
-//function for deleting a node
-int DeleteNode(struct Node *p,int pos){
-    Node *c,*q;
-    int x=-1,i;
-    if(pos<1 || pos>count(p)){
+// function for deleting a node
+int DeleteNode(struct Node *p, int pos)
+{
+    Node *c, *q;
+    int x = -1, i;
+    if (pos < 1 || pos > count(p))
+    {
         return -1;
     }
-    if(pos==1){
-        c=first;
+    if (pos == 1)
+    {
+        c = first;
         first = first->next;
         x = c->data;
         delete c;
         return x;
     }
-    else{
+    else
+    {
         c = first;
         q = nullptr;
 
-        for(i=0; i<pos-1; i++){
-            q=p;
-            p=p->next;
+        for (i = 0; i < pos - 1; i++)
+        {
+            q = p;
+            p = p->next;
         }
         q->next = p->next;
         x = p->data;
@@ -88,24 +93,22 @@ int DeleteNode(struct Node *p,int pos){
     }
 }
 
-void ReverseElements(struct Node *p){
-    
-    int* arr = new int[sizeof(int)*count(p)];
-    Node *q=p,*temp;
-    int i=0;
-    while(q){
-        arr[i] = q->data;
-        q=q->next;
-        i++;
+
+//Reversing the LL method 2 - 
+//Reversing it by using 3 sliding pointers
+void ReverseElements(struct Node *p)
+{
+    Node *current = nullptr;
+    Node *prev = nullptr;
+
+    while (p)
+    {
+        prev = current;
+        current = p;
+        p = p->next;
+        current->next = prev;
     }
-    q=p;
-    i--;
-    while(q){
-        q->data=arr[i];
-        q=q->next;
-        i--;
-    }
-    
+    first = current;
 }
 
 int main()
@@ -116,8 +119,6 @@ int main()
 
     ReverseElements(first);
     DisplayLL(first);
- 
 
-    
     return 0;
 }
