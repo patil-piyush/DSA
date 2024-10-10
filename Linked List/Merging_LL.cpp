@@ -6,7 +6,7 @@ struct Node
 {
     int data;
     struct Node *next;
-} *first, *second;
+} *first, *second, *third;
 
 void createfirst(int a[], int n)
 {
@@ -112,24 +112,58 @@ int DeleteNode(struct Node *p, int pos)
     }
 }
 
-//Function for concatenating two lists
-void Concatenate(struct Node *p, struct Node *q)
-{  
-    while(p->next){
-        p=p->next;
+// Function for Merging two linked list
+void MergeLL(struct Node *p, struct Node *q)
+{
+    Node *last;
+    // comparing first node of two linked list and making it first node of merged list
+    if (first->data < second->data)
+    {
+        third = last = first;
+        first = first->next;
+        last->next = NULL;
     }
-    p->next=second;
+    else
+    {
+        third = last = second;
+        second = second->next;
+        last->next = NULL;
+    }
+
+    // merging all nodes after the first node
+    while (first && second)
+    {
+        if (first->data < second->data)
+        {
+            last->next = first;
+            last = first;
+            first = first->next;
+            last->next = NULL;
+        }
+        else
+        {
+            last->next = second;
+            last = second;
+            second = second->next;
+            last->next = NULL;
+        }
+    }
+    // merging remaining nodes
+    if (first)
+        last->next = first;
+    else
+        last->next = second;
 }
 
 int main()
 {
     int a[] = {10, 20, 30, 40, 50};
-    int b[] = {1, 2, 3, 4, 5, 6};
+    int b[] = {11, 22, 33, 44, 55, 66};
     createfirst(a, 5);
     createsecond(b, 5);
-   
-    Concatenate(first,second);
-    DisplayLL(first);
+
+    MergeLL(first, second);
+    DisplayLL(third);
 
     return 0;
 }

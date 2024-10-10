@@ -5,9 +5,9 @@ struct Node
 {
     int data;
     struct Node *next;
-} *first;
+} *first, *second, *third;
 
-void create(int a[], int n)
+void createfirst(int a[], int n)
 {
     int i;
     struct Node *t, *last;
@@ -15,6 +15,25 @@ void create(int a[], int n)
     first->data = a[0];
     first->next = 0;
     last = first;
+
+    for (i = 1; i < n; i++)
+    {
+        t = new Node;
+        t->data = a[i];
+        t->next = 0;
+        last->next = t;
+        last = t;
+    }
+}
+
+void createsecond(int a[], int n)
+{
+    int i;
+    struct Node *t, *last;
+    second = new Node;
+    second->data = a[0];
+    second->next = 0;
+    last = second;
 
     for (i = 1; i < n; i++)
     {
@@ -71,27 +90,32 @@ void RDisplayLL(struct Node *p)
     }
 }
 
-//function for deleting a node
-int DeleteNode(struct Node *p,int pos){
-    Node *c,*q;
-    int x=-1,i;
-    if(pos<1 || pos>count(p)){
+// function for deleting a node
+int DeleteNode(struct Node *p, int pos)
+{
+    Node *c, *q;
+    int x = -1, i;
+    if (pos < 1 || pos > count(p))
+    {
         return -1;
     }
-    if(pos==1){
-        c=first;
+    if (pos == 1)
+    {
+        c = first;
         first = first->next;
         x = c->data;
         delete c;
         return x;
     }
-    else{
+    else
+    {
         c = first;
         q = nullptr;
 
-        for(i=0; i<pos-1; i++){
-            q=p;
-            p=p->next;
+        for (i = 0; i < pos - 1; i++)
+        {
+            q = p;
+            p = p->next;
         }
         q->next = p->next;
         x = p->data;
@@ -105,36 +129,43 @@ bool isSorted(struct Node *p)
 {
     int x = INT8_MIN;
 
-    while(p){
-        if(p->data < x){
+    while (p)
+    {
+        if (p->data < x)
+        {
             return false;
         }
-        else{
+        else
+        {
             x = p->data;
-            p=p->next;
+            p = p->next;
         }
     }
     return true;
 }
 
-//function for removing the duplicates from the sorted linked list
-void RemoveDuplicates(struct Node *p){
+// function for removing the duplicates from the sorted linked list
+void RemoveDuplicates(struct Node *p)
+{
     p = first;
     Node *q = first->next;
-    while(q){
-        if(p->data!=q->data){
-            p=q;
-            q=q->next;
+    while (q)
+    {
+        if (p->data != q->data)
+        {
+            p = q;
+            q = q->next;
         }
-        else{
-            p->next=q->next;
+        else
+        {
+            p->next = q->next;
             delete q;
-            q=p->next;
+            q = p->next;
         }
     }
 }
 
-//Function for inserting a node in a sorted linked list
+// Function for inserting a node in a sorted linked list
 void SortedInsert(struct Node *p, int x)
 {
     struct Node *t, *q;
@@ -194,7 +225,6 @@ int Insert(struct Node *p, int index, int x)
     }
 }
 
-
 // simple function for finding max element of a linked list
 int max(struct Node *p)
 {
@@ -209,7 +239,6 @@ int max(struct Node *p)
     }
     return m;
 }
-
 
 // recursive function for finding max element of a linked list
 int Rmax(struct Node *p)
@@ -289,32 +318,34 @@ int Rsum(struct Node *p)
     }
 }
 
-//reversing the linked list Method 1
-//it uses a array of size equal to the size of linked list
-//firstly traverse the LL and copy the elements from LL to the array 
-//while traversing second time copy the elements from array to LL in reverse order
-void ReverseElements1(struct Node *p){
-    
-    int* arr = new int[sizeof(int)*count(p)];
-    Node *q=p,*temp;
-    int i=0;
-    while(q){
+// reversing the linked list Method 1
+// it uses a array of size equal to the size of linked list
+// firstly traverse the LL and copy the elements from LL to the array
+// while traversing second time copy the elements from array to LL in reverse order
+void ReverseElements1(struct Node *p)
+{
+
+    int *arr = new int[sizeof(int) * count(p)];
+    Node *q = p, *temp;
+    int i = 0;
+    while (q)
+    {
         arr[i] = q->data;
-        q=q->next;
+        q = q->next;
         i++;
     }
-    q=p;
+    q = p;
     i--;
-    while(q){
-        q->data=arr[i];
-        q=q->next;
+    while (q)
+    {
+        q->data = arr[i];
+        q = q->next;
         i--;
     }
-    
 }
 
-//Reversing the LL method 2 - 
-//Reversing it by using 3 sliding pointers
+// Reversing the LL method 2 -
+// Reversing it by using 3 sliding pointers
 void ReverseElements2(struct Node *p)
 {
     Node *current = nullptr;
@@ -330,23 +361,78 @@ void ReverseElements2(struct Node *p)
     first = current;
 }
 
-//Reversing the LL method 3 - 
-//Reversing it by using Recursion
-void ReverseElements3(struct Node *q,struct Node *p)
+// Reversing the LL method 3 -
+// Reversing it by using Recursion
+void ReverseElements3(struct Node *q, struct Node *p)
 {
-    if(p){
-        ReverseElements3(p,p->next);
-        p->next=q;
+    if (p)
+    {
+        ReverseElements3(p, p->next);
+        p->next = q;
     }
-    else{
-        first=q;
+    else
+    {
+        first = q;
     }
+}
+
+// Function for concatenating two lists
+void Concatenate(struct Node *p, struct Node *q)
+{
+    while (p->next)
+    {
+        p = p->next;
+    }
+    p->next = second;
+}
+
+// Function for Merging two linked list
+void MergeLL(struct Node *p, struct Node *q)
+{
+    Node *last;
+    // comparing first node of two linked list and making it first node of merged list
+    if (first->data < second->data)
+    {
+        third = last = first;
+        first = first->next;
+        last->next = NULL;
+    }
+    else
+    {
+        third = last = second;
+        second = second->next;
+        last->next = NULL;
+    }
+
+    // merging all nodes after the first node
+    while (first && second)
+    {
+        if (first->data < second->data)
+        {
+            last->next = first;
+            last = first;
+            first = first->next;
+            last->next = NULL;
+        }
+        else
+        {
+            last->next = second;
+            last = second;
+            second = second->next;
+            last->next = NULL;
+        }
+    }
+    // merging remaining nodes
+    if (first)
+        last->next = first;
+    else
+        last->next = second;
 }
 
 int main()
 {
     int a[] = {10, 20, 30, 40, 50, 60, 70};
-    create(a, 7);
-    
+    createfirst(a, 7);
+
     return 0;
 }
