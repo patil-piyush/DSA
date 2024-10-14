@@ -429,10 +429,131 @@ void MergeLL(struct Node *p, struct Node *q)
         last->next = second;
 }
 
+
+// Function for finding the existance of loop in the LL
+int isLoop(Node *f){
+    Node *p,*q;
+    p=q=f;
+    do{
+        p=p->next;
+        q=q->next;
+        if(q){
+            q=q->next;            
+        }
+    }while(p && q && p!=q);
+    if(p==q){
+        return 1;
+    }
+    else{
+        return 0;
+    }
+}
+
+
 int main()
 {
-    int a[] = {10, 20, 30, 40, 50, 60, 70};
-    createfirst(a, 7);
+    int choice, index, value, n;
+
+    // Input for the linked list
+    cout << "Enter the number of elements in the linked list: ";
+    cin >> n;
+    int *a = new int[n];
+    cout << "Enter the elements of the linked list: \n";
+    for (int i = 0; i < n; i++)
+    {
+        cin >> a[i];
+    }
+    createfirst(a, n);  // Creating the linked list from user input
+
+    while (1)  // Infinite loop for menu-driven program
+    {
+        cout << "\n--- Menu ---\n";
+        cout << "1. Display Linked List\n";
+        cout << "2. Count Nodes\n";
+        cout << "3. Insert Element\n";
+        cout << "4. Delete Node\n";
+        cout << "5. Reverse Linked List (Using Array)\n";
+        cout << "6. Reverse Linked List (Using Pointers)\n";
+        cout << "7. Reverse Linked List (Using Recursion)\n";
+        cout << "8. Check if List is Sorted\n";
+        cout << "9. Find Max Element\n";
+        cout << "10. Find Min Element\n";
+        cout << "11. Sum of Elements\n";
+        cout << "12. Exit\n";
+        cout << "Enter your choice: ";
+        cin >> choice;
+
+        switch (choice)
+        {
+        case 1:
+            cout << "Linked List: \n";
+            DisplayLL(first);
+            break;
+
+        case 2:
+            cout << "Number of nodes: " << count(first) << endl;
+            break;
+
+        case 3:
+            cout << "Enter index to insert: ";
+            cin >> index;
+            cout << "Enter value to insert: ";
+            cin >> value;
+            Insert(first, index, value);
+            break;
+
+        case 4:
+            cout << "Enter position to delete node: ";
+            cin >> index;
+            value = DeleteNode(first, index);
+            if (value != -1)
+                cout << "Deleted element: " << value << endl;
+            else
+                cout << "Invalid position!" << endl;
+            break;
+
+        case 5:
+            cout << "Reversing Linked List using Array...\n";
+            ReverseElements1(first);
+            break;
+
+        case 6:
+            cout << "Reversing Linked List using Pointers...\n";
+            ReverseElements2(first);
+            break;
+
+        case 7:
+            cout << "Reversing Linked List using Recursion...\n";
+            ReverseElements3(NULL, first);
+            break;
+
+        case 8:
+            if (isSorted(first))
+                cout << "The linked list is sorted.\n";
+            else
+                cout << "The linked list is not sorted.\n";
+            break;
+
+        case 9:
+            cout << "Maximum element: " << max(first) << endl;
+            break;
+
+        case 10:
+            cout << "Minimum element: " << min(first) << endl;
+            break;
+
+        case 11:
+            cout << "Sum of elements: " << sum(first) << endl;
+            break;
+
+        case 12:
+            cout << "Exiting the program...\n";
+            exit(0);  // Exiting the program
+
+        default:
+            cout << "Invalid choice! Please try again.\n";
+        }
+    }
 
     return 0;
-}
+}    
