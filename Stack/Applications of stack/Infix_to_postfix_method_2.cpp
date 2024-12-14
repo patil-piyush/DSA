@@ -1,3 +1,5 @@
+//method 2 - it also pushes the operands in the stack and pops based on their precedance, operands has highest precedance
+
 #include <iostream>
 #include <string.h>
 using namespace std;
