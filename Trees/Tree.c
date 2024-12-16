@@ -114,7 +114,10 @@ void postorder(struct Node *p){
 
 int main() {
     TreeCreate();
+    printf("\npostorder: ");
     preorder(root);
+    printf("\nInorder: ");
+    Inorder(root);
     printf("\npostorder: ");
     postorder(root);
     return 0;
