@@ -154,35 +154,14 @@ int count(struct Node *p)
     return 0;
 }
 
-// function for counting Height of the tree
-int height(struct Node *p)
-{
-    int x = -1, y = -1;
-    if (p == 0)
-        return 0;
-    x = height(p->lchild);
-    y = height(p->rchild);
-    if (x > y)
-    {
-        return x + 1;
-    }
-    else
-    {
-        return y + 1;
-    }
-    return 0;
-}
-
 int main()
 {
     TreeCreate();
-    printf("\npostorder: ");
-    preorder(root);
-    printf("\nInorder: ");
-    Inorder(root);
-    printf("\npostorder: ");
-    postorder(root);
+
     printf("\nLevelorder: ");
     LevelOrder(root);
+
+    printf("\nNumber of Node: %d", count(root));
+
     return 0;
 }

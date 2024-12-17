@@ -176,13 +176,12 @@ int height(struct Node *p)
 int main()
 {
     TreeCreate();
-    printf("\npostorder: ");
-    preorder(root);
-    printf("\nInorder: ");
-    Inorder(root);
-    printf("\npostorder: ");
-    postorder(root);
+
     printf("\nLevelorder: ");
     LevelOrder(root);
+
+    printf("\nNumber of Node: %d", count(root));
+    printf("\nHeight of Tree: %d", height(root));
+
     return 0;
 }
