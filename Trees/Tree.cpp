@@ -55,6 +55,7 @@ class Tree{
     void preorder(Node *p);
     void postorder(Node *p);
     void Inorder(Node *p);
+    void LevelOrder(Node *root);
 };
 
 void Tree::CreateTree(){
@@ -114,6 +115,24 @@ void Tree::postorder(Node *p){
         postorder(p->lchild);
         postorder(p->rchild);
         cout<<p->data<<" ";
+    }
+}
+
+//Level Order traversal of the binary tree
+void Tree::LevelOrder(Node *root){
+    queue q(100);
+    printf("%d ",root->data);
+    q.enqueue(root);
+    while(!q.isEmpty()){
+        root = q.dequeue();
+        if(root->lchild){
+            cout<<root->lchild->data<<" ";
+            q.enqueue(root->lchild);
+        }
+        if(root->rchild){
+            cout<<root->rchild->data<<" ";
+            q.enqueue(root->rchild);
+        }
     }
 }
 
