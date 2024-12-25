@@ -24,6 +24,8 @@ struct Node *RInsert(struct Node *t, int key) {
     }
     return t; // Return the unchanged node
 }
+
+
 // iterative version of inserting a node in BST
 void Insert(int key)
 {
