@@ -153,10 +153,10 @@ struct Node *RDelete(struct Node *t, int key)
     else if (key > t->data)
         t->rchild = RDelete(t->rchild, key);
     // if key = t->data - 1)check the height
-    //                    2)if height of left sbtree is greater than find predecessor and replace t->data with it
+    //                    2)if height of left sbtree is greater then find predecessor and replace t->data with it
     //                    3)if predecessor node has childs - use delete function for left subtree of t
     //                                                     ELSE
-    //                    4)if height of right sbtree is greater than find successor and replace t->data with it 
+    //                    4)if height of right subtree is greater then find successor and replace t->data with it 
     //                    5)if successor node has childs - use delete function for right subtree of t
     else
     {
