@@ -81,6 +81,9 @@ struct Node* RRRotation(struct Node* p){
     pr->lchild = p;
     p->lchild = prl;
 
+    p->height = NodeHeight(p);
+    pr->height = NodeHeight(pr);
+
     if(root == p)
         root = pr;
     return pr;
